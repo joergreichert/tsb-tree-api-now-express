@@ -12,6 +12,7 @@ export interface PatchProp {
 export interface RequestBody {
   queryType: BodyQueryType;
   tree_id?: string;
+  watering_id?: string;
   uuid?: string;
   username?: string;
   amount?: number;
@@ -53,10 +54,11 @@ export interface AllTreesFiltered {
 export interface TreeWatered {
   amount: string;
   tree_id: string;
-  time: Date | string;
+  updated: Date | string;
   uuid: string;
   timestamp: Date | string;
   username: string;
+  watering_id: string;
 }
 
 export interface TreeAdopted {

@@ -13,6 +13,9 @@ import {
   unadoptTree,
   createUserProfile,
   updateUserProfile,
+  getWaterings,
+  updateWatered,
+  deleteWatering,
 } from "../db/db-manager";
 import { errorHandler } from "../error-handler";
 
@@ -90,9 +93,25 @@ export async function handleVerifiedRequest(
           case "canexportusers": {
             if (tokenSubject === "auth0|5f29bb0c53a5990037970148"/*joerg*/ 
                 || tokenSubject === "auth0|5f3bc85b4ee503006d6c041b"/*thorsten*/) {
-              result = true;    
+              result = true;
             } else {
               result = false;
+            }
+            break;
+          }
+          case "canupdatewatering": {
+            if (!id) {
+              result = false
+            } else {
+              const waterings = await getWaterings(id);
+              result = (waterings.length > 0 && tokenSubject === waterings[0].uuid);
+            }
+            break;
+          }
+          case "watering": {
+            if (id) {
+              const waterings = await getWaterings(id);
+              result = (waterings.length > 0 && tokenSubject === waterings[0].uuid) && waterings[0]
             }
             break;
           }
@@ -125,6 +144,7 @@ export async function handleVerifiedRequest(
         const {
           queryType,
           tree_id,
+          watering_id,
           uuid,
           username,
           amount,
@@ -203,6 +223,33 @@ export async function handleVerifiedRequest(
             result = await updateUserProfile({ uuid, patches });
             break;
 
+          case "watering-update": {
+            if (!watering_id) {
+              statusCode = 400;
+              throw new Error(`watering_id missing in request body`);
+            }
+            const waterings = await getWaterings(watering_id);
+            if (waterings.length === 0) {
+              statusCode = 404;
+              throw new Error(`No watering for ${watering_id}`);
+            }
+            if (tokenSubject !== waterings[0].uuid) {
+              statusCode = 401;
+              throw new Error(
+                "You're only allowed to update your own waterings",
+              );
+            }
+           if (!patches || patches.length == 0) {
+              statusCode = 400;
+              throw new Error(
+                "POST body needs non empty patches (array) properties",
+              );
+            }
+            statusCode = 200;
+            result = await updateWatered({ uuid: watering_id, patches });
+            break;
+          }
+
           default:
             statusCode = 400;
             throw new Error("Unknow POST body queryType");
@@ -228,6 +275,14 @@ export async function handleVerifiedRequest(
             }
             result = await unadoptTree(tree_id, uuid);
             break;
+          case "watering-delete":
+            if (uuid === undefined) {
+              statusCode = 400;
+              throw new Error("DELETE body uuid string properties");
+            }
+            result = await deleteWatering(uuid, tokenSubject);
+            break;
+
           default:
             statusCode = 400;
             throw new Error("Unknow DELETE body queryType");

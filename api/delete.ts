@@ -2,7 +2,7 @@ import { VercelRequest, VercelResponse } from "@vercel/node";
 import { errorHandler } from "./_utils/error-handler";
 import { verifyRequest } from "./_utils/auth/verify-request";
 
-type DeleteQueryType = "unadopt";
+type DeleteQueryType = "unadopt" | "watering-delete";
 
 interface Body {
   queryType: DeleteQueryType;

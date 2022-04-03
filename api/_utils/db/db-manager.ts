@@ -1,5 +1,6 @@
 import pg from "pg";
 import { Parser } from 'json2csv';
+import { v4 as uuidv4 } from 'uuid';
 import { getEnvs } from "../envs";
 import {
   Tree,
@@ -261,6 +262,17 @@ function convertToCsv(data: UserProps[], fields: string[]): string {
   return json2csv.parse(data);
 }
 
+export async function getWaterings(wateringId: string): Promise<TreeWatered[]> {
+  const result = await pool.query(
+    `
+    SELECT *
+    FROM trees_watered tw
+    WHERE tw.watering_id = $1`,
+    [wateringId],
+  );
+  return result.rows;
+}
+
 
 // POST POST POST POST POST POST POST POST POST
 // POST POST POST POST POST POST POST POST POST POST
@@ -295,10 +307,10 @@ export async function waterTree(opts: WaterTreeProps): Promise<string> {
   const { tree_id, uuid, amount, username } = opts;
   await pool.query(
     `
-    INSERT INTO trees_watered (tree_id, time, uuid, amount, timestamp, username)
-    VALUES ($1, clock_timestamp(), $2, $3, clock_timestamp(), $4)
+    INSERT INTO trees_watered (tree_id, updated, uuid, amount, timestamp, username, watering_id)
+    VALUES ($1, clock_timestamp(), $2, $3, clock_timestamp(), $4, $5)
   `,
-    [tree_id, uuid, amount, username],
+    [tree_id, uuid, amount, username, uuidv4()],
   );
   return `Tree with tree_id ${tree_id} was watered by user ${uuid}/${username} with ${amount}l of water`;
 }
@@ -392,19 +404,107 @@ export async function updateUserProfile(opts: PatchProps): Promise<UserProps> {
             await pool.query(
               `UPDATE trees_watered SET username = $2 WHERE uuid = $1`,
               [uuid, value],
-            );  
-          }  
+            );
+          }
         }
       } else {
         console.log(`Property ${patch.name} isn't supported for update`)
       }
-    }  
+    }
   }
   const result = await pool.query(
     `SELECT uuid, email, username, prefered_username, family_name, given_name, salutation, street_with_number, zipcode, phone_number FROM users WHERE uuid = $1`,
     [uuid],
   );
   return result.rows.length > 0 && result.rows[0];
+}
+
+export async function updateWatered(opts: PatchProps): Promise<TreeWatered|null> {
+  const supportedProps: String[] = [
+    "amount",
+    "timestamp",
+    "tree_id",
+  ]
+  const { uuid, patches } = opts;
+  const result = await pool.query(
+    `SELECT watering_id FROM trees_watered WHERE watering_id = $1`,
+    [uuid],
+  );
+  if (result.rows.length == 0) {
+    return Promise.resolve(null)
+  }
+  if (patches && Array.isArray(patches)) {
+    for (let patch of patches) {
+      if (supportedProps.indexOf(patch.name) >= 0) {
+        const entry = result.rows.length > 0 && result.rows[0];
+        const oldValue = entry && entry[patch.name];
+        const value = (patch.value === undefined || patch.value === null || patch.value === "") ? null : patch.value
+        if (patch.name == "amount") {
+          var number = null;
+          try {
+            number = value && parseInt(value)
+          } catch(e) {
+            console.log(`Value ${value} cannot be parsed as number, skipping...`)
+            continue
+          }
+          if (!number || number < 0 || number >= 300) {
+            console.log(`Value ${number} invalid for new amount of watering, skipping...`)
+            continue
+          }
+        } else if (patch.name == "tree_id") {
+          if (!value) {
+            console.log(`Value null invalid for new tree of watering, skipping...`)
+            continue
+          }
+          const queryResult = await pool.query(
+            `SELECT id FROM trees WHERE id = $1`,
+            [value],
+          );
+          const foundTree = queryResult.rows.length > 0;
+          if (!foundTree) {
+            console.log(`New tree ${value} of watering doesn't exist, skipping...`)
+            continue
+          }
+        } else if (patch.name == "timestamp") {
+          if (!value) {
+            console.log(`Value null invalid for new time of watering, skipping...`)
+            continue
+          }
+          try {
+            const current = new Date();
+            const currentYear = current.getFullYear();
+            const date = new Date(Date.parse(value));
+            const year = date.getFullYear();
+            if (current.getTime() < date.getTime() || year != currentYear) {
+              console.log(`Value ${value} invalid for new time of watering, skipping...`)
+              continue
+            }
+          } catch(e) {
+            console.log(`Value ${value} for new time of watering cause error, skipping...`)
+            continue
+          }
+        }
+        await pool.query(
+          `UPDATE trees_watered SET ${patch.name} = $2, updated = clock_timestamp() WHERE watering_id = $1`,
+          [uuid, value],
+        );
+      } else {
+        console.log(`Property ${patch.name} isn't supported for update`)
+      }
+    }
+  }
+  const finalResult = await pool.query(
+    `SELECT tw.*, u.username AS username_set, u.prefered_username FROM trees_watered tw 
+     LEFT OUTER JOIN users u ON tw.uuid = u.uuid WHERE tw.watering_id = $1`,
+    [uuid],
+  );
+  const tw = finalResult.rows[0];
+  return Promise.resolve({
+    username: tw.prefered_username || tw.username_set || tw.username,
+    username_set: undefined,
+    prefered_username: undefined,
+    ...tw,
+  });
 }
 
 // DELETE DELETE DELETE DELETE DELETE DELETE DELETE DELETE
@@ -431,4 +531,25 @@ export async function unadoptTree(
   return response.rowCount > 0
     ? `tree ${tree_id} was unadopted by user ${uuid}`
     : `tree ${tree_id} or user ${uuid} don't exist`;
+}
+
+/**
+ * Delete watering
+ *
+ */
+export async function deleteWatering(
+  wateringId: string,
+  userUuid: string,
+): Promise<string> {
+  const response = await pool.query(
+    `
+    DELETE FROM trees_watered
+    WHERE watering_id = $1 AND uuid = $2;
+  `,
+    [wateringId, userUuid],
+  );
+
+  return response.rowCount > 0
+    ? `watering ${wateringId} has been deleted`
+    : `watering ${wateringId} doesn't exist`;
 }

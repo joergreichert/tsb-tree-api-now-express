@@ -22,6 +22,8 @@ type GetQueryType =
   | "adopted"
   | "user-profile"
   | "canexportusers"
+  | "canupdatewatering"
+  | "watering"
   | "user-export"
   | "lastwatered"
   | "watered"
@@ -219,7 +221,9 @@ export default async function (
       case "istreeadopted":
       case "user-profile":
       case "user-export":
-      case "canexportusers":    
+      case "canexportusers":
+      case "canupdatewatering":
+      case "watering":
       case "adopted": {
         await verifyRequest(request, response);
         return;
