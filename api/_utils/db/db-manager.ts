@@ -553,3 +553,15 @@ export async function deleteWatering(
     ? `watering ${wateringId} has been deleted`
     : `watering ${wateringId} doesn't exist`;
 }
+
+
+// Auxilary
+
+export async function updateUserLastSeenById(uuid: string) {
+  await pool.query(
+    `INSERT INTO users_stats(user_id, last_seen) VALUES ($1, clock_timestamp()) 
+    ON CONFLICT (user_id) DO UPDATE SET last_seen = clock_timestamp()`,
+    [uuid],
+  );
+}
+

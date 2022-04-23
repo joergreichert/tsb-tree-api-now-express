@@ -9,6 +9,7 @@ import {
   isTreeAdoptedByUser,
   getAdoptedTreeIdsByUserId,
   getUserById,
+  updateUserLastSeenById,
   exportUserData,
   unadoptTree,
   createUserProfile,
@@ -88,6 +89,8 @@ export async function handleVerifiedRequest(
               );
             }
             result = await getUserById(uuid);
+            // update user stats
+            await updateUserLastSeenById(uuid);
             break;
           }
           case "canexportusers": {
