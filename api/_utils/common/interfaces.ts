@@ -44,6 +44,12 @@ export interface Tree {
   radolan_sum: number;
   radolan_days: number[];
   geom: string;
+  gattungwikipedia: string;
+  gattungwikidata: string;
+  gattungwikicommons: string;
+  artwikipedia: string;
+  artwikidata: string;
+  artwikicommons: string;
 }
 
 export type TreeReduced = [string, number, number, number];
