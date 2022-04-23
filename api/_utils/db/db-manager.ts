@@ -288,8 +288,8 @@ export async function adoptTree(
 ): Promise<string> {
   await pool.query(
     `
-     INSERT INTO trees_adopted (tree_id, uuid)
-     VALUES ($1, $2);
+     INSERT INTO trees_adopted (tree_id, uuid, updated)
+     VALUES ($1, $2, clock_timestamp());
   `,
     [tree_id, uuid],
   );
