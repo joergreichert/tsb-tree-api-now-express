@@ -1,0 +1,4324 @@
+{
+  "annotations": {
+    "list": [
+      {
+        "builtIn": 1,
+        "datasource": {
+          "type": "datasource",
+          "uid": "grafana"
+        },
+        "enable": true,
+        "hide": true,
+        "iconColor": "rgba(0, 211, 255, 1)",
+        "name": "Annotations & Alerts",
+        "target": {
+          "limit": 100,
+          "matchAny": false,
+          "tags": [],
+          "type": "dashboard"
+        },
+        "type": "dashboard"
+      }
+    ]
+  },
+  "editable": true,
+  "fiscalYearStartMonth": 0,
+  "graphTooltip": 0,
+  "id": 9,
+  "links": [],
+  "liveNow": false,
+  "panels": [
+    {
+      "collapsed": true,
+      "gridPos": {
+        "h": 1,
+        "w": 24,
+        "x": 0,
+        "y": 0
+      },
+      "id": 54,
+      "panels": [
+        {
+          "datasource": {
+            "uid": "LeipzigGiesst-PostgreSQL"
+          },
+          "fieldConfig": {
+            "defaults": {
+              "color": {
+                "mode": "thresholds"
+              },
+              "mappings": [],
+              "thresholds": {
+                "mode": "absolute",
+                "steps": [
+                  {
+                    "color": "green"
+                  }
+                ]
+              }
+            },
+            "overrides": []
+          },
+          "gridPos": {
+            "h": 5,
+            "w": 6,
+            "x": 0,
+            "y": 1
+          },
+          "id": 6,
+          "options": {
+            "colorMode": "value",
+            "graphMode": "area",
+            "justifyMode": "auto",
+            "orientation": "auto",
+            "reduceOptions": {
+              "calcs": [
+                "lastNotNull"
+              ],
+              "fields": "",
+              "values": false
+            },
+            "text": {},
+            "textMode": "auto"
+          },
+          "pluginVersion": "8.5.0",
+          "targets": [
+            {
+              "format": "table",
+              "group": [],
+              "metricColumn": "none",
+              "rawQuery": true,
+              "rawSql": "SELECT\n  count(created)\nFROM users",
+              "refId": "A",
+              "select": [
+                [
+                  {
+                    "params": [
+                      "created"
+                    ],
+                    "type": "column"
+                  },
+                  {
+                    "params": [
+                      "count"
+                    ],
+                    "type": "aggregate"
+                  },
+                  {
+                    "params": [
+                      "time"
+                    ],
+                    "type": "alias"
+                  }
+                ]
+              ],
+              "table": "users",
+              "timeColumn": "created",
+              "timeColumnType": "timestamp",
+              "where": [
+                {
+                  "name": "$__timeFilter",
+                  "params": [],
+                  "type": "macro"
+                }
+              ]
+            }
+          ],
+          "title": "Aktuelle Benutzeranzahl",
+          "type": "stat"
+        },
+        {
+          "datasource": {
+            "uid": "LeipzigGiesst-PostgreSQL"
+          },
+          "fieldConfig": {
+            "defaults": {
+              "color": {
+                "mode": "thresholds"
+              },
+              "mappings": [],
+              "thresholds": {
+                "mode": "absolute",
+                "steps": [
+                  {
+                    "color": "green"
+                  }
+                ]
+              }
+            },
+            "overrides": []
+          },
+          "gridPos": {
+            "h": 5,
+            "w": 6,
+            "x": 6,
+            "y": 1
+          },
+          "id": 8,
+          "options": {
+            "colorMode": "value",
+            "graphMode": "area",
+            "justifyMode": "auto",
+            "orientation": "auto",
+            "reduceOptions": {
+              "calcs": [
+                "lastNotNull"
+              ],
+              "fields": "",
+              "values": false
+            },
+            "text": {},
+            "textMode": "auto"
+          },
+          "pluginVersion": "8.5.0",
+          "targets": [
+            {
+              "format": "time_series",
+              "group": [
+                {
+                  "params": [
+                    "$__interval",
+                    "none"
+                  ],
+                  "type": "time"
+                }
+              ],
+              "metricColumn": "none",
+              "rawQuery": false,
+              "rawSql": "SELECT\n  $__unixEpochGroupAlias(0,$__interval),\n  count(id) AS \"id\"\nFROM trees_adopted\nGROUP BY 1\nORDER BY 1",
+              "refId": "A",
+              "select": [
+                [
+                  {
+                    "params": [
+                      "id"
+                    ],
+                    "type": "column"
+                  },
+                  {
+                    "params": [
+                      "count"
+                    ],
+                    "type": "aggregate"
+                  },
+                  {
+                    "params": [
+                      "id"
+                    ],
+                    "type": "alias"
+                  }
+                ]
+              ],
+              "table": "trees_adopted",
+              "timeColumn": "0",
+              "timeColumnType": "int4",
+              "where": []
+            }
+          ],
+          "title": "Baumadoptionen",
+          "type": "stat"
+        },
+        {
+          "datasource": {
+            "uid": "LeipzigGiesst-PostgreSQL"
+          },
+          "fieldConfig": {
+            "defaults": {
+              "color": {
+                "mode": "thresholds"
+              },
+              "mappings": [],
+              "thresholds": {
+                "mode": "absolute",
+                "steps": [
+                  {
+                    "color": "green"
+                  }
+                ]
+              }
+            },
+            "overrides": []
+          },
+          "gridPos": {
+            "h": 5,
+            "w": 7,
+            "x": 12,
+            "y": 1
+          },
+          "id": 12,
+          "options": {
+            "colorMode": "value",
+            "graphMode": "area",
+            "justifyMode": "auto",
+            "orientation": "auto",
+            "reduceOptions": {
+              "calcs": [
+                "lastNotNull"
+              ],
+              "fields": "",
+              "values": false
+            },
+            "text": {},
+            "textMode": "auto"
+          },
+          "pluginVersion": "8.5.0",
+          "targets": [
+            {
+              "format": "table",
+              "group": [],
+              "metricColumn": "none",
+              "rawQuery": true,
+              "rawSql": "SELECT\n  count(distinct(id))\nFROM trees",
+              "refId": "A",
+              "select": [
+                [
+                  {
+                    "params": [
+                      "created"
+                    ],
+                    "type": "column"
+                  },
+                  {
+                    "params": [
+                      "count"
+                    ],
+                    "type": "aggregate"
+                  },
+                  {
+                    "params": [
+                      "time"
+                    ],
+                    "type": "alias"
+                  }
+                ]
+              ],
+              "table": "users",
+              "timeColumn": "created",
+              "timeColumnType": "timestamp",
+              "where": [
+                {
+                  "name": "$__timeFilter",
+                  "params": [],
+                  "type": "macro"
+                }
+              ]
+            }
+          ],
+          "title": "Aktuelle Anzahl Bäume",
+          "type": "stat"
+        },
+        {
+          "datasource": {
+            "uid": "LeipzigGiesst-PostgreSQL"
+          },
+          "fieldConfig": {
+            "defaults": {
+              "color": {
+                "mode": "thresholds"
+              },
+              "mappings": [],
+              "thresholds": {
+                "mode": "absolute",
+                "steps": [
+                  {
+                    "color": "green"
+                  }
+                ]
+              }
+            },
+            "overrides": []
+          },
+          "gridPos": {
+            "h": 5,
+            "w": 5,
+            "x": 19,
+            "y": 1
+          },
+          "id": 9,
+          "options": {
+            "colorMode": "value",
+            "graphMode": "area",
+            "justifyMode": "auto",
+            "orientation": "auto",
+            "reduceOptions": {
+              "calcs": [
+                "lastNotNull"
+              ],
+              "fields": "",
+              "values": false
+            },
+            "text": {},
+            "textMode": "auto"
+          },
+          "pluginVersion": "8.5.0",
+          "targets": [
+            {
+              "format": "time_series",
+              "group": [
+                {
+                  "params": [
+                    "$__interval",
+                    "none"
+                  ],
+                  "type": "time"
+                }
+              ],
+              "metricColumn": "none",
+              "rawQuery": true,
+              "rawSql": "SELECT\n  $__unixEpochGroupAlias(0,$__interval),\n  count(distinct(tree_id)) AS \"id\"\nFROM trees_adopted\nGROUP BY 1\nORDER BY 1",
+              "refId": "A",
+              "select": [
+                [
+                  {
+                    "params": [
+                      "tree_id"
+                    ],
+                    "type": "column"
+                  },
+                  {
+                    "params": [
+                      "count"
+                    ],
+                    "type": "aggregate"
+                  },
+                  {
+                    "params": [
+                      "id"
+                    ],
+                    "type": "alias"
+                  }
+                ]
+              ],
+              "table": "trees_adopted",
+              "timeColumn": "0",
+              "timeColumnType": "int4",
+              "where": []
+            }
+          ],
+          "title": "Adoptierte Bäume",
+          "type": "stat"
+        }
+      ],
+      "title": "Gesamtauswertung (Allzeit)",
+      "type": "row"
+    },
+    {
+      "collapsed": true,
+      "gridPos": {
+        "h": 1,
+        "w": 24,
+        "x": 0,
+        "y": 1
+      },
+      "id": 52,
+      "panels": [
+        {
+          "datasource": {
+            "type": "postgres",
+            "uid": "mWlqklhnk"
+          },
+          "description": "",
+          "fieldConfig": {
+            "defaults": {
+              "color": {
+                "mode": "palette-classic"
+              },
+              "custom": {
+                "axisLabel": "",
+                "axisPlacement": "auto",
+                "barAlignment": 0,
+                "drawStyle": "line",
+                "fillOpacity": 10,
+                "gradientMode": "none",
+                "hideFrom": {
+                  "graph": false,
+                  "legend": false,
+                  "tooltip": false,
+                  "viz": false
+                },
+                "lineInterpolation": "linear",
+                "lineWidth": 1,
+                "pointSize": 5,
+                "scaleDistribution": {
+                  "type": "linear"
+                },
+                "showPoints": "never",
+                "spanNulls": true,
+                "stacking": {
+                  "group": "A",
+                  "mode": "none"
+                },
+                "thresholdsStyle": {
+                  "mode": "off"
+                }
+              },
+              "mappings": [],
+              "thresholds": {
+                "mode": "absolute",
+                "steps": [
+                  {
+                    "color": "green"
+                  },
+                  {
+                    "color": "red",
+                    "value": 80
+                  }
+                ]
+              },
+              "unit": "short"
+            },
+            "overrides": []
+          },
+          "gridPos": {
+            "h": 9,
+            "w": 12,
+            "x": 0,
+            "y": 2
+          },
+          "id": 4,
+          "options": {
+            "graph": {},
+            "legend": {
+              "calcs": [],
+              "displayMode": "list",
+              "placement": "bottom"
+            },
+            "tooltip": {
+              "mode": "single",
+              "sort": "none"
+            }
+          },
+          "pluginVersion": "7.5.7",
+          "targets": [
+            {
+              "datasource": {
+                "type": "postgres",
+                "uid": "mWlqklhnk"
+              },
+              "format": "time_series",
+              "group": [
+                {
+                  "params": [
+                    "$__interval",
+                    "none"
+                  ],
+                  "type": "time"
+                }
+              ],
+              "metricColumn": "none",
+              "rawQuery": true,
+              "rawSql": "SELECT\n  $__timeGroupAlias(\"timestamp\",$__interval),\n  sum(CAST (amount AS INTEGER)) AS \"Liter (Summe)\"\nFROM trees_watered\nGROUP BY 1\nORDER BY 1",
+              "refId": "A",
+              "select": [
+                [
+                  {
+                    "params": [
+                      "amount"
+                    ],
+                    "type": "column"
+                  },
+                  {
+                    "params": [
+                      "sum"
+                    ],
+                    "type": "aggregate"
+                  },
+                  {
+                    "params": [
+                      "timestamp"
+                    ],
+                    "type": "alias"
+                  }
+                ]
+              ],
+              "table": "trees_watered",
+              "timeColumn": "\"timestamp\"",
+              "timeColumnType": "timestamp",
+              "where": []
+            }
+          ],
+          "title": "Gegossene Liter",
+          "type": "timeseries"
+        },
+        {
+          "aliasColors": {},
+          "bars": false,
+          "dashLength": 10,
+          "dashes": false,
+          "datasource": {
+            "uid": "LeipzigGiesst-PostgreSQL"
+          },
+          "description": "",
+          "fill": 1,
+          "fillGradient": 0,
+          "gridPos": {
+            "h": 9,
+            "w": 12,
+            "x": 12,
+            "y": 2
+          },
+          "hiddenSeries": false,
+          "id": 2,
+          "legend": {
+            "avg": false,
+            "current": false,
+            "max": false,
+            "min": false,
+            "show": true,
+            "total": false,
+            "values": false
+          },
+          "lines": true,
+          "linewidth": 1,
+          "nullPointMode": "null",
+          "options": {
+            "alertThreshold": true
+          },
+          "percentage": false,
+          "pluginVersion": "8.5.0",
+          "pointradius": 2,
+          "points": false,
+          "renderer": "flot",
+          "seriesOverrides": [],
+          "spaceLength": 10,
+          "stack": false,
+          "steppedLine": false,
+          "targets": [
+            {
+              "format": "time_series",
+              "group": [
+                {
+                  "params": [
+                    "$__interval",
+                    "NULL"
+                  ],
+                  "type": "time"
+                }
+              ],
+              "metricColumn": "none",
+              "rawQuery": false,
+              "rawSql": "SELECT\n  $__timeGroupAlias(created,$__interval,NULL),\n  count(uuid)\nFROM users\nGROUP BY 1\nORDER BY 1",
+              "refId": "User created",
+              "select": [
+                [
+                  {
+                    "params": [
+                      "uuid"
+                    ],
+                    "type": "column"
+                  },
+                  {
+                    "params": [
+                      "count"
+                    ],
+                    "type": "aggregate"
+                  }
+                ]
+              ],
+              "table": "users",
+              "timeColumn": "created",
+              "where": []
+            }
+          ],
+          "thresholds": [],
+          "timeRegions": [],
+          "title": "Benutzerregistrierungen",
+          "tooltip": {
+            "shared": true,
+            "sort": 0,
+            "value_type": "individual"
+          },
+          "transformations": [
+            {
+              "id": "reduce",
+              "options": {
+                "includeTimeField": false,
+                "mode": "reduceFields",
+                "reducers": []
+              }
+            }
+          ],
+          "type": "graph",
+          "xaxis": {
+            "mode": "time",
+            "show": true,
+            "values": []
+          },
+          "yaxes": [
+            {
+              "$$hashKey": "object:196",
+              "format": "short",
+              "logBase": 1,
+              "show": true
+            },
+            {
+              "$$hashKey": "object:197",
+              "format": "short",
+              "logBase": 1,
+              "show": true
+            }
+          ],
+          "yaxis": {
+            "align": false
+          }
+        },
+        {
+          "datasource": {
+            "type": "postgres",
+            "uid": "mWlqklhnk"
+          },
+          "fieldConfig": {
+            "defaults": {
+              "color": {
+                "mode": "thresholds"
+              },
+              "mappings": [],
+              "thresholds": {
+                "mode": "absolute",
+                "steps": [
+                  {
+                    "color": "green"
+                  }
+                ]
+              }
+            },
+            "overrides": []
+          },
+          "gridPos": {
+            "h": 5,
+            "w": 4,
+            "x": 0,
+            "y": 11
+          },
+          "id": 55,
+          "options": {
+            "colorMode": "value",
+            "graphMode": "area",
+            "justifyMode": "auto",
+            "orientation": "auto",
+            "reduceOptions": {
+              "calcs": [
+                "lastNotNull"
+              ],
+              "fields": "",
+              "values": false
+            },
+            "text": {},
+            "textMode": "auto"
+          },
+          "pluginVersion": "8.5.0",
+          "targets": [
+            {
+              "datasource": {
+                "type": "postgres",
+                "uid": "mWlqklhnk"
+              },
+              "format": "table",
+              "group": [],
+              "metricColumn": "none",
+              "rawQuery": true,
+              "rawSql": "SELECT\n  count(created)\nFROM users\nwhere $__timeFilter(created)",
+              "refId": "A",
+              "select": [
+                [
+                  {
+                    "params": [
+                      "created"
+                    ],
+                    "type": "column"
+                  },
+                  {
+                    "params": [
+                      "count"
+                    ],
+                    "type": "aggregate"
+                  },
+                  {
+                    "params": [
+                      "time"
+                    ],
+                    "type": "alias"
+                  }
+                ]
+              ],
+              "table": "users",
+              "timeColumn": "created",
+              "timeColumnType": "timestamp",
+              "where": [
+                {
+                  "name": "$__timeFilter",
+                  "params": [],
+                  "type": "macro"
+                }
+              ]
+            }
+          ],
+          "title": "Neue Benutzer",
+          "type": "stat"
+        },
+        {
+          "datasource": {
+            "type": "postgres",
+            "uid": "mWlqklhnk"
+          },
+          "fieldConfig": {
+            "defaults": {
+              "color": {
+                "mode": "thresholds"
+              },
+              "mappings": [],
+              "thresholds": {
+                "mode": "absolute",
+                "steps": [
+                  {
+                    "color": "green"
+                  }
+                ]
+              }
+            },
+            "overrides": []
+          },
+          "gridPos": {
+            "h": 5,
+            "w": 4,
+            "x": 4,
+            "y": 11
+          },
+          "id": 56,
+          "options": {
+            "colorMode": "value",
+            "graphMode": "area",
+            "justifyMode": "auto",
+            "orientation": "auto",
+            "reduceOptions": {
+              "calcs": [
+                "lastNotNull"
+              ],
+              "fields": "",
+              "values": false
+            },
+            "text": {},
+            "textMode": "auto"
+          },
+          "pluginVersion": "8.5.0",
+          "targets": [
+            {
+              "datasource": {
+                "type": "postgres",
+                "uid": "mWlqklhnk"
+              },
+              "format": "table",
+              "group": [],
+              "metricColumn": "none",
+              "rawQuery": true,
+              "rawSql": "SELECT\n  count(*)\nFROM users\nwhere created <= $__timeTo()",
+              "refId": "A",
+              "select": [
+                [
+                  {
+                    "params": [
+                      "created"
+                    ],
+                    "type": "column"
+                  },
+                  {
+                    "params": [
+                      "count"
+                    ],
+                    "type": "aggregate"
+                  },
+                  {
+                    "params": [
+                      "time"
+                    ],
+                    "type": "alias"
+                  }
+                ]
+              ],
+              "table": "users",
+              "timeColumn": "created",
+              "timeColumnType": "timestamp",
+              "where": [
+                {
+                  "name": "$__timeFilter",
+                  "params": [],
+                  "type": "macro"
+                }
+              ]
+            }
+          ],
+          "title": "Benutzeranzahl",
+          "type": "stat"
+        },
+        {
+          "datasource": {
+            "type": "postgres",
+            "uid": "mWlqklhnk"
+          },
+          "fieldConfig": {
+            "defaults": {
+              "color": {
+                "mode": "thresholds"
+              },
+              "mappings": [],
+              "thresholds": {
+                "mode": "absolute",
+                "steps": [
+                  {
+                    "color": "green"
+                  }
+                ]
+              }
+            },
+            "overrides": []
+          },
+          "gridPos": {
+            "h": 5,
+            "w": 4,
+            "x": 8,
+            "y": 11
+          },
+          "id": 57,
+          "options": {
+            "colorMode": "value",
+            "graphMode": "area",
+            "justifyMode": "auto",
+            "orientation": "auto",
+            "reduceOptions": {
+              "calcs": [
+                "lastNotNull"
+              ],
+              "fields": "",
+              "values": false
+            },
+            "text": {},
+            "textMode": "auto"
+          },
+          "pluginVersion": "8.5.0",
+          "targets": [
+            {
+              "datasource": {
+                "type": "postgres",
+                "uid": "mWlqklhnk"
+              },
+              "format": "time_series",
+              "group": [
+                {
+                  "params": [
+                    "$__interval",
+                    "none"
+                  ],
+                  "type": "time"
+                }
+              ],
+              "metricColumn": "none",
+              "rawQuery": true,
+              "rawSql": "SELECT\n  $__unixEpochGroupAlias(0,$__interval),\n  count(timestamp) AS \"id\"\nFROM trees_watered\nwhere $__timeFilter(timestamp)\nGROUP BY 1\nORDER BY 1",
+              "refId": "A",
+              "select": [
+                [
+                  {
+                    "params": [
+                      "id"
+                    ],
+                    "type": "column"
+                  },
+                  {
+                    "params": [
+                      "count"
+                    ],
+                    "type": "aggregate"
+                  },
+                  {
+                    "params": [
+                      "id"
+                    ],
+                    "type": "alias"
+                  }
+                ]
+              ],
+              "table": "trees_adopted",
+              "timeColumn": "0",
+              "timeColumnType": "int4",
+              "where": []
+            }
+          ],
+          "title": "Anzahl Wässerungen",
+          "type": "stat"
+        },
+        {
+          "datasource": {
+            "type": "postgres",
+            "uid": "mWlqklhnk"
+          },
+          "fieldConfig": {
+            "defaults": {
+              "color": {
+                "mode": "thresholds"
+              },
+              "mappings": [],
+              "thresholds": {
+                "mode": "absolute",
+                "steps": [
+                  {
+                    "color": "green"
+                  }
+                ]
+              }
+            },
+            "overrides": []
+          },
+          "gridPos": {
+            "h": 5,
+            "w": 3,
+            "x": 12,
+            "y": 11
+          },
+          "id": 58,
+          "options": {
+            "colorMode": "value",
+            "graphMode": "area",
+            "justifyMode": "auto",
+            "orientation": "auto",
+            "reduceOptions": {
+              "calcs": [
+                "lastNotNull"
+              ],
+              "fields": "",
+              "values": false
+            },
+            "text": {},
+            "textMode": "auto"
+          },
+          "pluginVersion": "8.5.0",
+          "targets": [
+            {
+              "datasource": {
+                "type": "postgres",
+                "uid": "mWlqklhnk"
+              },
+              "format": "time_series",
+              "group": [
+                {
+                  "params": [
+                    "$__interval",
+                    "none"
+                  ],
+                  "type": "time"
+                }
+              ],
+              "metricColumn": "none",
+              "rawQuery": true,
+              "rawSql": "SELECT\n  $__unixEpochGroupAlias(0,$__interval),\n  count(distinct(uuid)) AS \"id\"\nFROM trees_watered\nwhere $__timeFilter(timestamp)\nGROUP BY 1\nORDER BY 1",
+              "refId": "A",
+              "select": [
+                [
+                  {
+                    "params": [
+                      "id"
+                    ],
+                    "type": "column"
+                  },
+                  {
+                    "params": [
+                      "count"
+                    ],
+                    "type": "aggregate"
+                  },
+                  {
+                    "params": [
+                      "id"
+                    ],
+                    "type": "alias"
+                  }
+                ]
+              ],
+              "table": "trees_adopted",
+              "timeColumn": "0",
+              "timeColumnType": "int4",
+              "where": []
+            }
+          ],
+          "title": "Anzahl Gießer",
+          "type": "stat"
+        },
+        {
+          "datasource": {
+            "type": "postgres",
+            "uid": "mWlqklhnk"
+          },
+          "fieldConfig": {
+            "defaults": {
+              "color": {
+                "mode": "thresholds"
+              },
+              "mappings": [],
+              "thresholds": {
+                "mode": "absolute",
+                "steps": [
+                  {
+                    "color": "green"
+                  }
+                ]
+              }
+            },
+            "overrides": []
+          },
+          "gridPos": {
+            "h": 5,
+            "w": 5,
+            "x": 15,
+            "y": 11
+          },
+          "id": 59,
+          "options": {
+            "colorMode": "value",
+            "graphMode": "area",
+            "justifyMode": "auto",
+            "orientation": "auto",
+            "reduceOptions": {
+              "calcs": [
+                "lastNotNull"
+              ],
+              "fields": "",
+              "values": false
+            },
+            "text": {},
+            "textMode": "auto"
+          },
+          "pluginVersion": "8.5.0",
+          "targets": [
+            {
+              "datasource": {
+                "type": "postgres",
+                "uid": "mWlqklhnk"
+              },
+              "format": "time_series",
+              "group": [
+                {
+                  "params": [
+                    "$__interval",
+                    "none"
+                  ],
+                  "type": "time"
+                }
+              ],
+              "metricColumn": "none",
+              "rawQuery": true,
+              "rawSql": "SELECT\n  $__unixEpochGroupAlias(0,$__interval),\n  count(distinct(tree_id)) AS \"id\"\nFROM trees_watered\nwhere $__timeFilter(timestamp)\nGROUP BY 1\nORDER BY 1",
+              "refId": "A",
+              "select": [
+                [
+                  {
+                    "params": [
+                      "id"
+                    ],
+                    "type": "column"
+                  },
+                  {
+                    "params": [
+                      "count"
+                    ],
+                    "type": "aggregate"
+                  },
+                  {
+                    "params": [
+                      "id"
+                    ],
+                    "type": "alias"
+                  }
+                ]
+              ],
+              "table": "trees_adopted",
+              "timeColumn": "0",
+              "timeColumnType": "int4",
+              "where": []
+            }
+          ],
+          "title": "Anzahl bewässerte Bäume",
+          "type": "stat"
+        },
+        {
+          "datasource": {
+            "type": "postgres",
+            "uid": "mWlqklhnk"
+          },
+          "fieldConfig": {
+            "defaults": {
+              "color": {
+                "mode": "thresholds"
+              },
+              "mappings": [],
+              "thresholds": {
+                "mode": "absolute",
+                "steps": [
+                  {
+                    "color": "green"
+                  }
+                ]
+              }
+            },
+            "overrides": []
+          },
+          "gridPos": {
+            "h": 5,
+            "w": 4,
+            "x": 20,
+            "y": 11
+          },
+          "id": 60,
+          "options": {
+            "colorMode": "value",
+            "graphMode": "area",
+            "justifyMode": "auto",
+            "orientation": "auto",
+            "reduceOptions": {
+              "calcs": [
+                "lastNotNull"
+              ],
+              "fields": "",
+              "values": false
+            },
+            "text": {},
+            "textMode": "auto"
+          },
+          "pluginVersion": "8.5.0",
+          "targets": [
+            {
+              "datasource": {
+                "type": "postgres",
+                "uid": "mWlqklhnk"
+              },
+              "format": "time_series",
+              "group": [
+                {
+                  "params": [
+                    "$__interval",
+                    "none"
+                  ],
+                  "type": "time"
+                }
+              ],
+              "metricColumn": "none",
+              "rawQuery": true,
+              "rawSql": "SELECT\n  $__unixEpochGroupAlias(0,$__interval),\n  sum(CAST (amount AS INTEGER)) AS \"liter\"\nFROM trees_watered\nwhere $__timeFilter(timestamp)\nGROUP BY 1\nORDER BY 1",
+              "refId": "A",
+              "select": [
+                [
+                  {
+                    "params": [
+                      "id"
+                    ],
+                    "type": "column"
+                  },
+                  {
+                    "params": [
+                      "count"
+                    ],
+                    "type": "aggregate"
+                  },
+                  {
+                    "params": [
+                      "id"
+                    ],
+                    "type": "alias"
+                  }
+                ]
+              ],
+              "table": "trees_adopted",
+              "timeColumn": "0",
+              "timeColumnType": "int4",
+              "where": []
+            }
+          ],
+          "title": "Gegossene Liter",
+          "type": "stat"
+        },
+        {
+          "datasource": {
+            "type": "postgres",
+            "uid": "mWlqklhnk"
+          },
+          "fieldConfig": {
+            "defaults": {
+              "color": {
+                "mode": "thresholds"
+              },
+              "custom": {
+                "align": "auto",
+                "displayMode": "auto",
+                "filterable": false,
+                "inspect": false
+              },
+              "mappings": [],
+              "thresholds": {
+                "mode": "absolute",
+                "steps": [
+                  {
+                    "color": "green"
+                  }
+                ]
+              }
+            },
+            "overrides": [
+              {
+                "matcher": {
+                  "id": "byName",
+                  "options": "rang"
+                },
+                "properties": [
+                  {
+                    "id": "custom.width",
+                    "value": 39
+                  }
+                ]
+              },
+              {
+                "matcher": {
+                  "id": "byName",
+                  "options": "benutzer"
+                },
+                "properties": [
+                  {
+                    "id": "custom.width",
+                    "value": 239
+                  }
+                ]
+              },
+              {
+                "matcher": {
+                  "id": "byName",
+                  "options": "gegossen"
+                },
+                "properties": [
+                  {
+                    "id": "custom.width",
+                    "value": 136
+                  }
+                ]
+              }
+            ]
+          },
+          "gridPos": {
+            "h": 11,
+            "w": 9,
+            "x": 0,
+            "y": 16
+          },
+          "id": 63,
+          "options": {
+            "footer": {
+              "fields": "",
+              "reducer": [
+                "sum"
+              ],
+              "show": false
+            },
+            "showHeader": true,
+            "sortBy": []
+          },
+          "pluginVersion": "8.5.0",
+          "targets": [
+            {
+              "datasource": {
+                "type": "postgres",
+                "uid": "mWlqklhnk"
+              },
+              "format": "table",
+              "group": [],
+              "metricColumn": "none",
+              "rawQuery": true,
+              "rawSql": "select row_number() over(order by sum(CAST (tw.amount AS INTEGER)) desc) Rang, tw.username AS Benutzer, sum(CAST (tw.amount AS INTEGER)) as gegossen from trees_watered tw where $__timeFilter(tw.timestamp) group by tw.uuid, tw.username order by gegossen desc",
+              "refId": "A",
+              "select": [
+                [
+                  {
+                    "params": [
+                      "value"
+                    ],
+                    "type": "column"
+                  }
+                ]
+              ],
+              "timeColumn": "time",
+              "where": [
+                {
+                  "name": "$__timeFilter",
+                  "params": [],
+                  "type": "macro"
+                }
+              ]
+            }
+          ],
+          "title": "Gießer-Rangliste nach gegossenen Litern",
+          "type": "table"
+        },
+        {
+          "datasource": {
+            "type": "postgres",
+            "uid": "mWlqklhnk"
+          },
+          "fieldConfig": {
+            "defaults": {
+              "color": {
+                "mode": "thresholds"
+              },
+              "custom": {
+                "align": "auto",
+                "displayMode": "auto",
+                "filterable": false,
+                "inspect": false
+              },
+              "mappings": [],
+              "thresholds": {
+                "mode": "absolute",
+                "steps": [
+                  {
+                    "color": "green"
+                  }
+                ]
+              }
+            },
+            "overrides": [
+              {
+                "matcher": {
+                  "id": "byName",
+                  "options": "rang"
+                },
+                "properties": [
+                  {
+                    "id": "custom.width",
+                    "value": 39
+                  }
+                ]
+              },
+              {
+                "matcher": {
+                  "id": "byName",
+                  "options": "benutzer"
+                },
+                "properties": [
+                  {
+                    "id": "custom.width",
+                    "value": 190
+                  }
+                ]
+              },
+              {
+                "matcher": {
+                  "id": "byName",
+                  "options": "baum_anzahl"
+                },
+                "properties": [
+                  {
+                    "id": "custom.width",
+                    "value": 136
+                  }
+                ]
+              }
+            ]
+          },
+          "gridPos": {
+            "h": 11,
+            "w": 8,
+            "x": 9,
+            "y": 16
+          },
+          "id": 64,
+          "options": {
+            "footer": {
+              "fields": "",
+              "reducer": [
+                "sum"
+              ],
+              "show": false
+            },
+            "showHeader": true,
+            "sortBy": []
+          },
+          "pluginVersion": "8.5.0",
+          "targets": [
+            {
+              "datasource": {
+                "type": "postgres",
+                "uid": "mWlqklhnk"
+              },
+              "format": "table",
+              "group": [],
+              "metricColumn": "none",
+              "rawQuery": true,
+              "rawSql": "select row_number() over(order by count(distinct(tree_id)) desc) AS Rang, username AS Benutzer, count(distinct(tree_id)) as baum_anzahl from trees_watered where $__timeFilter(timestamp) group by username having count(distinct(tree_id)) > 1 order by baum_anzahl desc",
+              "refId": "A",
+              "select": [
+                [
+                  {
+                    "params": [
+                      "value"
+                    ],
+                    "type": "column"
+                  }
+                ]
+              ],
+              "timeColumn": "time",
+              "where": [
+                {
+                  "name": "$__timeFilter",
+                  "params": [],
+                  "type": "macro"
+                }
+              ]
+            }
+          ],
+          "title": "Nutzer, die mehr als einen Baum gegossen haben",
+          "type": "table"
+        },
+        {
+          "datasource": {
+            "type": "postgres",
+            "uid": "mWlqklhnk"
+          },
+          "fieldConfig": {
+            "defaults": {
+              "color": {
+                "mode": "thresholds"
+              },
+              "custom": {
+                "align": "auto",
+                "displayMode": "auto",
+                "filterable": false,
+                "inspect": false
+              },
+              "mappings": [],
+              "thresholds": {
+                "mode": "absolute",
+                "steps": [
+                  {
+                    "color": "green"
+                  }
+                ]
+              }
+            },
+            "overrides": [
+              {
+                "matcher": {
+                  "id": "byName",
+                  "options": "rang"
+                },
+                "properties": [
+                  {
+                    "id": "custom.width",
+                    "value": 39
+                  }
+                ]
+              },
+              {
+                "matcher": {
+                  "id": "byName",
+                  "options": "benutzer"
+                },
+                "properties": [
+                  {
+                    "id": "custom.width",
+                    "value": 142
+                  }
+                ]
+              },
+              {
+                "matcher": {
+                  "id": "byName",
+                  "options": "giess_anzahl"
+                },
+                "properties": [
+                  {
+                    "id": "custom.width",
+                    "value": 136
+                  }
+                ]
+              }
+            ]
+          },
+          "gridPos": {
+            "h": 11,
+            "w": 7,
+            "x": 17,
+            "y": 16
+          },
+          "id": 65,
+          "options": {
+            "footer": {
+              "fields": "",
+              "reducer": [
+                "sum"
+              ],
+              "show": false
+            },
+            "showHeader": true,
+            "sortBy": []
+          },
+          "pluginVersion": "8.5.0",
+          "targets": [
+            {
+              "datasource": {
+                "type": "postgres",
+                "uid": "mWlqklhnk"
+              },
+              "format": "table",
+              "group": [],
+              "metricColumn": "none",
+              "rawQuery": true,
+              "rawSql": "select row_number() over(order by count(*) desc) AS rang, username AS Benutzer, count(*) as giess_anzahl from trees_watered where $__timeFilter(timestamp) group by username having count(*) > 1 order by giess_anzahl desc",
+              "refId": "A",
+              "select": [
+                [
+                  {
+                    "params": [
+                      "value"
+                    ],
+                    "type": "column"
+                  }
+                ]
+              ],
+              "timeColumn": "time",
+              "where": [
+                {
+                  "name": "$__timeFilter",
+                  "params": [],
+                  "type": "macro"
+                }
+              ]
+            }
+          ],
+          "title": "Nutzer, die mehr als einmal gegossen haben",
+          "type": "table"
+        }
+      ],
+      "title": "Gesamtauswertung (für gewählten Zeitraum)",
+      "type": "row"
+    },
+    {
+      "collapsed": true,
+      "datasource": {
+        "type": "postgres",
+        "uid": "mWlqklhnk"
+      },
+      "gridPos": {
+        "h": 1,
+        "w": 24,
+        "x": 0,
+        "y": 2
+      },
+      "id": 20,
+      "panels": [
+        {
+          "datasource": {
+            "type": "postgres",
+            "uid": "mWlqklhnk"
+          },
+          "fieldConfig": {
+            "defaults": {
+              "color": {
+                "mode": "thresholds"
+              },
+              "mappings": [],
+              "thresholds": {
+                "mode": "absolute",
+                "steps": [
+                  {
+                    "color": "green"
+                  }
+                ]
+              }
+            },
+            "overrides": []
+          },
+          "gridPos": {
+            "h": 5,
+            "w": 4,
+            "x": 0,
+            "y": 3
+          },
+          "id": 61,
+          "options": {
+            "colorMode": "value",
+            "graphMode": "area",
+            "justifyMode": "auto",
+            "orientation": "auto",
+            "reduceOptions": {
+              "calcs": [
+                "lastNotNull"
+              ],
+              "fields": "",
+              "values": false
+            },
+            "text": {},
+            "textMode": "auto"
+          },
+          "pluginVersion": "8.5.0",
+          "targets": [
+            {
+              "datasource": {
+                "type": "postgres",
+                "uid": "mWlqklhnk"
+              },
+              "format": "table",
+              "group": [],
+              "metricColumn": "none",
+              "rawQuery": true,
+              "rawSql": "SELECT\n  count(created)\nFROM users\nwhere created >= '2022-01-01 00:00:00.000'",
+              "refId": "A",
+              "select": [
+                [
+                  {
+                    "params": [
+                      "created"
+                    ],
+                    "type": "column"
+                  },
+                  {
+                    "params": [
+                      "count"
+                    ],
+                    "type": "aggregate"
+                  },
+                  {
+                    "params": [
+                      "time"
+                    ],
+                    "type": "alias"
+                  }
+                ]
+              ],
+              "table": "users",
+              "timeColumn": "created",
+              "timeColumnType": "timestamp",
+              "where": [
+                {
+                  "name": "$__timeFilter",
+                  "params": [],
+                  "type": "macro"
+                }
+              ]
+            }
+          ],
+          "title": "Neue Benutzer",
+          "type": "stat"
+        },
+        {
+          "datasource": {
+            "type": "postgres",
+            "uid": "mWlqklhnk"
+          },
+          "fieldConfig": {
+            "defaults": {
+              "color": {
+                "mode": "thresholds"
+              },
+              "mappings": [],
+              "thresholds": {
+                "mode": "absolute",
+                "steps": [
+                  {
+                    "color": "green"
+                  }
+                ]
+              }
+            },
+            "overrides": []
+          },
+          "gridPos": {
+            "h": 5,
+            "w": 4,
+            "x": 4,
+            "y": 3
+          },
+          "id": 62,
+          "options": {
+            "colorMode": "value",
+            "graphMode": "area",
+            "justifyMode": "auto",
+            "orientation": "auto",
+            "reduceOptions": {
+              "calcs": [
+                "lastNotNull"
+              ],
+              "fields": "",
+              "values": false
+            },
+            "text": {},
+            "textMode": "auto"
+          },
+          "pluginVersion": "8.5.0",
+          "targets": [
+            {
+              "datasource": {
+                "type": "postgres",
+                "uid": "mWlqklhnk"
+              },
+              "format": "table",
+              "group": [],
+              "metricColumn": "none",
+              "rawQuery": true,
+              "rawSql": "SELECT\n  count(*)\nFROM users",
+              "refId": "A",
+              "select": [
+                [
+                  {
+                    "params": [
+                      "created"
+                    ],
+                    "type": "column"
+                  },
+                  {
+                    "params": [
+                      "count"
+                    ],
+                    "type": "aggregate"
+                  },
+                  {
+                    "params": [
+                      "time"
+                    ],
+                    "type": "alias"
+                  }
+                ]
+              ],
+              "table": "users",
+              "timeColumn": "created",
+              "timeColumnType": "timestamp",
+              "where": [
+                {
+                  "name": "$__timeFilter",
+                  "params": [],
+                  "type": "macro"
+                }
+              ]
+            }
+          ],
+          "title": "Benutzeranzahl",
+          "type": "stat"
+        },
+        {
+          "datasource": {
+            "type": "postgres",
+            "uid": "mWlqklhnk"
+          },
+          "fieldConfig": {
+            "defaults": {
+              "color": {
+                "mode": "thresholds"
+              },
+              "mappings": [],
+              "thresholds": {
+                "mode": "absolute",
+                "steps": [
+                  {
+                    "color": "green"
+                  }
+                ]
+              }
+            },
+            "overrides": []
+          },
+          "gridPos": {
+            "h": 5,
+            "w": 4,
+            "x": 8,
+            "y": 3
+          },
+          "id": 10,
+          "options": {
+            "colorMode": "value",
+            "graphMode": "area",
+            "justifyMode": "auto",
+            "orientation": "auto",
+            "reduceOptions": {
+              "calcs": [
+                "lastNotNull"
+              ],
+              "fields": "",
+              "values": false
+            },
+            "text": {},
+            "textMode": "auto"
+          },
+          "pluginVersion": "8.5.0",
+          "targets": [
+            {
+              "datasource": {
+                "type": "postgres",
+                "uid": "mWlqklhnk"
+              },
+              "format": "time_series",
+              "group": [
+                {
+                  "params": [
+                    "$__interval",
+                    "none"
+                  ],
+                  "type": "time"
+                }
+              ],
+              "metricColumn": "none",
+              "rawQuery": true,
+              "rawSql": "SELECT\n  $__unixEpochGroupAlias(0,$__interval),\n  count(timestamp) AS \"id\"\nFROM trees_watered\nwhere timestamp >= '2022-01-01 00:00:00.000'\nGROUP BY 1\nORDER BY 1",
+              "refId": "A",
+              "select": [
+                [
+                  {
+                    "params": [
+                      "id"
+                    ],
+                    "type": "column"
+                  },
+                  {
+                    "params": [
+                      "count"
+                    ],
+                    "type": "aggregate"
+                  },
+                  {
+                    "params": [
+                      "id"
+                    ],
+                    "type": "alias"
+                  }
+                ]
+              ],
+              "table": "trees_adopted",
+              "timeColumn": "0",
+              "timeColumnType": "int4",
+              "where": []
+            }
+          ],
+          "title": "Anzahl Wässerungen",
+          "type": "stat"
+        },
+        {
+          "datasource": {
+            "type": "postgres",
+            "uid": "mWlqklhnk"
+          },
+          "fieldConfig": {
+            "defaults": {
+              "color": {
+                "mode": "thresholds"
+              },
+              "mappings": [],
+              "thresholds": {
+                "mode": "absolute",
+                "steps": [
+                  {
+                    "color": "green"
+                  }
+                ]
+              }
+            },
+            "overrides": []
+          },
+          "gridPos": {
+            "h": 5,
+            "w": 3,
+            "x": 12,
+            "y": 3
+          },
+          "id": 13,
+          "options": {
+            "colorMode": "value",
+            "graphMode": "area",
+            "justifyMode": "auto",
+            "orientation": "auto",
+            "reduceOptions": {
+              "calcs": [
+                "lastNotNull"
+              ],
+              "fields": "",
+              "values": false
+            },
+            "text": {},
+            "textMode": "auto"
+          },
+          "pluginVersion": "8.5.0",
+          "targets": [
+            {
+              "datasource": {
+                "type": "postgres",
+                "uid": "mWlqklhnk"
+              },
+              "format": "time_series",
+              "group": [
+                {
+                  "params": [
+                    "$__interval",
+                    "none"
+                  ],
+                  "type": "time"
+                }
+              ],
+              "metricColumn": "none",
+              "rawQuery": true,
+              "rawSql": "SELECT\n  $__unixEpochGroupAlias(0,$__interval),\n  count(distinct(uuid)) AS \"id\"\nFROM trees_watered\nwhere timestamp >= '2022-01-01 00:00:00.000'\nGROUP BY 1\nORDER BY 1",
+              "refId": "A",
+              "select": [
+                [
+                  {
+                    "params": [
+                      "id"
+                    ],
+                    "type": "column"
+                  },
+                  {
+                    "params": [
+                      "count"
+                    ],
+                    "type": "aggregate"
+                  },
+                  {
+                    "params": [
+                      "id"
+                    ],
+                    "type": "alias"
+                  }
+                ]
+              ],
+              "table": "trees_adopted",
+              "timeColumn": "0",
+              "timeColumnType": "int4",
+              "where": []
+            }
+          ],
+          "title": "Anzahl Gießer",
+          "type": "stat"
+        },
+        {
+          "datasource": {
+            "type": "postgres",
+            "uid": "mWlqklhnk"
+          },
+          "fieldConfig": {
+            "defaults": {
+              "color": {
+                "mode": "thresholds"
+              },
+              "mappings": [],
+              "thresholds": {
+                "mode": "absolute",
+                "steps": [
+                  {
+                    "color": "green"
+                  }
+                ]
+              }
+            },
+            "overrides": []
+          },
+          "gridPos": {
+            "h": 5,
+            "w": 5,
+            "x": 15,
+            "y": 3
+          },
+          "id": 11,
+          "options": {
+            "colorMode": "value",
+            "graphMode": "area",
+            "justifyMode": "auto",
+            "orientation": "auto",
+            "reduceOptions": {
+              "calcs": [
+                "lastNotNull"
+              ],
+              "fields": "",
+              "values": false
+            },
+            "text": {},
+            "textMode": "auto"
+          },
+          "pluginVersion": "8.5.0",
+          "targets": [
+            {
+              "datasource": {
+                "type": "postgres",
+                "uid": "mWlqklhnk"
+              },
+              "format": "time_series",
+              "group": [
+                {
+                  "params": [
+                    "$__interval",
+                    "none"
+                  ],
+                  "type": "time"
+                }
+              ],
+              "metricColumn": "none",
+              "rawQuery": true,
+              "rawSql": "SELECT\n  $__unixEpochGroupAlias(0,$__interval),\n  count(distinct(tree_id)) AS \"id\"\nFROM trees_watered\nwhere timestamp >= '2022-01-01 00:00:00.000'\nGROUP BY 1\nORDER BY 1",
+              "refId": "A",
+              "select": [
+                [
+                  {
+                    "params": [
+                      "id"
+                    ],
+                    "type": "column"
+                  },
+                  {
+                    "params": [
+                      "count"
+                    ],
+                    "type": "aggregate"
+                  },
+                  {
+                    "params": [
+                      "id"
+                    ],
+                    "type": "alias"
+                  }
+                ]
+              ],
+              "table": "trees_adopted",
+              "timeColumn": "0",
+              "timeColumnType": "int4",
+              "where": []
+            }
+          ],
+          "title": "Anzahl bewässerte Bäume",
+          "type": "stat"
+        },
+        {
+          "datasource": {
+            "type": "postgres",
+            "uid": "mWlqklhnk"
+          },
+          "fieldConfig": {
+            "defaults": {
+              "color": {
+                "mode": "thresholds"
+              },
+              "mappings": [],
+              "thresholds": {
+                "mode": "absolute",
+                "steps": [
+                  {
+                    "color": "green"
+                  }
+                ]
+              }
+            },
+            "overrides": []
+          },
+          "gridPos": {
+            "h": 5,
+            "w": 4,
+            "x": 20,
+            "y": 3
+          },
+          "id": 14,
+          "options": {
+            "colorMode": "value",
+            "graphMode": "area",
+            "justifyMode": "auto",
+            "orientation": "auto",
+            "reduceOptions": {
+              "calcs": [
+                "lastNotNull"
+              ],
+              "fields": "",
+              "values": false
+            },
+            "text": {},
+            "textMode": "auto"
+          },
+          "pluginVersion": "8.5.0",
+          "targets": [
+            {
+              "datasource": {
+                "type": "postgres",
+                "uid": "mWlqklhnk"
+              },
+              "format": "time_series",
+              "group": [
+                {
+                  "params": [
+                    "$__interval",
+                    "none"
+                  ],
+                  "type": "time"
+                }
+              ],
+              "metricColumn": "none",
+              "rawQuery": true,
+              "rawSql": "SELECT\n  $__unixEpochGroupAlias(0,$__interval),\n  sum(CAST (amount AS INTEGER)) AS \"liter\"\nFROM trees_watered\nwhere timestamp >= '2022-01-01 00:00:00.000'\nGROUP BY 1\nORDER BY 1",
+              "refId": "A",
+              "select": [
+                [
+                  {
+                    "params": [
+                      "id"
+                    ],
+                    "type": "column"
+                  },
+                  {
+                    "params": [
+                      "count"
+                    ],
+                    "type": "aggregate"
+                  },
+                  {
+                    "params": [
+                      "id"
+                    ],
+                    "type": "alias"
+                  }
+                ]
+              ],
+              "table": "trees_adopted",
+              "timeColumn": "0",
+              "timeColumnType": "int4",
+              "where": []
+            }
+          ],
+          "title": "Gegossene Liter",
+          "type": "stat"
+        },
+        {
+          "datasource": {
+            "type": "postgres",
+            "uid": "mWlqklhnk"
+          },
+          "fieldConfig": {
+            "defaults": {
+              "color": {
+                "mode": "thresholds"
+              },
+              "custom": {
+                "align": "auto",
+                "displayMode": "auto",
+                "filterable": false,
+                "inspect": false
+              },
+              "mappings": [],
+              "thresholds": {
+                "mode": "absolute",
+                "steps": [
+                  {
+                    "color": "green"
+                  }
+                ]
+              }
+            },
+            "overrides": [
+              {
+                "matcher": {
+                  "id": "byName",
+                  "options": "rang"
+                },
+                "properties": [
+                  {
+                    "id": "custom.width",
+                    "value": 39
+                  }
+                ]
+              },
+              {
+                "matcher": {
+                  "id": "byName",
+                  "options": "benutzer"
+                },
+                "properties": [
+                  {
+                    "id": "custom.width",
+                    "value": 239
+                  }
+                ]
+              },
+              {
+                "matcher": {
+                  "id": "byName",
+                  "options": "gegossen"
+                },
+                "properties": [
+                  {
+                    "id": "custom.width",
+                    "value": 136
+                  }
+                ]
+              }
+            ]
+          },
+          "gridPos": {
+            "h": 11,
+            "w": 9,
+            "x": 0,
+            "y": 8
+          },
+          "id": 16,
+          "options": {
+            "footer": {
+              "fields": "",
+              "reducer": [
+                "sum"
+              ],
+              "show": false
+            },
+            "showHeader": true,
+            "sortBy": []
+          },
+          "pluginVersion": "8.5.0",
+          "targets": [
+            {
+              "datasource": {
+                "type": "postgres",
+                "uid": "mWlqklhnk"
+              },
+              "format": "table",
+              "group": [],
+              "metricColumn": "none",
+              "rawQuery": true,
+              "rawSql": "select row_number() over(order by sum(CAST (tw.amount AS INTEGER)) desc) Rang, tw.username AS Benutzer, sum(CAST (tw.amount AS INTEGER)) as gegossen from trees_watered tw where tw.timestamp >= '2022-01-01 00:00:00.000' group by tw.uuid, tw.username order by gegossen desc",
+              "refId": "A",
+              "select": [
+                [
+                  {
+                    "params": [
+                      "value"
+                    ],
+                    "type": "column"
+                  }
+                ]
+              ],
+              "timeColumn": "time",
+              "where": [
+                {
+                  "name": "$__timeFilter",
+                  "params": [],
+                  "type": "macro"
+                }
+              ]
+            }
+          ],
+          "title": "Gießer-Rangliste nach gegossenen Litern",
+          "type": "table"
+        },
+        {
+          "datasource": {
+            "type": "postgres",
+            "uid": "mWlqklhnk"
+          },
+          "fieldConfig": {
+            "defaults": {
+              "color": {
+                "mode": "thresholds"
+              },
+              "custom": {
+                "align": "auto",
+                "displayMode": "auto",
+                "filterable": false,
+                "inspect": false
+              },
+              "mappings": [],
+              "thresholds": {
+                "mode": "absolute",
+                "steps": [
+                  {
+                    "color": "green"
+                  }
+                ]
+              }
+            },
+            "overrides": [
+              {
+                "matcher": {
+                  "id": "byName",
+                  "options": "rang"
+                },
+                "properties": [
+                  {
+                    "id": "custom.width",
+                    "value": 39
+                  }
+                ]
+              },
+              {
+                "matcher": {
+                  "id": "byName",
+                  "options": "benutzer"
+                },
+                "properties": [
+                  {
+                    "id": "custom.width",
+                    "value": 190
+                  }
+                ]
+              },
+              {
+                "matcher": {
+                  "id": "byName",
+                  "options": "baum_anzahl"
+                },
+                "properties": [
+                  {
+                    "id": "custom.width",
+                    "value": 136
+                  }
+                ]
+              }
+            ]
+          },
+          "gridPos": {
+            "h": 11,
+            "w": 8,
+            "x": 9,
+            "y": 8
+          },
+          "id": 17,
+          "options": {
+            "footer": {
+              "fields": "",
+              "reducer": [
+                "sum"
+              ],
+              "show": false
+            },
+            "showHeader": true,
+            "sortBy": []
+          },
+          "pluginVersion": "8.5.0",
+          "targets": [
+            {
+              "datasource": {
+                "type": "postgres",
+                "uid": "mWlqklhnk"
+              },
+              "format": "table",
+              "group": [],
+              "metricColumn": "none",
+              "rawQuery": true,
+              "rawSql": "select row_number() over(order by count(distinct(tree_id)) desc) AS Rang, username AS Benutzer, count(distinct(tree_id)) as baum_anzahl from trees_watered where timestamp >= '2022-01-01 00:00:00.000' group by username having count(distinct(tree_id)) > 1 order by baum_anzahl desc",
+              "refId": "A",
+              "select": [
+                [
+                  {
+                    "params": [
+                      "value"
+                    ],
+                    "type": "column"
+                  }
+                ]
+              ],
+              "timeColumn": "time",
+              "where": [
+                {
+                  "name": "$__timeFilter",
+                  "params": [],
+                  "type": "macro"
+                }
+              ]
+            }
+          ],
+          "title": "Nutzer, die mehr als einen Baum gegossen haben",
+          "type": "table"
+        },
+        {
+          "datasource": {
+            "type": "postgres",
+            "uid": "mWlqklhnk"
+          },
+          "fieldConfig": {
+            "defaults": {
+              "color": {
+                "mode": "thresholds"
+              },
+              "custom": {
+                "align": "auto",
+                "displayMode": "auto",
+                "filterable": false,
+                "inspect": false
+              },
+              "mappings": [],
+              "thresholds": {
+                "mode": "absolute",
+                "steps": [
+                  {
+                    "color": "green"
+                  }
+                ]
+              }
+            },
+            "overrides": [
+              {
+                "matcher": {
+                  "id": "byName",
+                  "options": "rang"
+                },
+                "properties": [
+                  {
+                    "id": "custom.width",
+                    "value": 39
+                  }
+                ]
+              },
+              {
+                "matcher": {
+                  "id": "byName",
+                  "options": "benutzer"
+                },
+                "properties": [
+                  {
+                    "id": "custom.width",
+                    "value": 142
+                  }
+                ]
+              },
+              {
+                "matcher": {
+                  "id": "byName",
+                  "options": "giess_anzahl"
+                },
+                "properties": [
+                  {
+                    "id": "custom.width",
+                    "value": 136
+                  }
+                ]
+              }
+            ]
+          },
+          "gridPos": {
+            "h": 11,
+            "w": 7,
+            "x": 17,
+            "y": 8
+          },
+          "id": 18,
+          "options": {
+            "footer": {
+              "fields": "",
+              "reducer": [
+                "sum"
+              ],
+              "show": false
+            },
+            "showHeader": true,
+            "sortBy": []
+          },
+          "pluginVersion": "8.5.0",
+          "targets": [
+            {
+              "datasource": {
+                "type": "postgres",
+                "uid": "mWlqklhnk"
+              },
+              "format": "table",
+              "group": [],
+              "metricColumn": "none",
+              "rawQuery": true,
+              "rawSql": "select row_number() over(order by count(*) desc) AS rang, username AS Benutzer, count(*) as giess_anzahl from trees_watered where timestamp >= '2022-01-01 00:00:00.000' group by username having count(*) > 1 order by giess_anzahl desc",
+              "refId": "A",
+              "select": [
+                [
+                  {
+                    "params": [
+                      "value"
+                    ],
+                    "type": "column"
+                  }
+                ]
+              ],
+              "timeColumn": "time",
+              "where": [
+                {
+                  "name": "$__timeFilter",
+                  "params": [],
+                  "type": "macro"
+                }
+              ]
+            }
+          ],
+          "title": "Nutzer, die mehr als einmal gegossen haben",
+          "type": "table"
+        }
+      ],
+      "title": "Gesamtauswertung (2022)",
+      "type": "row"
+    },
+    {
+      "collapsed": true,
+      "gridPos": {
+        "h": 1,
+        "w": 24,
+        "x": 0,
+        "y": 3
+      },
+      "id": 67,
+      "panels": [
+        {
+          "datasource": {
+            "type": "postgres",
+            "uid": "mWlqklhnk"
+          },
+          "fieldConfig": {
+            "defaults": {
+              "color": {
+                "mode": "thresholds"
+              },
+              "custom": {
+                "align": "auto",
+                "displayMode": "auto",
+                "filterable": false,
+                "inspect": false
+              },
+              "mappings": [],
+              "thresholds": {
+                "mode": "absolute",
+                "steps": [
+                  {
+                    "color": "green"
+                  },
+                  {
+                    "color": "red",
+                    "value": 80
+                  }
+                ]
+              }
+            },
+            "overrides": [
+              {
+                "matcher": {
+                  "id": "byName",
+                  "options": "rang"
+                },
+                "properties": [
+                  {
+                    "id": "custom.width",
+                    "value": 36
+                  }
+                ]
+              },
+              {
+                "matcher": {
+                  "id": "byName",
+                  "options": "ortsteil"
+                },
+                "properties": [
+                  {
+                    "id": "custom.width",
+                    "value": 171
+                  }
+                ]
+              },
+              {
+                "matcher": {
+                  "id": "byName",
+                  "options": "gegossen"
+                },
+                "properties": [
+                  {
+                    "id": "custom.width",
+                    "value": 88
+                  }
+                ]
+              }
+            ]
+          },
+          "gridPos": {
+            "h": 11,
+            "w": 7,
+            "x": 0,
+            "y": 4
+          },
+          "id": 68,
+          "options": {
+            "footer": {
+              "fields": "",
+              "reducer": [
+                "sum"
+              ],
+              "show": false
+            },
+            "showHeader": true,
+            "sortBy": []
+          },
+          "pluginVersion": "8.5.0",
+          "targets": [
+            {
+              "datasource": {
+                "type": "postgres",
+                "uid": "mWlqklhnk"
+              },
+              "format": "table",
+              "group": [],
+              "metricColumn": "none",
+              "rawQuery": true,
+              "rawSql": "select row_number() over(order by sum(CAST (tw.amount AS INTEGER)) desc) Rang, t.bezirk AS Ortsteil, sum(CAST (tw.amount AS INTEGER)) as gegossen from trees_watered tw join trees t on tw.tree_id = t.id where $__timeFilter(tw.timestamp) group by tw.uuid, t.bezirk order by gegossen desc\r\n",
+              "refId": "A",
+              "select": [
+                [
+                  {
+                    "params": [
+                      "value"
+                    ],
+                    "type": "column"
+                  }
+                ]
+              ],
+              "timeColumn": "time",
+              "where": [
+                {
+                  "name": "$__timeFilter",
+                  "params": [],
+                  "type": "macro"
+                }
+              ]
+            }
+          ],
+          "title": "Gegossene Liter nach Ortsteilen",
+          "type": "table"
+        },
+        {
+          "datasource": {
+            "type": "postgres",
+            "uid": "mWlqklhnk"
+          },
+          "fieldConfig": {
+            "defaults": {
+              "color": {
+                "mode": "thresholds"
+              },
+              "custom": {
+                "align": "auto",
+                "displayMode": "auto",
+                "filterable": false,
+                "inspect": false
+              },
+              "mappings": [],
+              "thresholds": {
+                "mode": "absolute",
+                "steps": [
+                  {
+                    "color": "green"
+                  },
+                  {
+                    "color": "red",
+                    "value": 80
+                  }
+                ]
+              }
+            },
+            "overrides": [
+              {
+                "matcher": {
+                  "id": "byName",
+                  "options": "rang"
+                },
+                "properties": [
+                  {
+                    "id": "custom.width",
+                    "value": 36
+                  }
+                ]
+              },
+              {
+                "matcher": {
+                  "id": "byName",
+                  "options": "baum_anzahl"
+                },
+                "properties": [
+                  {
+                    "id": "custom.width",
+                    "value": 108
+                  }
+                ]
+              },
+              {
+                "matcher": {
+                  "id": "byName",
+                  "options": "ortsteil"
+                },
+                "properties": [
+                  {
+                    "id": "custom.width",
+                    "value": 309
+                  }
+                ]
+              }
+            ]
+          },
+          "gridPos": {
+            "h": 11,
+            "w": 10,
+            "x": 7,
+            "y": 4
+          },
+          "id": 69,
+          "options": {
+            "footer": {
+              "fields": "",
+              "reducer": [
+                "sum"
+              ],
+              "show": false
+            },
+            "showHeader": true,
+            "sortBy": []
+          },
+          "pluginVersion": "8.5.0",
+          "targets": [
+            {
+              "datasource": {
+                "type": "postgres",
+                "uid": "mWlqklhnk"
+              },
+              "format": "table",
+              "group": [],
+              "metricColumn": "none",
+              "rawQuery": true,
+              "rawSql": "select row_number() over(order by count(distinct(tw.tree_id)) desc) AS Rang, bezirk AS Ortsteil, count(distinct(tw.tree_id)) as baum_anzahl from trees_watered tw join trees t on tw.tree_id = t.id where $__timeFilter(tw.timestamp) group by t.bezirk having count(distinct(tw.tree_id)) > 1 order by baum_anzahl desc",
+              "refId": "A",
+              "select": [
+                [
+                  {
+                    "params": [
+                      "value"
+                    ],
+                    "type": "column"
+                  }
+                ]
+              ],
+              "timeColumn": "time",
+              "where": [
+                {
+                  "name": "$__timeFilter",
+                  "params": [],
+                  "type": "macro"
+                }
+              ]
+            }
+          ],
+          "title": "Bäume nach Ortsteile, die mehr als einmal gegossen worden sind",
+          "type": "table"
+        },
+        {
+          "datasource": {
+            "type": "postgres",
+            "uid": "mWlqklhnk"
+          },
+          "fieldConfig": {
+            "defaults": {
+              "color": {
+                "mode": "thresholds"
+              },
+              "custom": {
+                "align": "auto",
+                "displayMode": "auto",
+                "filterable": false,
+                "inspect": false
+              },
+              "mappings": [],
+              "thresholds": {
+                "mode": "absolute",
+                "steps": [
+                  {
+                    "color": "green"
+                  },
+                  {
+                    "color": "red",
+                    "value": 80
+                  }
+                ]
+              }
+            },
+            "overrides": [
+              {
+                "matcher": {
+                  "id": "byName",
+                  "options": "rang"
+                },
+                "properties": [
+                  {
+                    "id": "custom.width",
+                    "value": 34
+                  }
+                ]
+              },
+              {
+                "matcher": {
+                  "id": "byName",
+                  "options": "ortsteil"
+                },
+                "properties": [
+                  {
+                    "id": "custom.width",
+                    "value": 177
+                  }
+                ]
+              },
+              {
+                "matcher": {
+                  "id": "byName",
+                  "options": "giess_anzahl"
+                },
+                "properties": [
+                  {
+                    "id": "custom.width",
+                    "value": 103
+                  }
+                ]
+              }
+            ]
+          },
+          "gridPos": {
+            "h": 11,
+            "w": 7,
+            "x": 17,
+            "y": 4
+          },
+          "id": 70,
+          "options": {
+            "footer": {
+              "fields": "",
+              "reducer": [
+                "sum"
+              ],
+              "show": false
+            },
+            "showHeader": true,
+            "sortBy": []
+          },
+          "pluginVersion": "8.5.0",
+          "targets": [
+            {
+              "datasource": {
+                "type": "postgres",
+                "uid": "mWlqklhnk"
+              },
+              "format": "table",
+              "group": [],
+              "metricColumn": "none",
+              "rawQuery": true,
+              "rawSql": "select row_number() over(order by count(*) desc) AS rang, t.bezirk as Ortsteil, count(*) as giess_anzahl from trees_watered tw join trees t on tw.tree_id = t.id where $__timeFilter(tw.timestamp) group by t.bezirk having count(*) > 1 order by giess_anzahl desc, t.bezirk",
+              "refId": "A",
+              "select": [
+                [
+                  {
+                    "params": [
+                      "value"
+                    ],
+                    "type": "column"
+                  }
+                ]
+              ],
+              "timeColumn": "time",
+              "where": [
+                {
+                  "name": "$__timeFilter",
+                  "params": [],
+                  "type": "macro"
+                }
+              ]
+            }
+          ],
+          "title": "Gießungen nach Ortsteilen",
+          "type": "table"
+        },
+        {
+          "datasource": {
+            "type": "postgres",
+            "uid": "mWlqklhnk"
+          },
+          "description": "",
+          "fieldConfig": {
+            "defaults": {
+              "color": {
+                "mode": "thresholds"
+              },
+              "custom": {
+                "align": "auto",
+                "displayMode": "auto",
+                "filterable": false,
+                "inspect": false
+              },
+              "mappings": [],
+              "thresholds": {
+                "mode": "absolute",
+                "steps": [
+                  {
+                    "color": "green"
+                  },
+                  {
+                    "color": "red",
+                    "value": 80
+                  }
+                ]
+              }
+            },
+            "overrides": [
+              {
+                "matcher": {
+                  "id": "byName",
+                  "options": "rang"
+                },
+                "properties": [
+                  {
+                    "id": "custom.width",
+                    "value": 27
+                  }
+                ]
+              },
+              {
+                "matcher": {
+                  "id": "byName",
+                  "options": "ortsteil"
+                },
+                "properties": [
+                  {
+                    "id": "custom.width",
+                    "value": 176
+                  }
+                ]
+              },
+              {
+                "matcher": {
+                  "id": "byName",
+                  "options": "nutzer_anzahl"
+                },
+                "properties": [
+                  {
+                    "id": "custom.width",
+                    "value": 116
+                  }
+                ]
+              }
+            ]
+          },
+          "gridPos": {
+            "h": 11,
+            "w": 8,
+            "x": 0,
+            "y": 15
+          },
+          "id": 71,
+          "options": {
+            "footer": {
+              "fields": "",
+              "reducer": [
+                "sum"
+              ],
+              "show": false
+            },
+            "showHeader": true,
+            "sortBy": []
+          },
+          "pluginVersion": "8.5.0",
+          "targets": [
+            {
+              "datasource": {
+                "type": "postgres",
+                "uid": "mWlqklhnk"
+              },
+              "format": "table",
+              "group": [],
+              "metricColumn": "none",
+              "rawQuery": true,
+              "rawSql": "select row_number() over(order by count(distinct(username)) desc) AS rang, t.bezirk as Ortsteil, count(distinct(username)) as nutzer_anzahl from trees_watered tw join trees t on tw.tree_id = t.id where $__timeFilter(tw.timestamp) group by t.bezirk order by nutzer_anzahl desc, t.bezirk\r\n",
+              "refId": "A",
+              "select": [
+                [
+                  {
+                    "params": [
+                      "value"
+                    ],
+                    "type": "column"
+                  }
+                ]
+              ],
+              "timeColumn": "time",
+              "where": [
+                {
+                  "name": "$__timeFilter",
+                  "params": [],
+                  "type": "macro"
+                }
+              ]
+            }
+          ],
+          "title": "Anzahl Gießende nach Ortsteil",
+          "type": "table"
+        },
+        {
+          "datasource": {
+            "type": "postgres",
+            "uid": "mWlqklhnk"
+          },
+          "fieldConfig": {
+            "defaults": {
+              "color": {
+                "mode": "thresholds"
+              },
+              "custom": {
+                "align": "auto",
+                "displayMode": "auto",
+                "filterable": false,
+                "inspect": false
+              },
+              "mappings": [],
+              "thresholds": {
+                "mode": "absolute",
+                "steps": [
+                  {
+                    "color": "green"
+                  },
+                  {
+                    "color": "red",
+                    "value": 80
+                  }
+                ]
+              }
+            },
+            "overrides": [
+              {
+                "matcher": {
+                  "id": "byName",
+                  "options": "rang"
+                },
+                "properties": [
+                  {
+                    "id": "custom.width",
+                    "value": 43
+                  }
+                ]
+              },
+              {
+                "matcher": {
+                  "id": "byName",
+                  "options": "ortsteil"
+                },
+                "properties": [
+                  {
+                    "id": "custom.width",
+                    "value": 292
+                  }
+                ]
+              },
+              {
+                "matcher": {
+                  "id": "byName",
+                  "options": "giess_anzahl"
+                },
+                "properties": [
+                  {
+                    "id": "custom.width",
+                    "value": 96
+                  }
+                ]
+              },
+              {
+                "matcher": {
+                  "id": "byName",
+                  "options": "username"
+                },
+                "properties": [
+                  {
+                    "id": "custom.width",
+                    "value": 329
+                  }
+                ]
+              }
+            ]
+          },
+          "gridPos": {
+            "h": 11,
+            "w": 16,
+            "x": 8,
+            "y": 15
+          },
+          "id": 72,
+          "options": {
+            "footer": {
+              "fields": "",
+              "reducer": [
+                "sum"
+              ],
+              "show": false
+            },
+            "showHeader": true,
+            "sortBy": []
+          },
+          "pluginVersion": "8.5.0",
+          "targets": [
+            {
+              "datasource": {
+                "type": "postgres",
+                "uid": "mWlqklhnk"
+              },
+              "format": "table",
+              "group": [],
+              "metricColumn": "none",
+              "rawQuery": true,
+              "rawSql": "select row_number() over(order by count(*) desc) AS rang, t.bezirk as Ortsteil, tw.username, count(*) as giess_anzahl from trees_watered tw join trees t on tw.tree_id = t.id where $__timeFilter(tw.timestamp) group by t.bezirk, tw.username having count(*) > 1 order by giess_anzahl desc, t.bezirk\r\n",
+              "refId": "A",
+              "select": [
+                [
+                  {
+                    "params": [
+                      "value"
+                    ],
+                    "type": "column"
+                  }
+                ]
+              ],
+              "timeColumn": "time",
+              "where": [
+                {
+                  "name": "$__timeFilter",
+                  "params": [],
+                  "type": "macro"
+                }
+              ]
+            }
+          ],
+          "title": "Gießer mit Ortsteil nach Anzahl Gießungen",
+          "type": "table"
+        }
+      ],
+      "title": "Auswertung nach Stadtteilen (für gewählten Zeitraum)",
+      "type": "row"
+    },
+    {
+      "collapsed": true,
+      "datasource": {
+        "type": "postgres",
+        "uid": "mWlqklhnk"
+      },
+      "gridPos": {
+        "h": 1,
+        "w": 24,
+        "x": 0,
+        "y": 4
+      },
+      "id": 22,
+      "panels": [
+        {
+          "datasource": {
+            "type": "postgres",
+            "uid": "mWlqklhnk"
+          },
+          "fieldConfig": {
+            "defaults": {
+              "color": {
+                "mode": "thresholds"
+              },
+              "custom": {
+                "align": "auto",
+                "displayMode": "auto",
+                "filterable": false,
+                "inspect": false
+              },
+              "mappings": [],
+              "thresholds": {
+                "mode": "absolute",
+                "steps": [
+                  {
+                    "color": "green"
+                  },
+                  {
+                    "color": "red",
+                    "value": 80
+                  }
+                ]
+              }
+            },
+            "overrides": [
+              {
+                "matcher": {
+                  "id": "byName",
+                  "options": "rang"
+                },
+                "properties": [
+                  {
+                    "id": "custom.width",
+                    "value": 36
+                  }
+                ]
+              },
+              {
+                "matcher": {
+                  "id": "byName",
+                  "options": "ortsteil"
+                },
+                "properties": [
+                  {
+                    "id": "custom.width",
+                    "value": 171
+                  }
+                ]
+              },
+              {
+                "matcher": {
+                  "id": "byName",
+                  "options": "gegossen"
+                },
+                "properties": [
+                  {
+                    "id": "custom.width",
+                    "value": 88
+                  }
+                ]
+              }
+            ]
+          },
+          "gridPos": {
+            "h": 11,
+            "w": 7,
+            "x": 0,
+            "y": 5
+          },
+          "id": 24,
+          "options": {
+            "footer": {
+              "fields": "",
+              "reducer": [
+                "sum"
+              ],
+              "show": false
+            },
+            "showHeader": true,
+            "sortBy": []
+          },
+          "pluginVersion": "8.5.0",
+          "targets": [
+            {
+              "datasource": {
+                "type": "postgres",
+                "uid": "mWlqklhnk"
+              },
+              "format": "table",
+              "group": [],
+              "metricColumn": "none",
+              "rawQuery": true,
+              "rawSql": "select row_number() over(order by sum(CAST (tw.amount AS INTEGER)) desc) Rang, t.bezirk AS Ortsteil, sum(CAST (tw.amount AS INTEGER)) as gegossen from trees_watered tw join trees t on tw.tree_id = t.id  where tw.timestamp >= '2022-01-01 00:00:00.000' group by tw.uuid, t.bezirk order by gegossen desc\r\n",
+              "refId": "A",
+              "select": [
+                [
+                  {
+                    "params": [
+                      "value"
+                    ],
+                    "type": "column"
+                  }
+                ]
+              ],
+              "timeColumn": "time",
+              "where": [
+                {
+                  "name": "$__timeFilter",
+                  "params": [],
+                  "type": "macro"
+                }
+              ]
+            }
+          ],
+          "title": "Gegossene Liter nach Ortsteilen",
+          "type": "table"
+        },
+        {
+          "datasource": {
+            "type": "postgres",
+            "uid": "mWlqklhnk"
+          },
+          "fieldConfig": {
+            "defaults": {
+              "color": {
+                "mode": "thresholds"
+              },
+              "custom": {
+                "align": "auto",
+                "displayMode": "auto",
+                "filterable": false,
+                "inspect": false
+              },
+              "mappings": [],
+              "thresholds": {
+                "mode": "absolute",
+                "steps": [
+                  {
+                    "color": "green"
+                  },
+                  {
+                    "color": "red",
+                    "value": 80
+                  }
+                ]
+              }
+            },
+            "overrides": [
+              {
+                "matcher": {
+                  "id": "byName",
+                  "options": "rang"
+                },
+                "properties": [
+                  {
+                    "id": "custom.width",
+                    "value": 36
+                  }
+                ]
+              },
+              {
+                "matcher": {
+                  "id": "byName",
+                  "options": "baum_anzahl"
+                },
+                "properties": [
+                  {
+                    "id": "custom.width",
+                    "value": 108
+                  }
+                ]
+              },
+              {
+                "matcher": {
+                  "id": "byName",
+                  "options": "ortsteil"
+                },
+                "properties": [
+                  {
+                    "id": "custom.width",
+                    "value": 309
+                  }
+                ]
+              }
+            ]
+          },
+          "gridPos": {
+            "h": 11,
+            "w": 10,
+            "x": 7,
+            "y": 5
+          },
+          "id": 26,
+          "options": {
+            "footer": {
+              "fields": "",
+              "reducer": [
+                "sum"
+              ],
+              "show": false
+            },
+            "showHeader": true,
+            "sortBy": []
+          },
+          "pluginVersion": "8.5.0",
+          "targets": [
+            {
+              "datasource": {
+                "type": "postgres",
+                "uid": "mWlqklhnk"
+              },
+              "format": "table",
+              "group": [],
+              "metricColumn": "none",
+              "rawQuery": true,
+              "rawSql": "select row_number() over(order by count(distinct(tw.tree_id)) desc) AS Rang, bezirk AS Ortsteil, count(distinct(tw.tree_id)) as baum_anzahl from trees_watered tw join trees t on tw.tree_id = t.id where tw.timestamp >= '2022-01-01 00:00:00.000' group by t.bezirk having count(distinct(tw.tree_id)) > 1 order by baum_anzahl desc",
+              "refId": "A",
+              "select": [
+                [
+                  {
+                    "params": [
+                      "value"
+                    ],
+                    "type": "column"
+                  }
+                ]
+              ],
+              "timeColumn": "time",
+              "where": [
+                {
+                  "name": "$__timeFilter",
+                  "params": [],
+                  "type": "macro"
+                }
+              ]
+            }
+          ],
+          "title": "Bäume nach Ortsteile, die mehr als einmal gegossen worden sind",
+          "type": "table"
+        },
+        {
+          "datasource": {
+            "type": "postgres",
+            "uid": "mWlqklhnk"
+          },
+          "fieldConfig": {
+            "defaults": {
+              "color": {
+                "mode": "thresholds"
+              },
+              "custom": {
+                "align": "auto",
+                "displayMode": "auto",
+                "filterable": false,
+                "inspect": false
+              },
+              "mappings": [],
+              "thresholds": {
+                "mode": "absolute",
+                "steps": [
+                  {
+                    "color": "green"
+                  },
+                  {
+                    "color": "red",
+                    "value": 80
+                  }
+                ]
+              }
+            },
+            "overrides": [
+              {
+                "matcher": {
+                  "id": "byName",
+                  "options": "rang"
+                },
+                "properties": [
+                  {
+                    "id": "custom.width",
+                    "value": 34
+                  }
+                ]
+              },
+              {
+                "matcher": {
+                  "id": "byName",
+                  "options": "ortsteil"
+                },
+                "properties": [
+                  {
+                    "id": "custom.width",
+                    "value": 177
+                  }
+                ]
+              },
+              {
+                "matcher": {
+                  "id": "byName",
+                  "options": "giess_anzahl"
+                },
+                "properties": [
+                  {
+                    "id": "custom.width",
+                    "value": 103
+                  }
+                ]
+              }
+            ]
+          },
+          "gridPos": {
+            "h": 11,
+            "w": 7,
+            "x": 17,
+            "y": 5
+          },
+          "id": 28,
+          "options": {
+            "footer": {
+              "fields": "",
+              "reducer": [
+                "sum"
+              ],
+              "show": false
+            },
+            "showHeader": true,
+            "sortBy": []
+          },
+          "pluginVersion": "8.5.0",
+          "targets": [
+            {
+              "datasource": {
+                "type": "postgres",
+                "uid": "mWlqklhnk"
+              },
+              "format": "table",
+              "group": [],
+              "metricColumn": "none",
+              "rawQuery": true,
+              "rawSql": "select row_number() over(order by count(*) desc) AS rang, t.bezirk as Ortsteil, count(*) as giess_anzahl from trees_watered tw join trees t on tw.tree_id = t.id where tw.timestamp >= '2022-01-01 00:00:00.000' group by t.bezirk having count(*) > 1 order by giess_anzahl desc, t.bezirk",
+              "refId": "A",
+              "select": [
+                [
+                  {
+                    "params": [
+                      "value"
+                    ],
+                    "type": "column"
+                  }
+                ]
+              ],
+              "timeColumn": "time",
+              "where": [
+                {
+                  "name": "$__timeFilter",
+                  "params": [],
+                  "type": "macro"
+                }
+              ]
+            }
+          ],
+          "title": "Gießungen nach Ortsteilen",
+          "type": "table"
+        },
+        {
+          "datasource": {
+            "type": "postgres",
+            "uid": "mWlqklhnk"
+          },
+          "description": "",
+          "fieldConfig": {
+            "defaults": {
+              "color": {
+                "mode": "thresholds"
+              },
+              "custom": {
+                "align": "auto",
+                "displayMode": "auto",
+                "filterable": false,
+                "inspect": false
+              },
+              "mappings": [],
+              "thresholds": {
+                "mode": "absolute",
+                "steps": [
+                  {
+                    "color": "green"
+                  },
+                  {
+                    "color": "red",
+                    "value": 80
+                  }
+                ]
+              }
+            },
+            "overrides": [
+              {
+                "matcher": {
+                  "id": "byName",
+                  "options": "rang"
+                },
+                "properties": [
+                  {
+                    "id": "custom.width",
+                    "value": 27
+                  }
+                ]
+              },
+              {
+                "matcher": {
+                  "id": "byName",
+                  "options": "ortsteil"
+                },
+                "properties": [
+                  {
+                    "id": "custom.width",
+                    "value": 176
+                  }
+                ]
+              },
+              {
+                "matcher": {
+                  "id": "byName",
+                  "options": "nutzer_anzahl"
+                },
+                "properties": [
+                  {
+                    "id": "custom.width",
+                    "value": 116
+                  }
+                ]
+              }
+            ]
+          },
+          "gridPos": {
+            "h": 11,
+            "w": 8,
+            "x": 0,
+            "y": 16
+          },
+          "id": 32,
+          "options": {
+            "footer": {
+              "fields": "",
+              "reducer": [
+                "sum"
+              ],
+              "show": false
+            },
+            "showHeader": true,
+            "sortBy": []
+          },
+          "pluginVersion": "8.5.0",
+          "targets": [
+            {
+              "datasource": {
+                "type": "postgres",
+                "uid": "mWlqklhnk"
+              },
+              "format": "table",
+              "group": [],
+              "metricColumn": "none",
+              "rawQuery": true,
+              "rawSql": "select row_number() over(order by count(distinct(username)) desc) AS rang, t.bezirk as Ortsteil, count(distinct(username)) as nutzer_anzahl from trees_watered tw join trees t on tw.tree_id = t.id where tw.timestamp >= '2022-01-01 00:00:00.000' group by t.bezirk order by nutzer_anzahl desc, t.bezirk\r\n",
+              "refId": "A",
+              "select": [
+                [
+                  {
+                    "params": [
+                      "value"
+                    ],
+                    "type": "column"
+                  }
+                ]
+              ],
+              "timeColumn": "time",
+              "where": [
+                {
+                  "name": "$__timeFilter",
+                  "params": [],
+                  "type": "macro"
+                }
+              ]
+            }
+          ],
+          "title": "Anzahl Gießende nach Ortsteil",
+          "type": "table"
+        },
+        {
+          "datasource": {
+            "type": "postgres",
+            "uid": "mWlqklhnk"
+          },
+          "fieldConfig": {
+            "defaults": {
+              "color": {
+                "mode": "thresholds"
+              },
+              "custom": {
+                "align": "auto",
+                "displayMode": "auto",
+                "filterable": false,
+                "inspect": false
+              },
+              "mappings": [],
+              "thresholds": {
+                "mode": "absolute",
+                "steps": [
+                  {
+                    "color": "green"
+                  },
+                  {
+                    "color": "red",
+                    "value": 80
+                  }
+                ]
+              }
+            },
+            "overrides": [
+              {
+                "matcher": {
+                  "id": "byName",
+                  "options": "rang"
+                },
+                "properties": [
+                  {
+                    "id": "custom.width",
+                    "value": 43
+                  }
+                ]
+              },
+              {
+                "matcher": {
+                  "id": "byName",
+                  "options": "ortsteil"
+                },
+                "properties": [
+                  {
+                    "id": "custom.width",
+                    "value": 292
+                  }
+                ]
+              },
+              {
+                "matcher": {
+                  "id": "byName",
+                  "options": "giess_anzahl"
+                },
+                "properties": [
+                  {
+                    "id": "custom.width",
+                    "value": 96
+                  }
+                ]
+              },
+              {
+                "matcher": {
+                  "id": "byName",
+                  "options": "username"
+                },
+                "properties": [
+                  {
+                    "id": "custom.width",
+                    "value": 329
+                  }
+                ]
+              }
+            ]
+          },
+          "gridPos": {
+            "h": 11,
+            "w": 16,
+            "x": 8,
+            "y": 16
+          },
+          "id": 30,
+          "options": {
+            "footer": {
+              "fields": "",
+              "reducer": [
+                "sum"
+              ],
+              "show": false
+            },
+            "showHeader": true,
+            "sortBy": []
+          },
+          "pluginVersion": "8.5.0",
+          "targets": [
+            {
+              "datasource": {
+                "type": "postgres",
+                "uid": "mWlqklhnk"
+              },
+              "format": "table",
+              "group": [],
+              "metricColumn": "none",
+              "rawQuery": true,
+              "rawSql": "select row_number() over(order by count(*) desc) AS rang, t.bezirk as Ortsteil, tw.username, count(*) as giess_anzahl from trees_watered tw join trees t on tw.tree_id = t.id where tw.timestamp >= '2022-01-01 00:00:00.000' group by t.bezirk, tw.username having count(*) > 1 order by giess_anzahl desc, t.bezirk\r\n",
+              "refId": "A",
+              "select": [
+                [
+                  {
+                    "params": [
+                      "value"
+                    ],
+                    "type": "column"
+                  }
+                ]
+              ],
+              "timeColumn": "time",
+              "where": [
+                {
+                  "name": "$__timeFilter",
+                  "params": [],
+                  "type": "macro"
+                }
+              ]
+            }
+          ],
+          "title": "Gießer mit Ortsteil nach Anzahl Gießungen",
+          "type": "table"
+        }
+      ],
+      "title": "Auswertung nach Stadtteilen (2022)",
+      "type": "row"
+    },
+    {
+      "collapsed": true,
+      "datasource": {
+        "type": "postgres",
+        "uid": "mWlqklhnk"
+      },
+      "gridPos": {
+        "h": 1,
+        "w": 24,
+        "x": 0,
+        "y": 5
+      },
+      "id": 34,
+      "panels": [
+        {
+          "datasource": {
+            "uid": "LeipzigGiesst-PostgreSQL"
+          },
+          "fieldConfig": {
+            "defaults": {
+              "color": {
+                "mode": "thresholds"
+              },
+              "custom": {
+                "calculation": "mean",
+                "colorPalette": "interpolateGreens",
+                "colorSpace": "rgb",
+                "groupBy": 15,
+                "invertPalette": false,
+                "nullValueColor": "rgb(155, 155, 155)"
+              },
+              "displayName": "Liters",
+              "mappings": [],
+              "max": 20,
+              "min": 0,
+              "thresholds": {
+                "mode": "absolute",
+                "steps": [
+                  {
+                    "color": "green"
+                  }
+                ]
+              }
+            },
+            "overrides": []
+          },
+          "gridPos": {
+            "h": 18,
+            "w": 12,
+            "x": 0,
+            "y": 6
+          },
+          "id": 36,
+          "options": {
+            "from": "0",
+            "legendGradientQuality": "high",
+            "showCellBorder": false,
+            "showLegend": true,
+            "showTooltip": true,
+            "showValueIndicator": false,
+            "to": "0"
+          },
+          "pluginVersion": "7.5.7",
+          "targets": [
+            {
+              "format": "time_series",
+              "group": [],
+              "metricColumn": "amount",
+              "rawQuery": true,
+              "rawSql": "SELECT\n  \"timestamp\" AS \"time\",\n  amount::numeric::integer AS value\nFROM trees_watered\nWHERE\n  $__timeFilter(\"timestamp\")\nORDER BY 1,2",
+              "refId": "A",
+              "select": [
+                [
+                  {
+                    "params": [
+                      "amount"
+                    ],
+                    "type": "column"
+                  }
+                ]
+              ],
+              "table": "trees_watered",
+              "timeColumn": "\"timestamp\"",
+              "timeColumnType": "timestamp",
+              "where": [
+                {
+                  "name": "$__timeFilter",
+                  "params": [],
+                  "type": "macro"
+                }
+              ]
+            }
+          ],
+          "title": "Wässerungen nach Tageszeit",
+          "type": "marcusolsson-hourly-heatmap-panel"
+        }
+      ],
+      "title": "Tageszeitauswertung (für gewählten Zeitraum)",
+      "type": "row"
+    },
+    {
+      "collapsed": true,
+      "datasource": {
+        "type": "postgres",
+        "uid": "mWlqklhnk"
+      },
+      "gridPos": {
+        "h": 1,
+        "w": 24,
+        "x": 0,
+        "y": 6
+      },
+      "id": 44,
+      "panels": [
+        {
+          "datasource": {
+            "type": "postgres",
+            "uid": "mWlqklhnk"
+          },
+          "fieldConfig": {
+            "defaults": {
+              "color": {
+                "mode": "thresholds"
+              },
+              "custom": {
+                "align": "auto",
+                "displayMode": "auto",
+                "filterable": false,
+                "inspect": false
+              },
+              "mappings": [],
+              "thresholds": {
+                "mode": "absolute",
+                "steps": [
+                  {
+                    "color": "green"
+                  },
+                  {
+                    "color": "red",
+                    "value": 80
+                  }
+                ]
+              }
+            },
+            "overrides": [
+              {
+                "matcher": {
+                  "id": "byName",
+                  "options": "standortnr"
+                },
+                "properties": [
+                  {
+                    "id": "custom.width",
+                    "value": 88
+                  }
+                ]
+              },
+              {
+                "matcher": {
+                  "id": "byName",
+                  "options": "email"
+                },
+                "properties": [
+                  {
+                    "id": "custom.width",
+                    "value": 323
+                  }
+                ]
+              },
+              {
+                "matcher": {
+                  "id": "byName",
+                  "options": "strname"
+                },
+                "properties": [
+                  {
+                    "id": "custom.width",
+                    "value": 183
+                  }
+                ]
+              },
+              {
+                "matcher": {
+                  "id": "byName",
+                  "options": "pflanzjahr"
+                },
+                "properties": [
+                  {
+                    "id": "custom.width",
+                    "value": 83
+                  }
+                ]
+              },
+              {
+                "matcher": {
+                  "id": "byName",
+                  "options": "gattung"
+                },
+                "properties": [
+                  {
+                    "id": "custom.width",
+                    "value": 121
+                  }
+                ]
+              },
+              {
+                "matcher": {
+                  "id": "byName",
+                  "options": "id"
+                },
+                "properties": [
+                  {
+                    "id": "custom.width",
+                    "value": 106
+                  }
+                ]
+              }
+            ]
+          },
+          "gridPos": {
+            "h": 8,
+            "w": 24,
+            "x": 0,
+            "y": 8
+          },
+          "id": 46,
+          "options": {
+            "footer": {
+              "fields": "",
+              "reducer": [
+                "sum"
+              ],
+              "show": false
+            },
+            "showHeader": true,
+            "sortBy": []
+          },
+          "pluginVersion": "8.5.0",
+          "targets": [
+            {
+              "datasource": {
+                "type": "postgres",
+                "uid": "mWlqklhnk"
+              },
+              "format": "table",
+              "group": [],
+              "metricColumn": "none",
+              "rawQuery": true,
+              "rawSql": "SELECT\n  t.id, t.standortnr, u.email, t.strname, t.pflanzjahr, t.gattung, t.artdtsch\nFROM users u JOIN trees_adopted a ON a.uuid = u.uuid JOIN trees t ON t.id = a.tree_id\nORDER BY u.email",
+              "refId": "A",
+              "select": [
+                [
+                  {
+                    "params": [
+                      "user"
+                    ],
+                    "type": "column"
+                  }
+                ]
+              ],
+              "table": "trees_adopted",
+              "timeColumn": "id",
+              "timeColumnType": "int4",
+              "where": [
+                {
+                  "name": "$__unixEpochFilter",
+                  "params": [],
+                  "type": "macro"
+                }
+              ]
+            }
+          ],
+          "title": "Gießpatenschaften",
+          "type": "table"
+        }
+      ],
+      "title": "Gießpatentschaften",
+      "type": "row"
+    },
+    {
+      "collapsed": true,
+      "datasource": {
+        "type": "postgres",
+        "uid": "mWlqklhnk"
+      },
+      "gridPos": {
+        "h": 1,
+        "w": 24,
+        "x": 0,
+        "y": 7
+      },
+      "id": 38,
+      "panels": [
+        {
+          "circleMaxSize": 30,
+          "circleMinSize": 2,
+          "colors": [
+            "#FF9830",
+            "#FADE2A",
+            "#73BF69"
+          ],
+          "datasource": {
+            "uid": "LeipzigGiesst-PostgreSQL"
+          },
+          "decimals": 0,
+          "esMetric": "Count",
+          "gridPos": {
+            "h": 14,
+            "w": 23,
+            "x": 0,
+            "y": 7
+          },
+          "hideEmpty": false,
+          "hideZero": false,
+          "id": 40,
+          "initialZoom": "12",
+          "locationData": "table",
+          "mapCenter": "custom",
+          "mapCenterLatitude": "51.3399028",
+          "mapCenterLongitude": "12.3742236",
+          "maxDataPoints": 1,
+          "mouseWheelZoom": true,
+          "pluginVersion": "7.5.7",
+          "showLegend": true,
+          "stickyLabels": true,
+          "tableQueryOptions": {
+            "geohashField": "geohash",
+            "labelField": "tree",
+            "latitudeField": "latitude",
+            "longitudeField": "longitude",
+            "metricField": "value",
+            "queryType": "coordinates"
+          },
+          "targets": [
+            {
+              "format": "table",
+              "group": [],
+              "metricColumn": "none",
+              "rawQuery": true,
+              "rawSql": "SELECT\n  t.id as tree,\n  tw.amount::numeric::integer as value,\n  t.lat::numeric::float as latitude,\n  t.lng::numeric::float as longitude\nFROM trees_watered tw JOIN trees t ON tw.tree_id = t.id\nWHERE\n  $__timeFilter(timestamp)",
+              "refId": "A",
+              "select": [
+                [
+                  {
+                    "params": [
+                      "value"
+                    ],
+                    "type": "column"
+                  }
+                ]
+              ],
+              "table": "trees_watered",
+              "timeColumn": "\"timestamp\"",
+              "timeColumnType": "timestamp",
+              "where": [
+                {
+                  "name": "$__timeFilter",
+                  "params": [],
+                  "type": "macro"
+                }
+              ]
+            }
+          ],
+          "thresholds": "25,75",
+          "title": "Gießkarte",
+          "type": "grafana-worldmap-panel",
+          "unitPlural": "Liter",
+          "unitSingle": "",
+          "unitSingular": "Liter",
+          "valueName": "max"
+        }
+      ],
+      "title": "Karte (für gewählten Zeitraum)",
+      "type": "row"
+    },
+    {
+      "collapsed": true,
+      "datasource": {
+        "type": "postgres",
+        "uid": "mWlqklhnk"
+      },
+      "gridPos": {
+        "h": 1,
+        "w": 24,
+        "x": 0,
+        "y": 8
+      },
+      "id": 48,
+      "panels": [
+        {
+          "datasource": {
+            "uid": "LeipzigGiesst-PostgreSQL"
+          },
+          "fieldConfig": {
+            "defaults": {
+              "color": {
+                "mode": "thresholds"
+              },
+              "custom": {
+                "align": "auto",
+                "displayMode": "auto",
+                "filterable": false,
+                "inspect": false
+              },
+              "mappings": [],
+              "thresholds": {
+                "mode": "absolute",
+                "steps": [
+                  {
+                    "color": "green"
+                  },
+                  {
+                    "color": "red",
+                    "value": 80
+                  }
+                ]
+              }
+            },
+            "overrides": []
+          },
+          "gridPos": {
+            "h": 3,
+            "w": 7,
+            "x": 0,
+            "y": 9
+          },
+          "id": 50,
+          "options": {
+            "footer": {
+              "fields": "",
+              "reducer": [
+                "sum"
+              ],
+              "show": false
+            },
+            "showHeader": true
+          },
+          "pluginVersion": "8.5.0",
+          "targets": [
+            {
+              "format": "table",
+              "group": [],
+              "metricColumn": "none",
+              "rawQuery": true,
+              "rawSql": "select count(*) from trees where pflanzjahr IS NOT NULL AND pflanzjahr::int >= 2006 and pflanzjahr::int <= 2010 ",
+              "refId": "A",
+              "select": [
+                [
+                  {
+                    "params": [
+                      "value"
+                    ],
+                    "type": "column"
+                  }
+                ]
+              ],
+              "timeColumn": "time",
+              "where": [
+                {
+                  "name": "$__timeFilter",
+                  "params": [],
+                  "type": "macro"
+                }
+              ]
+            }
+          ],
+          "title": "Anzahl Bäume im Alter von 10 bis 15 Jahren",
+          "type": "table"
+        }
+      ],
+      "title": "Baumalter",
+      "type": "row"
+    }
+  ],
+  "refresh": false,
+  "schemaVersion": 36,
+  "style": "dark",
+  "tags": [],
+  "templating": {
+    "list": []
+  },
+  "time": {
+    "from": "now-7d",
+    "to": "now"
+  },
+  "timepicker": {},
+  "timezone": "",
+  "title": "Leipzig giesst",
+  "uid": "RQFRCgeGk",
+  "version": 7,
+  "weekStart": ""
+}

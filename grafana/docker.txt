@@ -1,0 +1,6 @@
+docker pull grafana/grafana
+docker run -d --name grafana_not_sanitized -p 3010:3000 -v /ectgrafana/grafana.ini:/grafana.ini:ro -e GF_PATHS_CONFIG=/grafana.ini -v grafana-storage:/var/lib/grafana/:rw grafana/grafana
+docker exec -it grafana_not_sanitized grafana-cli admin reset-admin-password "<new_password>"
+docker run exec -it grafana_not_sanitized /bin/bash
+grafana-cli plugins install grafana-worldmap-panel
+exit
