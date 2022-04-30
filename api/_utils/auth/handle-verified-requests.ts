@@ -1,7 +1,7 @@
 import { VercelResponse, VercelRequest } from "@vercel/node";
 import { setupResponseData } from "../setup-response";
 import { send } from "micro";
-import { RequestBody } from "../common/interfaces";
+import { RequestBody, TreeWatered } from "../common/interfaces";
 import {
   adoptTree,
   waterTree,
@@ -102,15 +102,6 @@ export async function handleVerifiedRequest(
             }
             break;
           }
-          case "canupdatewatering": {
-            if (!id) {
-              result = false
-            } else {
-              const waterings = await getWaterings(id);
-              result = (waterings.length > 0 && tokenSubject === waterings[0].uuid);
-            }
-            break;
-          }
           case "watering": {
             if (id) {
               const waterings = await getWaterings(id);
@@ -151,11 +142,42 @@ export async function handleVerifiedRequest(
           uuid,
           username,
           amount,
+          timestamp,
           patches,
           email,
+          ids,
         } = request.body as RequestBody;
 
         switch (queryType) {
+          case "canupdatewaterings": {
+            if (!ids) {
+              result = {};
+              break;
+            }
+            const promises = []
+            if (ids) {
+              for (const index in ids) {
+                const id = ids[index];
+                const wateringsPromise = getWaterings(id);
+                promises.push(wateringsPromise)
+              }
+            }
+            result = await Promise.all(promises).then(wateringsList => {
+              const map: Record<string, boolean | undefined> = {};
+              for (const index in wateringsList) {
+                const treeWaterings = wateringsList[index];
+                const watering = treeWaterings.length > 0 && treeWaterings[0];
+                if (watering) {
+                  const allowed = tokenSubject === watering.uuid;
+                  map[watering.watering_id] = allowed;
+                }
+              }
+              return map;
+            }).catch(e => {
+              console.log("error while promise", e);
+            })
+            break;
+          }
           case "adopt":
             if (tree_id === undefined || uuid === undefined) {
               statusCode = 400;
@@ -179,7 +201,7 @@ export async function handleVerifiedRequest(
               );
             }
 
-            result = await waterTree({ tree_id, username, amount, uuid });
+            result = await waterTree({ tree_id, username, timestamp, amount, uuid });
             break;
 
           case "user":

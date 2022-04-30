@@ -304,7 +304,7 @@ export async function adoptTree(
 
 interface WaterTreeProps {
   tree_id: string;
-  timestamp: string | null;
+  timestamp?: string;
   uuid: string;
   amount: number;
   username: string;
@@ -503,7 +503,7 @@ export async function updateWatered(opts: PatchProps): Promise<TreeWatered|null>
   });
 }
 
-function checkWateringTimestamp(value: string | null): string | null {
+function checkWateringTimestamp(value: string | null | undefined): string | null {
   if (!value) {
     console.log(`Value null invalid for new time of watering, skipping...`)
     return null;

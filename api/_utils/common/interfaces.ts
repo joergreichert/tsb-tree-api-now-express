@@ -16,8 +16,10 @@ export interface RequestBody {
   uuid?: string;
   username?: string;
   amount?: number;
+  timestamp?: string;
   patches?: PatchProp[];
   email?: string;
+  ids?: string[];
 }
 
 export interface Tree {
