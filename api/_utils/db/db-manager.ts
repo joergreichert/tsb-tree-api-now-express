@@ -304,18 +304,27 @@ export async function adoptTree(
 
 interface WaterTreeProps {
   tree_id: string;
+  timestamp: string | null;
   uuid: string;
   amount: number;
   username: string;
 }
 export async function waterTree(opts: WaterTreeProps): Promise<string> {
-  const { tree_id, uuid, amount, username } = opts;
+  const { tree_id, timestamp, uuid, amount, username } = opts;
+  await pool.query(`
+    set time zone UTC;
+  `);
+  const ts = checkWateringTimestamp(timestamp) || new Date().toISOString();
+  const watering = amount && checkWateringAmount(amount.toString());
+  if (watering == null) {
+    return `Tree with tree_id ${tree_id} couldn't be watered by user ${uuid}/${username} because of invalid liter amount ${amount}`;
+  }
   await pool.query(
     `
     INSERT INTO trees_watered (tree_id, updated, uuid, amount, timestamp, username, watering_id)
-    VALUES ($1, clock_timestamp(), $2, $3, clock_timestamp(), $4, $5)
+    VALUES ($1, clock_timestamp(), $2, $3, $4, $5, $6)
   `,
-    [tree_id, uuid, amount, username, uuidv4()],
+    [tree_id, uuid, watering, ts, username, uuidv4()],
   );
   return `Tree with tree_id ${tree_id} was watered by user ${uuid}/${username} with ${amount}l of water`;
 }
@@ -445,14 +454,8 @@ export async function updateWatered(opts: PatchProps): Promise<TreeWatered|null>
         const oldValue = entry && entry[patch.name];
         const value = (patch.value === undefined || patch.value === null || patch.value === "") ? null : patch.value
         if (patch.name == "amount") {
-          var number = null;
-          try {
-            number = value && parseInt(value)
-          } catch(e) {
-            console.log(`Value ${value} cannot be parsed as number, skipping...`)
-            continue
-          }
-          if (!number || number < 0 || number >= 300) {
+          const number = checkWateringAmount(value);
+          if (number == null) {
             console.log(`Value ${number} invalid for new amount of watering, skipping...`)
             continue
           }
@@ -471,21 +474,9 @@ export async function updateWatered(opts: PatchProps): Promise<TreeWatered|null>
             continue
           }
         } else if (patch.name == "timestamp") {
-          if (!value) {
-            console.log(`Value null invalid for new time of watering, skipping...`)
-            continue
-          }
-          try {
-            const current = new Date();
-            const currentYear = current.getFullYear();
-            const date = new Date(Date.parse(value));
-            const year = date.getFullYear();
-            if (current.getTime() < date.getTime() || year != currentYear) {
-              console.log(`Value ${value} invalid for new time of watering, skipping...`)
-              continue
-            }
-          } catch(e) {
-            console.log(`Value ${value} for new time of watering cause error, skipping...`)
+          const ts = checkWateringTimestamp(value)
+          if (!ts) {
+            console.log(`Value invalid for new time of watering, skipping...`)
             continue
           }
         }
@@ -510,6 +501,42 @@ export async function updateWatered(opts: PatchProps): Promise<TreeWatered|null>
     prefered_username: undefined,
     ...tw,
   });
+}
+
+function checkWateringTimestamp(value: string | null): string | null {
+  if (!value) {
+    console.log(`Value null invalid for new time of watering, skipping...`)
+    return null;
+  }
+  try {
+    const current = new Date();
+    const currentYear = current.getFullYear();
+    const date = new Date(Date.parse(value));
+    const year = date.getFullYear();
+    if (current.getTime() < date.getTime() || year != currentYear) {
+      console.log(`Value ${value} invalid for new time of watering, skipping...`)
+      return null;
+    }
+  } catch(e) {
+    console.log(`Value ${value} for new time of watering cause error, skipping...`)
+    return null;
+  }
+  return value;
+}
+
+function checkWateringAmount(value: string | null): number | null {
+  var number = null;
+  try {
+    number = value && parseInt(value)
+  } catch(e) {
+    console.log(`Value ${value} cannot be parsed as number, skipping...`)
+    return null
+  }
+  if (!number || number < 0 || number >= 300) {
+    console.log(`Value ${number} invalid for new amount of watering, skipping...`)
+    return null
+  }
+  return number;
 }
 
 // DELETE DELETE DELETE DELETE DELETE DELETE DELETE DELETE
