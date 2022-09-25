@@ -34,7 +34,7 @@ export async function getTreeById(id: string): Promise<Tree[]> {
     `
     SELECT t.*, g.german_label as gattungdeutsch,
     g.wikipedia as gattungwikipedia, g.wikidata as gattungwikidata, g.wikicommons as gattungwikicommons,
-    s.wikipedia as artwikipedia, s.wikidata as artwikidata, s.wikicommons as artwikicommons
+    s.wikipedia as artwikipedia, s.wikidata as artwikidata, s.wikicommons as artwikicommons, t.notes as notes
     FROM trees t
     LEFT OUTER JOIN trees_metadata g ON t.gattung = g.latin_name AND g.category_type = 'genus'
     LEFT OUTER JOIN trees_metadata s ON t.artbot = s.latin_name AND s.category_type = 'species'

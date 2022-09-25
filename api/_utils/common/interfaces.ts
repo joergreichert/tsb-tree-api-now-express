@@ -52,6 +52,7 @@ export interface Tree {
   artwikipedia: string;
   artwikidata: string;
   artwikicommons: string;
+  notes: string;
 }
 
 export type TreeReduced = [string, number, number, number];
