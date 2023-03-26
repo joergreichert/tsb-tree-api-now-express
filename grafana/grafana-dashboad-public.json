@@ -4,8 +4,8 @@
       {
         "builtIn": 1,
         "datasource": {
-          "type": "datasource",
-          "uid": "grafana"
+          "type": "grafana",
+          "uid": "-- Grafana --"
         },
         "enable": true,
         "hide": true,
@@ -24,7 +24,7 @@
   "editable": true,
   "fiscalYearStartMonth": 0,
   "graphTooltip": 0,
-  "id": 9,
+  "id": 17,
   "links": [],
   "liveNow": false,
   "panels": [
@@ -52,7 +52,8 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green"
+                    "color": "green",
+                    "value": null
                   }
                 ]
               }
@@ -141,7 +142,8 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green"
+                    "color": "green",
+                    "value": null
                   }
                 ]
               }
@@ -232,7 +234,8 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green"
+                    "color": "green",
+                    "value": null
                   }
                 ]
               }
@@ -321,7 +324,8 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green"
+                    "color": "green",
+                    "value": null
                   }
                 ]
               }
@@ -424,6 +428,8 @@
                 "mode": "palette-classic"
               },
               "custom": {
+                "axisCenteredZero": false,
+                "axisColorMode": "text",
                 "axisLabel": "",
                 "axisPlacement": "auto",
                 "barAlignment": 0,
@@ -457,7 +463,8 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green"
+                    "color": "green",
+                    "value": null
                   },
                   {
                     "color": "red",
@@ -473,7 +480,7 @@
             "h": 9,
             "w": 12,
             "x": 0,
-            "y": 66
+            "y": 2
           },
           "id": 4,
           "options": {
@@ -556,7 +563,7 @@
             "h": 9,
             "w": 12,
             "x": 12,
-            "y": 66
+            "y": 2
           },
           "hiddenSeries": false,
           "id": 2,
@@ -576,7 +583,7 @@
             "alertThreshold": true
           },
           "percentage": false,
-          "pluginVersion": "8.5.0",
+          "pluginVersion": "9.2.5",
           "pointradius": 2,
           "points": false,
           "renderer": "flot",
@@ -678,7 +685,8 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green"
+                    "color": "green",
+                    "value": null
                   }
                 ]
               }
@@ -689,7 +697,7 @@
             "h": 5,
             "w": 4,
             "x": 0,
-            "y": 75
+            "y": 11
           },
           "id": 55,
           "options": {
@@ -707,7 +715,7 @@
             "text": {},
             "textMode": "auto"
           },
-          "pluginVersion": "8.5.0",
+          "pluginVersion": "9.2.5",
           "targets": [
             {
               "datasource": {
@@ -772,7 +780,8 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green"
+                    "color": "green",
+                    "value": null
                   }
                 ]
               }
@@ -783,7 +792,7 @@
             "h": 5,
             "w": 4,
             "x": 4,
-            "y": 75
+            "y": 11
           },
           "id": 56,
           "options": {
@@ -801,7 +810,7 @@
             "text": {},
             "textMode": "auto"
           },
-          "pluginVersion": "8.5.0",
+          "pluginVersion": "9.2.5",
           "targets": [
             {
               "datasource": {
@@ -866,7 +875,8 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green"
+                    "color": "green",
+                    "value": null
                   }
                 ]
               }
@@ -877,7 +887,7 @@
             "h": 5,
             "w": 4,
             "x": 8,
-            "y": 75
+            "y": 11
           },
           "id": 57,
           "options": {
@@ -895,7 +905,7 @@
             "text": {},
             "textMode": "auto"
           },
-          "pluginVersion": "8.5.0",
+          "pluginVersion": "9.2.5",
           "targets": [
             {
               "datasource": {
@@ -962,7 +972,8 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green"
+                    "color": "green",
+                    "value": null
                   }
                 ]
               }
@@ -973,7 +984,7 @@
             "h": 5,
             "w": 3,
             "x": 12,
-            "y": 75
+            "y": 11
           },
           "id": 58,
           "options": {
@@ -991,7 +1002,7 @@
             "text": {},
             "textMode": "auto"
           },
-          "pluginVersion": "8.5.0",
+          "pluginVersion": "9.2.5",
           "targets": [
             {
               "datasource": {
@@ -1058,7 +1069,8 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green"
+                    "color": "green",
+                    "value": null
                   }
                 ]
               }
@@ -1069,7 +1081,7 @@
             "h": 5,
             "w": 5,
             "x": 15,
-            "y": 75
+            "y": 11
           },
           "id": 59,
           "options": {
@@ -1087,7 +1099,7 @@
             "text": {},
             "textMode": "auto"
           },
-          "pluginVersion": "8.5.0",
+          "pluginVersion": "9.2.5",
           "targets": [
             {
               "datasource": {
@@ -1154,7 +1166,8 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green"
+                    "color": "green",
+                    "value": null
                   }
                 ]
               }
@@ -1165,7 +1178,7 @@
             "h": 5,
             "w": 4,
             "x": 20,
-            "y": 75
+            "y": 11
           },
           "id": 60,
           "options": {
@@ -1183,7 +1196,7 @@
             "text": {},
             "textMode": "auto"
           },
-          "pluginVersion": "8.5.0",
+          "pluginVersion": "9.2.5",
           "targets": [
             {
               "datasource": {
@@ -1234,363 +1247,6 @@
           ],
           "title": "Gegossene Liter",
           "type": "stat"
-        },
-        {
-          "datasource": {
-            "type": "postgres",
-            "uid": "LeipzigGiesst-PostgreSQL"
-          },
-          "fieldConfig": {
-            "defaults": {
-              "color": {
-                "mode": "thresholds"
-              },
-              "custom": {
-                "align": "auto",
-                "displayMode": "auto",
-                "filterable": false,
-                "inspect": false
-              },
-              "mappings": [],
-              "thresholds": {
-                "mode": "absolute",
-                "steps": [
-                  {
-                    "color": "green"
-                  }
-                ]
-              }
-            },
-            "overrides": [
-              {
-                "matcher": {
-                  "id": "byName",
-                  "options": "rang"
-                },
-                "properties": [
-                  {
-                    "id": "custom.width",
-                    "value": 39
-                  }
-                ]
-              },
-              {
-                "matcher": {
-                  "id": "byName",
-                  "options": "benutzer"
-                },
-                "properties": [
-                  {
-                    "id": "custom.width",
-                    "value": 239
-                  }
-                ]
-              },
-              {
-                "matcher": {
-                  "id": "byName",
-                  "options": "gegossen"
-                },
-                "properties": [
-                  {
-                    "id": "custom.width",
-                    "value": 136
-                  }
-                ]
-              }
-            ]
-          },
-          "gridPos": {
-            "h": 11,
-            "w": 9,
-            "x": 0,
-            "y": 80
-          },
-          "id": 63,
-          "options": {
-            "footer": {
-              "fields": "",
-              "reducer": [
-                "sum"
-              ],
-              "show": false
-            },
-            "showHeader": true,
-            "sortBy": []
-          },
-          "pluginVersion": "8.5.0",
-          "targets": [
-            {
-              "datasource": {
-                "type": "postgres",
-                "uid": "LeipzigGiesst-PostgreSQL"
-              },
-              "format": "table",
-              "group": [],
-              "metricColumn": "none",
-              "rawQuery": true,
-              "rawSql": "select row_number() over(order by sum(CAST (tw.amount AS INTEGER)) desc) Rang, tw.username AS Benutzer, sum(CAST (tw.amount AS INTEGER)) as gegossen from trees_watered tw where $__timeFilter(tw.timestamp) group by tw.uuid, tw.username order by gegossen desc",
-              "refId": "A",
-              "select": [
-                [
-                  {
-                    "params": [
-                      "value"
-                    ],
-                    "type": "column"
-                  }
-                ]
-              ],
-              "timeColumn": "time",
-              "where": [
-                {
-                  "name": "$__timeFilter",
-                  "params": [],
-                  "type": "macro"
-                }
-              ]
-            }
-          ],
-          "title": "Gießer-Rangliste nach gegossenen Litern",
-          "type": "table"
-        },
-        {
-          "datasource": {
-            "type": "postgres",
-            "uid": "LeipzigGiesst-PostgreSQL"
-          },
-          "fieldConfig": {
-            "defaults": {
-              "color": {
-                "mode": "thresholds"
-              },
-              "custom": {
-                "align": "auto",
-                "displayMode": "auto",
-                "filterable": false,
-                "inspect": false
-              },
-              "mappings": [],
-              "thresholds": {
-                "mode": "absolute",
-                "steps": [
-                  {
-                    "color": "green"
-                  }
-                ]
-              }
-            },
-            "overrides": [
-              {
-                "matcher": {
-                  "id": "byName",
-                  "options": "rang"
-                },
-                "properties": [
-                  {
-                    "id": "custom.width",
-                    "value": 39
-                  }
-                ]
-              },
-              {
-                "matcher": {
-                  "id": "byName",
-                  "options": "benutzer"
-                },
-                "properties": [
-                  {
-                    "id": "custom.width",
-                    "value": 190
-                  }
-                ]
-              },
-              {
-                "matcher": {
-                  "id": "byName",
-                  "options": "baum_anzahl"
-                },
-                "properties": [
-                  {
-                    "id": "custom.width",
-                    "value": 136
-                  }
-                ]
-              }
-            ]
-          },
-          "gridPos": {
-            "h": 11,
-            "w": 8,
-            "x": 9,
-            "y": 80
-          },
-          "id": 64,
-          "options": {
-            "footer": {
-              "fields": "",
-              "reducer": [
-                "sum"
-              ],
-              "show": false
-            },
-            "showHeader": true,
-            "sortBy": []
-          },
-          "pluginVersion": "8.5.0",
-          "targets": [
-            {
-              "datasource": {
-                "type": "postgres",
-                "uid": "LeipzigGiesst-PostgreSQL"
-              },
-              "format": "table",
-              "group": [],
-              "metricColumn": "none",
-              "rawQuery": true,
-              "rawSql": "select row_number() over(order by count(distinct(tree_id)) desc) AS Rang, username AS Benutzer, count(distinct(tree_id)) as baum_anzahl from trees_watered where $__timeFilter(timestamp) group by username having count(distinct(tree_id)) > 1 order by baum_anzahl desc",
-              "refId": "A",
-              "select": [
-                [
-                  {
-                    "params": [
-                      "value"
-                    ],
-                    "type": "column"
-                  }
-                ]
-              ],
-              "timeColumn": "time",
-              "where": [
-                {
-                  "name": "$__timeFilter",
-                  "params": [],
-                  "type": "macro"
-                }
-              ]
-            }
-          ],
-          "title": "Nutzer, die mehr als einen Baum gegossen haben",
-          "type": "table"
-        },
-        {
-          "datasource": {
-            "type": "postgres",
-            "uid": "LeipzigGiesst-PostgreSQL"
-          },
-          "fieldConfig": {
-            "defaults": {
-              "color": {
-                "mode": "thresholds"
-              },
-              "custom": {
-                "align": "auto",
-                "displayMode": "auto",
-                "filterable": false,
-                "inspect": false
-              },
-              "mappings": [],
-              "thresholds": {
-                "mode": "absolute",
-                "steps": [
-                  {
-                    "color": "green"
-                  }
-                ]
-              }
-            },
-            "overrides": [
-              {
-                "matcher": {
-                  "id": "byName",
-                  "options": "rang"
-                },
-                "properties": [
-                  {
-                    "id": "custom.width",
-                    "value": 39
-                  }
-                ]
-              },
-              {
-                "matcher": {
-                  "id": "byName",
-                  "options": "benutzer"
-                },
-                "properties": [
-                  {
-                    "id": "custom.width",
-                    "value": 142
-                  }
-                ]
-              },
-              {
-                "matcher": {
-                  "id": "byName",
-                  "options": "giess_anzahl"
-                },
-                "properties": [
-                  {
-                    "id": "custom.width",
-                    "value": 136
-                  }
-                ]
-              }
-            ]
-          },
-          "gridPos": {
-            "h": 11,
-            "w": 7,
-            "x": 17,
-            "y": 80
-          },
-          "id": 65,
-          "options": {
-            "footer": {
-              "fields": "",
-              "reducer": [
-                "sum"
-              ],
-              "show": false
-            },
-            "showHeader": true,
-            "sortBy": []
-          },
-          "pluginVersion": "8.5.0",
-          "targets": [
-            {
-              "datasource": {
-                "type": "postgres",
-                "uid": "LeipzigGiesst-PostgreSQL"
-              },
-              "format": "table",
-              "group": [],
-              "metricColumn": "none",
-              "rawQuery": true,
-              "rawSql": "select row_number() over(order by count(*) desc) AS rang, username AS Benutzer, count(*) as giess_anzahl from trees_watered where $__timeFilter(timestamp) group by username having count(*) > 1 order by giess_anzahl desc",
-              "refId": "A",
-              "select": [
-                [
-                  {
-                    "params": [
-                      "value"
-                    ],
-                    "type": "column"
-                  }
-                ]
-              ],
-              "timeColumn": "time",
-              "where": [
-                {
-                  "name": "$__timeFilter",
-                  "params": [],
-                  "type": "macro"
-                }
-              ]
-            }
-          ],
-          "title": "Nutzer, die mehr als einmal gegossen haben",
-          "type": "table"
         }
       ],
       "title": "Gesamtauswertung (für gewählten Zeitraum)",
@@ -1625,7 +1281,8 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green"
+                    "color": "green",
+                    "value": null
                   }
                 ]
               }
@@ -1636,7 +1293,7 @@
             "h": 5,
             "w": 4,
             "x": 0,
-            "y": 67
+            "y": 3
           },
           "id": 61,
           "options": {
@@ -1654,7 +1311,7 @@
             "text": {},
             "textMode": "auto"
           },
-          "pluginVersion": "8.5.0",
+          "pluginVersion": "9.2.5",
           "targets": [
             {
               "datasource": {
@@ -1719,7 +1376,8 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green"
+                    "color": "green",
+                    "value": null
                   }
                 ]
               }
@@ -1730,7 +1388,7 @@
             "h": 5,
             "w": 4,
             "x": 4,
-            "y": 67
+            "y": 3
           },
           "id": 62,
           "options": {
@@ -1748,7 +1406,7 @@
             "text": {},
             "textMode": "auto"
           },
-          "pluginVersion": "8.5.0",
+          "pluginVersion": "9.2.5",
           "targets": [
             {
               "datasource": {
@@ -1813,7 +1471,8 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green"
+                    "color": "green",
+                    "value": null
                   }
                 ]
               }
@@ -1824,7 +1483,7 @@
             "h": 5,
             "w": 4,
             "x": 8,
-            "y": 67
+            "y": 3
           },
           "id": 10,
           "options": {
@@ -1842,7 +1501,7 @@
             "text": {},
             "textMode": "auto"
           },
-          "pluginVersion": "8.5.0",
+          "pluginVersion": "9.2.5",
           "targets": [
             {
               "datasource": {
@@ -1909,7 +1568,8 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green"
+                    "color": "green",
+                    "value": null
                   }
                 ]
               }
@@ -1920,7 +1580,7 @@
             "h": 5,
             "w": 3,
             "x": 12,
-            "y": 67
+            "y": 3
           },
           "id": 13,
           "options": {
@@ -1938,7 +1598,7 @@
             "text": {},
             "textMode": "auto"
           },
-          "pluginVersion": "8.5.0",
+          "pluginVersion": "9.2.5",
           "targets": [
             {
               "datasource": {
@@ -2005,7 +1665,8 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green"
+                    "color": "green",
+                    "value": null
                   }
                 ]
               }
@@ -2016,7 +1677,7 @@
             "h": 5,
             "w": 5,
             "x": 15,
-            "y": 67
+            "y": 3
           },
           "id": 11,
           "options": {
@@ -2034,7 +1695,7 @@
             "text": {},
             "textMode": "auto"
           },
-          "pluginVersion": "8.5.0",
+          "pluginVersion": "9.2.5",
           "targets": [
             {
               "datasource": {
@@ -2101,7 +1762,8 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green"
+                    "color": "green",
+                    "value": null
                   }
                 ]
               }
@@ -2112,7 +1774,7 @@
             "h": 5,
             "w": 4,
             "x": 20,
-            "y": 67
+            "y": 3
           },
           "id": 14,
           "options": {
@@ -2130,7 +1792,7 @@
             "text": {},
             "textMode": "auto"
           },
-          "pluginVersion": "8.5.0",
+          "pluginVersion": "9.2.5",
           "targets": [
             {
               "datasource": {
@@ -2181,363 +1843,6 @@
           ],
           "title": "Gegossene Liter",
           "type": "stat"
-        },
-        {
-          "datasource": {
-            "type": "postgres",
-            "uid": "LeipzigGiesst-PostgreSQL"
-          },
-          "fieldConfig": {
-            "defaults": {
-              "color": {
-                "mode": "thresholds"
-              },
-              "custom": {
-                "align": "auto",
-                "displayMode": "auto",
-                "filterable": false,
-                "inspect": false
-              },
-              "mappings": [],
-              "thresholds": {
-                "mode": "absolute",
-                "steps": [
-                  {
-                    "color": "green"
-                  }
-                ]
-              }
-            },
-            "overrides": [
-              {
-                "matcher": {
-                  "id": "byName",
-                  "options": "rang"
-                },
-                "properties": [
-                  {
-                    "id": "custom.width",
-                    "value": 39
-                  }
-                ]
-              },
-              {
-                "matcher": {
-                  "id": "byName",
-                  "options": "benutzer"
-                },
-                "properties": [
-                  {
-                    "id": "custom.width",
-                    "value": 239
-                  }
-                ]
-              },
-              {
-                "matcher": {
-                  "id": "byName",
-                  "options": "gegossen"
-                },
-                "properties": [
-                  {
-                    "id": "custom.width",
-                    "value": 136
-                  }
-                ]
-              }
-            ]
-          },
-          "gridPos": {
-            "h": 11,
-            "w": 9,
-            "x": 0,
-            "y": 72
-          },
-          "id": 16,
-          "options": {
-            "footer": {
-              "fields": "",
-              "reducer": [
-                "sum"
-              ],
-              "show": false
-            },
-            "showHeader": true,
-            "sortBy": []
-          },
-          "pluginVersion": "8.5.0",
-          "targets": [
-            {
-              "datasource": {
-                "type": "postgres",
-                "uid": "LeipzigGiesst-PostgreSQL"
-              },
-              "format": "table",
-              "group": [],
-              "metricColumn": "none",
-              "rawQuery": true,
-              "rawSql": "select row_number() over(order by sum(CAST (tw.amount AS INTEGER)) desc) Rang, tw.username AS Benutzer, sum(CAST (tw.amount AS INTEGER)) as gegossen from trees_watered tw where tw.timestamp >= '2022-01-01 00:00:00.000' group by tw.uuid, tw.username order by gegossen desc",
-              "refId": "A",
-              "select": [
-                [
-                  {
-                    "params": [
-                      "value"
-                    ],
-                    "type": "column"
-                  }
-                ]
-              ],
-              "timeColumn": "time",
-              "where": [
-                {
-                  "name": "$__timeFilter",
-                  "params": [],
-                  "type": "macro"
-                }
-              ]
-            }
-          ],
-          "title": "Gießer-Rangliste nach gegossenen Litern",
-          "type": "table"
-        },
-        {
-          "datasource": {
-            "type": "postgres",
-            "uid": "LeipzigGiesst-PostgreSQL"
-          },
-          "fieldConfig": {
-            "defaults": {
-              "color": {
-                "mode": "thresholds"
-              },
-              "custom": {
-                "align": "auto",
-                "displayMode": "auto",
-                "filterable": false,
-                "inspect": false
-              },
-              "mappings": [],
-              "thresholds": {
-                "mode": "absolute",
-                "steps": [
-                  {
-                    "color": "green"
-                  }
-                ]
-              }
-            },
-            "overrides": [
-              {
-                "matcher": {
-                  "id": "byName",
-                  "options": "rang"
-                },
-                "properties": [
-                  {
-                    "id": "custom.width",
-                    "value": 39
-                  }
-                ]
-              },
-              {
-                "matcher": {
-                  "id": "byName",
-                  "options": "benutzer"
-                },
-                "properties": [
-                  {
-                    "id": "custom.width",
-                    "value": 190
-                  }
-                ]
-              },
-              {
-                "matcher": {
-                  "id": "byName",
-                  "options": "baum_anzahl"
-                },
-                "properties": [
-                  {
-                    "id": "custom.width",
-                    "value": 136
-                  }
-                ]
-              }
-            ]
-          },
-          "gridPos": {
-            "h": 11,
-            "w": 8,
-            "x": 9,
-            "y": 72
-          },
-          "id": 17,
-          "options": {
-            "footer": {
-              "fields": "",
-              "reducer": [
-                "sum"
-              ],
-              "show": false
-            },
-            "showHeader": true,
-            "sortBy": []
-          },
-          "pluginVersion": "8.5.0",
-          "targets": [
-            {
-              "datasource": {
-                "type": "postgres",
-                "uid": "LeipzigGiesst-PostgreSQL"
-              },
-              "format": "table",
-              "group": [],
-              "metricColumn": "none",
-              "rawQuery": true,
-              "rawSql": "select row_number() over(order by count(distinct(tree_id)) desc) AS Rang, username AS Benutzer, count(distinct(tree_id)) as baum_anzahl from trees_watered where timestamp >= '2022-01-01 00:00:00.000' group by username having count(distinct(tree_id)) > 1 order by baum_anzahl desc",
-              "refId": "A",
-              "select": [
-                [
-                  {
-                    "params": [
-                      "value"
-                    ],
-                    "type": "column"
-                  }
-                ]
-              ],
-              "timeColumn": "time",
-              "where": [
-                {
-                  "name": "$__timeFilter",
-                  "params": [],
-                  "type": "macro"
-                }
-              ]
-            }
-          ],
-          "title": "Nutzer, die mehr als einen Baum gegossen haben",
-          "type": "table"
-        },
-        {
-          "datasource": {
-            "type": "postgres",
-            "uid": "LeipzigGiesst-PostgreSQL"
-          },
-          "fieldConfig": {
-            "defaults": {
-              "color": {
-                "mode": "thresholds"
-              },
-              "custom": {
-                "align": "auto",
-                "displayMode": "auto",
-                "filterable": false,
-                "inspect": false
-              },
-              "mappings": [],
-              "thresholds": {
-                "mode": "absolute",
-                "steps": [
-                  {
-                    "color": "green"
-                  }
-                ]
-              }
-            },
-            "overrides": [
-              {
-                "matcher": {
-                  "id": "byName",
-                  "options": "rang"
-                },
-                "properties": [
-                  {
-                    "id": "custom.width",
-                    "value": 39
-                  }
-                ]
-              },
-              {
-                "matcher": {
-                  "id": "byName",
-                  "options": "benutzer"
-                },
-                "properties": [
-                  {
-                    "id": "custom.width",
-                    "value": 142
-                  }
-                ]
-              },
-              {
-                "matcher": {
-                  "id": "byName",
-                  "options": "giess_anzahl"
-                },
-                "properties": [
-                  {
-                    "id": "custom.width",
-                    "value": 136
-                  }
-                ]
-              }
-            ]
-          },
-          "gridPos": {
-            "h": 11,
-            "w": 7,
-            "x": 17,
-            "y": 72
-          },
-          "id": 18,
-          "options": {
-            "footer": {
-              "fields": "",
-              "reducer": [
-                "sum"
-              ],
-              "show": false
-            },
-            "showHeader": true,
-            "sortBy": []
-          },
-          "pluginVersion": "8.5.0",
-          "targets": [
-            {
-              "datasource": {
-                "type": "postgres",
-                "uid": "LeipzigGiesst-PostgreSQL"
-              },
-              "format": "table",
-              "group": [],
-              "metricColumn": "none",
-              "rawQuery": true,
-              "rawSql": "select row_number() over(order by count(*) desc) AS rang, username AS Benutzer, count(*) as giess_anzahl from trees_watered where timestamp >= '2022-01-01 00:00:00.000' group by username having count(*) > 1 order by giess_anzahl desc",
-              "refId": "A",
-              "select": [
-                [
-                  {
-                    "params": [
-                      "value"
-                    ],
-                    "type": "column"
-                  }
-                ]
-              ],
-              "timeColumn": "time",
-              "where": [
-                {
-                  "name": "$__timeFilter",
-                  "params": [],
-                  "type": "macro"
-                }
-              ]
-            }
-          ],
-          "title": "Nutzer, die mehr als einmal gegossen haben",
-          "type": "table"
         }
       ],
       "title": "Gesamtauswertung (2022)",
@@ -2574,7 +1879,8 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green"
+                    "color": "green",
+                    "value": null
                   },
                   {
                     "color": "red",
@@ -2626,7 +1932,7 @@
             "h": 11,
             "w": 7,
             "x": 0,
-            "y": 68
+            "y": 4
           },
           "id": 68,
           "options": {
@@ -2640,7 +1946,7 @@
             "showHeader": true,
             "sortBy": []
           },
-          "pluginVersion": "8.5.0",
+          "pluginVersion": "9.2.5",
           "targets": [
             {
               "datasource": {
@@ -2697,7 +2003,8 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green"
+                    "color": "green",
+                    "value": null
                   },
                   {
                     "color": "red",
@@ -2749,7 +2056,7 @@
             "h": 11,
             "w": 10,
             "x": 7,
-            "y": 68
+            "y": 4
           },
           "id": 69,
           "options": {
@@ -2763,7 +2070,7 @@
             "showHeader": true,
             "sortBy": []
           },
-          "pluginVersion": "8.5.0",
+          "pluginVersion": "9.2.5",
           "targets": [
             {
               "datasource": {
@@ -2820,7 +2127,8 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green"
+                    "color": "green",
+                    "value": null
                   },
                   {
                     "color": "red",
@@ -2872,7 +2180,7 @@
             "h": 11,
             "w": 7,
             "x": 17,
-            "y": 68
+            "y": 4
           },
           "id": 70,
           "options": {
@@ -2886,7 +2194,7 @@
             "showHeader": true,
             "sortBy": []
           },
-          "pluginVersion": "8.5.0",
+          "pluginVersion": "9.2.5",
           "targets": [
             {
               "datasource": {
@@ -2920,265 +2228,6 @@
             }
           ],
           "title": "Gießungen nach Ortsteilen",
-          "type": "table"
-        },
-        {
-          "datasource": {
-            "type": "postgres",
-            "uid": "LeipzigGiesst-PostgreSQL"
-          },
-          "description": "",
-          "fieldConfig": {
-            "defaults": {
-              "color": {
-                "mode": "thresholds"
-              },
-              "custom": {
-                "align": "auto",
-                "displayMode": "auto",
-                "filterable": false,
-                "inspect": false
-              },
-              "mappings": [],
-              "thresholds": {
-                "mode": "absolute",
-                "steps": [
-                  {
-                    "color": "green"
-                  },
-                  {
-                    "color": "red",
-                    "value": 80
-                  }
-                ]
-              }
-            },
-            "overrides": [
-              {
-                "matcher": {
-                  "id": "byName",
-                  "options": "rang"
-                },
-                "properties": [
-                  {
-                    "id": "custom.width",
-                    "value": 27
-                  }
-                ]
-              },
-              {
-                "matcher": {
-                  "id": "byName",
-                  "options": "ortsteil"
-                },
-                "properties": [
-                  {
-                    "id": "custom.width",
-                    "value": 176
-                  }
-                ]
-              },
-              {
-                "matcher": {
-                  "id": "byName",
-                  "options": "nutzer_anzahl"
-                },
-                "properties": [
-                  {
-                    "id": "custom.width",
-                    "value": 116
-                  }
-                ]
-              }
-            ]
-          },
-          "gridPos": {
-            "h": 11,
-            "w": 8,
-            "x": 0,
-            "y": 79
-          },
-          "id": 71,
-          "options": {
-            "footer": {
-              "fields": "",
-              "reducer": [
-                "sum"
-              ],
-              "show": false
-            },
-            "showHeader": true,
-            "sortBy": []
-          },
-          "pluginVersion": "8.5.0",
-          "targets": [
-            {
-              "datasource": {
-                "type": "postgres",
-                "uid": "LeipzigGiesst-PostgreSQL"
-              },
-              "format": "table",
-              "group": [],
-              "metricColumn": "none",
-              "rawQuery": true,
-              "rawSql": "select row_number() over(order by count(distinct(username)) desc) AS rang, t.bezirk as Ortsteil, count(distinct(username)) as nutzer_anzahl from trees_watered tw join trees t on tw.tree_id = t.id where $__timeFilter(tw.timestamp) group by t.bezirk order by nutzer_anzahl desc, t.bezirk\r\n",
-              "refId": "A",
-              "select": [
-                [
-                  {
-                    "params": [
-                      "value"
-                    ],
-                    "type": "column"
-                  }
-                ]
-              ],
-              "timeColumn": "time",
-              "where": [
-                {
-                  "name": "$__timeFilter",
-                  "params": [],
-                  "type": "macro"
-                }
-              ]
-            }
-          ],
-          "title": "Anzahl Gießende nach Ortsteil",
-          "type": "table"
-        },
-        {
-          "datasource": {
-            "type": "postgres",
-            "uid": "LeipzigGiesst-PostgreSQL"
-          },
-          "fieldConfig": {
-            "defaults": {
-              "color": {
-                "mode": "thresholds"
-              },
-              "custom": {
-                "align": "auto",
-                "displayMode": "auto",
-                "filterable": false,
-                "inspect": false
-              },
-              "mappings": [],
-              "thresholds": {
-                "mode": "absolute",
-                "steps": [
-                  {
-                    "color": "green"
-                  },
-                  {
-                    "color": "red",
-                    "value": 80
-                  }
-                ]
-              }
-            },
-            "overrides": [
-              {
-                "matcher": {
-                  "id": "byName",
-                  "options": "rang"
-                },
-                "properties": [
-                  {
-                    "id": "custom.width",
-                    "value": 43
-                  }
-                ]
-              },
-              {
-                "matcher": {
-                  "id": "byName",
-                  "options": "ortsteil"
-                },
-                "properties": [
-                  {
-                    "id": "custom.width",
-                    "value": 292
-                  }
-                ]
-              },
-              {
-                "matcher": {
-                  "id": "byName",
-                  "options": "giess_anzahl"
-                },
-                "properties": [
-                  {
-                    "id": "custom.width",
-                    "value": 96
-                  }
-                ]
-              },
-              {
-                "matcher": {
-                  "id": "byName",
-                  "options": "username"
-                },
-                "properties": [
-                  {
-                    "id": "custom.width",
-                    "value": 329
-                  }
-                ]
-              }
-            ]
-          },
-          "gridPos": {
-            "h": 11,
-            "w": 16,
-            "x": 8,
-            "y": 79
-          },
-          "id": 72,
-          "options": {
-            "footer": {
-              "fields": "",
-              "reducer": [
-                "sum"
-              ],
-              "show": false
-            },
-            "showHeader": true,
-            "sortBy": []
-          },
-          "pluginVersion": "8.5.0",
-          "targets": [
-            {
-              "datasource": {
-                "type": "postgres",
-                "uid": "LeipzigGiesst-PostgreSQL"
-              },
-              "format": "table",
-              "group": [],
-              "metricColumn": "none",
-              "rawQuery": true,
-              "rawSql": "select row_number() over(order by count(*) desc) AS rang, t.bezirk as Ortsteil, tw.username, count(*) as giess_anzahl from trees_watered tw join trees t on tw.tree_id = t.id where $__timeFilter(tw.timestamp) group by t.bezirk, tw.username having count(*) > 1 order by giess_anzahl desc, t.bezirk\r\n",
-              "refId": "A",
-              "select": [
-                [
-                  {
-                    "params": [
-                      "value"
-                    ],
-                    "type": "column"
-                  }
-                ]
-              ],
-              "timeColumn": "time",
-              "where": [
-                {
-                  "name": "$__timeFilter",
-                  "params": [],
-                  "type": "macro"
-                }
-              ]
-            }
-          ],
-          "title": "Gießer mit Ortsteil nach Anzahl Gießungen",
           "type": "table"
         }
       ],
@@ -3220,7 +2269,8 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green"
+                    "color": "green",
+                    "value": null
                   },
                   {
                     "color": "red",
@@ -3272,7 +2322,7 @@
             "h": 11,
             "w": 7,
             "x": 0,
-            "y": 69
+            "y": 5
           },
           "id": 24,
           "options": {
@@ -3286,7 +2336,7 @@
             "showHeader": true,
             "sortBy": []
           },
-          "pluginVersion": "8.5.0",
+          "pluginVersion": "9.2.5",
           "targets": [
             {
               "datasource": {
@@ -3343,7 +2393,8 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green"
+                    "color": "green",
+                    "value": null
                   },
                   {
                     "color": "red",
@@ -3395,7 +2446,7 @@
             "h": 11,
             "w": 10,
             "x": 7,
-            "y": 69
+            "y": 5
           },
           "id": 26,
           "options": {
@@ -3409,7 +2460,7 @@
             "showHeader": true,
             "sortBy": []
           },
-          "pluginVersion": "8.5.0",
+          "pluginVersion": "9.2.5",
           "targets": [
             {
               "datasource": {
@@ -3466,7 +2517,8 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green"
+                    "color": "green",
+                    "value": null
                   },
                   {
                     "color": "red",
@@ -3518,7 +2570,7 @@
             "h": 11,
             "w": 7,
             "x": 17,
-            "y": 69
+            "y": 5
           },
           "id": 28,
           "options": {
@@ -3532,7 +2584,7 @@
             "showHeader": true,
             "sortBy": []
           },
-          "pluginVersion": "8.5.0",
+          "pluginVersion": "9.2.5",
           "targets": [
             {
               "datasource": {
@@ -3567,265 +2619,6 @@
           ],
           "title": "Gießungen nach Ortsteilen",
           "type": "table"
-        },
-        {
-          "datasource": {
-            "type": "postgres",
-            "uid": "LeipzigGiesst-PostgreSQL"
-          },
-          "description": "",
-          "fieldConfig": {
-            "defaults": {
-              "color": {
-                "mode": "thresholds"
-              },
-              "custom": {
-                "align": "auto",
-                "displayMode": "auto",
-                "filterable": false,
-                "inspect": false
-              },
-              "mappings": [],
-              "thresholds": {
-                "mode": "absolute",
-                "steps": [
-                  {
-                    "color": "green"
-                  },
-                  {
-                    "color": "red",
-                    "value": 80
-                  }
-                ]
-              }
-            },
-            "overrides": [
-              {
-                "matcher": {
-                  "id": "byName",
-                  "options": "rang"
-                },
-                "properties": [
-                  {
-                    "id": "custom.width",
-                    "value": 27
-                  }
-                ]
-              },
-              {
-                "matcher": {
-                  "id": "byName",
-                  "options": "ortsteil"
-                },
-                "properties": [
-                  {
-                    "id": "custom.width",
-                    "value": 176
-                  }
-                ]
-              },
-              {
-                "matcher": {
-                  "id": "byName",
-                  "options": "nutzer_anzahl"
-                },
-                "properties": [
-                  {
-                    "id": "custom.width",
-                    "value": 116
-                  }
-                ]
-              }
-            ]
-          },
-          "gridPos": {
-            "h": 11,
-            "w": 8,
-            "x": 0,
-            "y": 80
-          },
-          "id": 32,
-          "options": {
-            "footer": {
-              "fields": "",
-              "reducer": [
-                "sum"
-              ],
-              "show": false
-            },
-            "showHeader": true,
-            "sortBy": []
-          },
-          "pluginVersion": "8.5.0",
-          "targets": [
-            {
-              "datasource": {
-                "type": "postgres",
-                "uid": "LeipzigGiesst-PostgreSQL"
-              },
-              "format": "table",
-              "group": [],
-              "metricColumn": "none",
-              "rawQuery": true,
-              "rawSql": "select row_number() over(order by count(distinct(username)) desc) AS rang, t.bezirk as Ortsteil, count(distinct(username)) as nutzer_anzahl from trees_watered tw join trees t on tw.tree_id = t.id where tw.timestamp >= '2022-01-01 00:00:00.000' group by t.bezirk order by nutzer_anzahl desc, t.bezirk\r\n",
-              "refId": "A",
-              "select": [
-                [
-                  {
-                    "params": [
-                      "value"
-                    ],
-                    "type": "column"
-                  }
-                ]
-              ],
-              "timeColumn": "time",
-              "where": [
-                {
-                  "name": "$__timeFilter",
-                  "params": [],
-                  "type": "macro"
-                }
-              ]
-            }
-          ],
-          "title": "Anzahl Gießende nach Ortsteil",
-          "type": "table"
-        },
-        {
-          "datasource": {
-            "type": "postgres",
-            "uid": "LeipzigGiesst-PostgreSQL"
-          },
-          "fieldConfig": {
-            "defaults": {
-              "color": {
-                "mode": "thresholds"
-              },
-              "custom": {
-                "align": "auto",
-                "displayMode": "auto",
-                "filterable": false,
-                "inspect": false
-              },
-              "mappings": [],
-              "thresholds": {
-                "mode": "absolute",
-                "steps": [
-                  {
-                    "color": "green"
-                  },
-                  {
-                    "color": "red",
-                    "value": 80
-                  }
-                ]
-              }
-            },
-            "overrides": [
-              {
-                "matcher": {
-                  "id": "byName",
-                  "options": "rang"
-                },
-                "properties": [
-                  {
-                    "id": "custom.width",
-                    "value": 43
-                  }
-                ]
-              },
-              {
-                "matcher": {
-                  "id": "byName",
-                  "options": "ortsteil"
-                },
-                "properties": [
-                  {
-                    "id": "custom.width",
-                    "value": 292
-                  }
-                ]
-              },
-              {
-                "matcher": {
-                  "id": "byName",
-                  "options": "giess_anzahl"
-                },
-                "properties": [
-                  {
-                    "id": "custom.width",
-                    "value": 96
-                  }
-                ]
-              },
-              {
-                "matcher": {
-                  "id": "byName",
-                  "options": "username"
-                },
-                "properties": [
-                  {
-                    "id": "custom.width",
-                    "value": 329
-                  }
-                ]
-              }
-            ]
-          },
-          "gridPos": {
-            "h": 11,
-            "w": 16,
-            "x": 8,
-            "y": 80
-          },
-          "id": 30,
-          "options": {
-            "footer": {
-              "fields": "",
-              "reducer": [
-                "sum"
-              ],
-              "show": false
-            },
-            "showHeader": true,
-            "sortBy": []
-          },
-          "pluginVersion": "8.5.0",
-          "targets": [
-            {
-              "datasource": {
-                "type": "postgres",
-                "uid": "LeipzigGiesst-PostgreSQL"
-              },
-              "format": "table",
-              "group": [],
-              "metricColumn": "none",
-              "rawQuery": true,
-              "rawSql": "select row_number() over(order by count(*) desc) AS rang, t.bezirk as Ortsteil, tw.username, count(*) as giess_anzahl from trees_watered tw join trees t on tw.tree_id = t.id where tw.timestamp >= '2022-01-01 00:00:00.000' group by t.bezirk, tw.username having count(*) > 1 order by giess_anzahl desc, t.bezirk\r\n",
-              "refId": "A",
-              "select": [
-                [
-                  {
-                    "params": [
-                      "value"
-                    ],
-                    "type": "column"
-                  }
-                ]
-              ],
-              "timeColumn": "time",
-              "where": [
-                {
-                  "name": "$__timeFilter",
-                  "params": [],
-                  "type": "macro"
-                }
-              ]
-            }
-          ],
-          "title": "Gießer mit Ortsteil nach Anzahl Gießungen",
-          "type": "table"
         }
       ],
       "title": "Auswertung nach Stadtteilen (2022)",
@@ -3842,285 +2635,6 @@
         "w": 24,
         "x": 0,
         "y": 5
-      },
-      "id": 34,
-      "panels": [
-        {
-          "datasource": {
-            "uid": "LeipzigGiesst-PostgreSQL"
-          },
-          "fieldConfig": {
-            "defaults": {
-              "color": {
-                "mode": "thresholds"
-              },
-              "custom": {
-                "calculation": "mean",
-                "colorPalette": "interpolateGreens",
-                "colorSpace": "rgb",
-                "groupBy": 15,
-                "invertPalette": false,
-                "nullValueColor": "rgb(155, 155, 155)"
-              },
-              "displayName": "Liters",
-              "mappings": [],
-              "max": 20,
-              "min": 0,
-              "thresholds": {
-                "mode": "absolute",
-                "steps": [
-                  {
-                    "color": "green"
-                  }
-                ]
-              }
-            },
-            "overrides": []
-          },
-          "gridPos": {
-            "h": 18,
-            "w": 12,
-            "x": 0,
-            "y": 70
-          },
-          "id": 36,
-          "options": {
-            "from": "0",
-            "legendGradientQuality": "high",
-            "showCellBorder": false,
-            "showLegend": true,
-            "showTooltip": true,
-            "showValueIndicator": false,
-            "to": "0"
-          },
-          "pluginVersion": "7.5.7",
-          "targets": [
-            {
-              "format": "time_series",
-              "group": [],
-              "metricColumn": "amount",
-              "rawQuery": true,
-              "rawSql": "SELECT\n  \"timestamp\" AS \"time\",\n  amount::numeric::integer AS value\nFROM trees_watered\nWHERE\n  $__timeFilter(\"timestamp\")\nORDER BY 1,2",
-              "refId": "A",
-              "select": [
-                [
-                  {
-                    "params": [
-                      "amount"
-                    ],
-                    "type": "column"
-                  }
-                ]
-              ],
-              "table": "trees_watered",
-              "timeColumn": "\"timestamp\"",
-              "timeColumnType": "timestamp",
-              "where": [
-                {
-                  "name": "$__timeFilter",
-                  "params": [],
-                  "type": "macro"
-                }
-              ]
-            }
-          ],
-          "title": "Wässerungen nach Tageszeit",
-          "type": "marcusolsson-hourly-heatmap-panel"
-        }
-      ],
-      "title": "Tageszeitauswertung (für gewählten Zeitraum)",
-      "type": "row"
-    },
-    {
-      "collapsed": true,
-      "datasource": {
-        "type": "postgres",
-        "uid": "LeipzigGiesst-PostgreSQL"
-      },
-      "gridPos": {
-        "h": 1,
-        "w": 24,
-        "x": 0,
-        "y": 6
-      },
-      "id": 44,
-      "panels": [
-        {
-          "datasource": {
-            "type": "postgres",
-            "uid": "LeipzigGiesst-PostgreSQL"
-          },
-          "fieldConfig": {
-            "defaults": {
-              "color": {
-                "mode": "thresholds"
-              },
-              "custom": {
-                "align": "auto",
-                "displayMode": "auto",
-                "filterable": false,
-                "inspect": false
-              },
-              "mappings": [],
-              "thresholds": {
-                "mode": "absolute",
-                "steps": [
-                  {
-                    "color": "green"
-                  },
-                  {
-                    "color": "red",
-                    "value": 80
-                  }
-                ]
-              }
-            },
-            "overrides": [
-              {
-                "matcher": {
-                  "id": "byName",
-                  "options": "standortnr"
-                },
-                "properties": [
-                  {
-                    "id": "custom.width",
-                    "value": 88
-                  }
-                ]
-              },
-              {
-                "matcher": {
-                  "id": "byName",
-                  "options": "email"
-                },
-                "properties": [
-                  {
-                    "id": "custom.width",
-                    "value": 323
-                  }
-                ]
-              },
-              {
-                "matcher": {
-                  "id": "byName",
-                  "options": "strname"
-                },
-                "properties": [
-                  {
-                    "id": "custom.width",
-                    "value": 183
-                  }
-                ]
-              },
-              {
-                "matcher": {
-                  "id": "byName",
-                  "options": "pflanzjahr"
-                },
-                "properties": [
-                  {
-                    "id": "custom.width",
-                    "value": 83
-                  }
-                ]
-              },
-              {
-                "matcher": {
-                  "id": "byName",
-                  "options": "gattung"
-                },
-                "properties": [
-                  {
-                    "id": "custom.width",
-                    "value": 121
-                  }
-                ]
-              },
-              {
-                "matcher": {
-                  "id": "byName",
-                  "options": "id"
-                },
-                "properties": [
-                  {
-                    "id": "custom.width",
-                    "value": 106
-                  }
-                ]
-              }
-            ]
-          },
-          "gridPos": {
-            "h": 8,
-            "w": 24,
-            "x": 0,
-            "y": 72
-          },
-          "id": 46,
-          "options": {
-            "footer": {
-              "fields": "",
-              "reducer": [
-                "sum"
-              ],
-              "show": false
-            },
-            "showHeader": true,
-            "sortBy": []
-          },
-          "pluginVersion": "8.5.0",
-          "targets": [
-            {
-              "datasource": {
-                "type": "postgres",
-                "uid": "LeipzigGiesst-PostgreSQL"
-              },
-              "format": "table",
-              "group": [],
-              "metricColumn": "none",
-              "rawQuery": true,
-              "rawSql": "SELECT\n  t.id, t.standortnr, u.email, t.strname, t.pflanzjahr, t.gattung, t.artdtsch\nFROM users u JOIN trees_adopted a ON a.uuid = u.uuid JOIN trees t ON t.id = a.tree_id\nORDER BY u.email",
-              "refId": "A",
-              "select": [
-                [
-                  {
-                    "params": [
-                      "user"
-                    ],
-                    "type": "column"
-                  }
-                ]
-              ],
-              "table": "trees_adopted",
-              "timeColumn": "id",
-              "timeColumnType": "int4",
-              "where": [
-                {
-                  "name": "$__unixEpochFilter",
-                  "params": [],
-                  "type": "macro"
-                }
-              ]
-            }
-          ],
-          "title": "Gießpatenschaften",
-          "type": "table"
-        }
-      ],
-      "title": "Gießpatentschaften",
-      "type": "row"
-    },
-    {
-      "collapsed": true,
-      "datasource": {
-        "type": "postgres",
-        "uid": "LeipzigGiesst-PostgreSQL"
-      },
-      "gridPos": {
-        "h": 1,
-        "w": 24,
-        "x": 0,
-        "y": 7
       },
       "id": 38,
       "panels": [
@@ -4141,7 +2655,7 @@
             "h": 14,
             "w": 23,
             "x": 0,
-            "y": 71
+            "y": 6
           },
           "hideEmpty": false,
           "hideZero": false,
@@ -4208,109 +2722,11 @@
     },
     {
       "collapsed": true,
-      "datasource": {
-        "type": "postgres",
-        "uid": "LeipzigGiesst-PostgreSQL"
-      },
       "gridPos": {
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 8
-      },
-      "id": 48,
-      "panels": [
-        {
-          "datasource": {
-            "uid": "LeipzigGiesst-PostgreSQL"
-          },
-          "fieldConfig": {
-            "defaults": {
-              "color": {
-                "mode": "thresholds"
-              },
-              "custom": {
-                "align": "auto",
-                "displayMode": "auto",
-                "filterable": false,
-                "inspect": false
-              },
-              "mappings": [],
-              "thresholds": {
-                "mode": "absolute",
-                "steps": [
-                  {
-                    "color": "green"
-                  },
-                  {
-                    "color": "red",
-                    "value": 80
-                  }
-                ]
-              }
-            },
-            "overrides": []
-          },
-          "gridPos": {
-            "h": 3,
-            "w": 7,
-            "x": 0,
-            "y": 49
-          },
-          "id": 50,
-          "options": {
-            "footer": {
-              "fields": "",
-              "reducer": [
-                "sum"
-              ],
-              "show": false
-            },
-            "showHeader": true
-          },
-          "pluginVersion": "9.2.5",
-          "targets": [
-            {
-              "format": "table",
-              "group": [],
-              "metricColumn": "none",
-              "rawQuery": true,
-              "rawSql": "select count(*) from trees where pflanzjahr IS NOT NULL AND pflanzjahr::int >= 2006 and pflanzjahr::int <= 2010 ",
-              "refId": "A",
-              "select": [
-                [
-                  {
-                    "params": [
-                      "value"
-                    ],
-                    "type": "column"
-                  }
-                ]
-              ],
-              "timeColumn": "time",
-              "where": [
-                {
-                  "name": "$__timeFilter",
-                  "params": [],
-                  "type": "macro"
-                }
-              ]
-            }
-          ],
-          "title": "Anzahl Bäume im Alter von 10 bis 15 Jahren",
-          "type": "table"
-        }
-      ],
-      "title": "Baumalter",
-      "type": "row"
-    },
-    {
-      "collapsed": true,
-      "gridPos": {
-        "h": 1,
-        "w": 24,
-        "x": 0,
-        "y": 9
+        "y": 6
       },
       "id": 74,
       "panels": [
@@ -4335,7 +2751,8 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green"
+                    "color": "green",
+                    "value": null
                   },
                   {
                     "color": "red",
@@ -4375,7 +2792,7 @@
             "h": 8,
             "w": 12,
             "x": 0,
-            "y": 50
+            "y": 7
           },
           "id": 76,
           "options": {
@@ -4450,7 +2867,8 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green"
+                    "color": "green",
+                    "value": null
                   },
                   {
                     "color": "red",
@@ -4465,7 +2883,7 @@
             "h": 8,
             "w": 12,
             "x": 12,
-            "y": 50
+            "y": 7
           },
           "id": 78,
           "options": {
@@ -4524,7 +2942,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 10
+        "y": 7
       },
       "id": 82,
       "panels": [
@@ -4549,7 +2967,8 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green"
+                    "color": "green",
+                    "value": null
                   },
                   {
                     "color": "red",
@@ -4577,7 +2996,7 @@
             "h": 8,
             "w": 12,
             "x": 0,
-            "y": 35
+            "y": 8
           },
           "id": 80,
           "options": {
@@ -4659,899 +3078,902 @@
       "type": "row"
     },
     {
-      "collapsed": false,
+      "collapsed": true,
       "gridPos": {
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 11
+        "y": 8
       },
       "id": 84,
-      "panels": [],
+      "panels": [
+        {
+          "datasource": {
+            "type": "postgres",
+            "uid": "LeipzigGiesst-PostgreSQL"
+          },
+          "description": "mm = liter pro m²",
+          "fieldConfig": {
+            "defaults": {
+              "color": {
+                "mode": "palette-classic"
+              },
+              "custom": {
+                "axisCenteredZero": false,
+                "axisColorMode": "text",
+                "axisLabel": "",
+                "axisPlacement": "auto",
+                "barAlignment": 0,
+                "drawStyle": "bars",
+                "fillOpacity": 100,
+                "gradientMode": "none",
+                "hideFrom": {
+                  "legend": false,
+                  "tooltip": false,
+                  "viz": false
+                },
+                "lineInterpolation": "linear",
+                "lineWidth": 1,
+                "pointSize": 5,
+                "scaleDistribution": {
+                  "type": "linear"
+                },
+                "showPoints": "auto",
+                "spanNulls": false,
+                "stacking": {
+                  "group": "A",
+                  "mode": "none"
+                },
+                "thresholdsStyle": {
+                  "mode": "off"
+                }
+              },
+              "mappings": [],
+              "thresholds": {
+                "mode": "absolute",
+                "steps": [
+                  {
+                    "color": "green",
+                    "value": null
+                  },
+                  {
+                    "color": "red",
+                    "value": 80
+                  }
+                ]
+              }
+            },
+            "overrides": []
+          },
+          "gridPos": {
+            "h": 8,
+            "w": 12,
+            "x": 0,
+            "y": 9
+          },
+          "id": 86,
+          "options": {
+            "legend": {
+              "calcs": [],
+              "displayMode": "list",
+              "placement": "bottom",
+              "showLegend": true
+            },
+            "timezone": [
+              "Europe/Berlin"
+            ],
+            "tooltip": {
+              "mode": "single",
+              "sort": "none"
+            }
+          },
+          "targets": [
+            {
+              "datasource": {
+                "type": "postgres",
+                "uid": "LeipzigGiesst-PostgreSQL"
+              },
+              "format": "time_series",
+              "group": [],
+              "metricColumn": "none",
+              "rawQuery": false,
+              "rawSql": "SELECT\n  date AS \"time\",\n  mm\nFROM station_values\nWHERE\n  station_id = 1\nORDER BY 1",
+              "refId": "A",
+              "select": [
+                [
+                  {
+                    "params": [
+                      "mm"
+                    ],
+                    "type": "column"
+                  }
+                ]
+              ],
+              "table": "station_values",
+              "timeColumn": "date",
+              "where": [
+                {
+                  "datatype": "int4",
+                  "name": "",
+                  "params": [
+                    "station_id",
+                    "=",
+                    "1"
+                  ],
+                  "type": "expression"
+                }
+              ]
+            }
+          ],
+          "title": "Niederschlag Leipzig/Holzhausen täglich liter/m²",
+          "type": "timeseries"
+        },
+        {
+          "datasource": {
+            "type": "postgres",
+            "uid": "LeipzigGiesst-PostgreSQL"
+          },
+          "description": "mm = liter pro m²",
+          "fieldConfig": {
+            "defaults": {
+              "color": {
+                "mode": "palette-classic"
+              },
+              "custom": {
+                "axisCenteredZero": false,
+                "axisColorMode": "text",
+                "axisLabel": "",
+                "axisPlacement": "auto",
+                "barAlignment": 0,
+                "drawStyle": "bars",
+                "fillOpacity": 100,
+                "gradientMode": "none",
+                "hideFrom": {
+                  "legend": false,
+                  "tooltip": false,
+                  "viz": false
+                },
+                "lineInterpolation": "linear",
+                "lineWidth": 1,
+                "pointSize": 5,
+                "scaleDistribution": {
+                  "type": "linear"
+                },
+                "showPoints": "auto",
+                "spanNulls": false,
+                "stacking": {
+                  "group": "A",
+                  "mode": "none"
+                },
+                "thresholdsStyle": {
+                  "mode": "off"
+                }
+              },
+              "mappings": [],
+              "thresholds": {
+                "mode": "absolute",
+                "steps": [
+                  {
+                    "color": "green",
+                    "value": null
+                  },
+                  {
+                    "color": "red",
+                    "value": 80
+                  }
+                ]
+              }
+            },
+            "overrides": []
+          },
+          "gridPos": {
+            "h": 8,
+            "w": 12,
+            "x": 12,
+            "y": 9
+          },
+          "id": 87,
+          "options": {
+            "legend": {
+              "calcs": [],
+              "displayMode": "list",
+              "placement": "bottom",
+              "showLegend": true
+            },
+            "timezone": [
+              "Europe/Berlin"
+            ],
+            "tooltip": {
+              "mode": "single",
+              "sort": "none"
+            }
+          },
+          "targets": [
+            {
+              "datasource": {
+                "type": "postgres",
+                "uid": "LeipzigGiesst-PostgreSQL"
+              },
+              "format": "table",
+              "group": [],
+              "metricColumn": "none",
+              "rawQuery": true,
+              "rawSql": "SELECT\n  date_trunc('week', date) AS weekly,\n  SUM(mm) as mm\nFROM station_values\nWHERE\n  station_id = 1\nGROUP BY weekly  \nORDER BY weekly",
+              "refId": "A",
+              "select": [
+                [
+                  {
+                    "params": [
+                      "mm"
+                    ],
+                    "type": "column"
+                  }
+                ]
+              ],
+              "table": "station_values",
+              "timeColumn": "date",
+              "where": [
+                {
+                  "datatype": "int4",
+                  "name": "",
+                  "params": [
+                    "station_id",
+                    "=",
+                    "1"
+                  ],
+                  "type": "expression"
+                }
+              ]
+            }
+          ],
+          "title": "Niederschlag Leipzig/Holzhausen wöchentliche Summe liter/m²",
+          "type": "timeseries"
+        },
+        {
+          "datasource": {
+            "type": "postgres",
+            "uid": "LeipzigGiesst-PostgreSQL"
+          },
+          "description": "mm = liter pro m²",
+          "fieldConfig": {
+            "defaults": {
+              "color": {
+                "mode": "palette-classic"
+              },
+              "custom": {
+                "axisCenteredZero": false,
+                "axisColorMode": "text",
+                "axisLabel": "",
+                "axisPlacement": "auto",
+                "barAlignment": 0,
+                "drawStyle": "bars",
+                "fillOpacity": 100,
+                "gradientMode": "none",
+                "hideFrom": {
+                  "legend": false,
+                  "tooltip": false,
+                  "viz": false
+                },
+                "lineInterpolation": "linear",
+                "lineWidth": 1,
+                "pointSize": 5,
+                "scaleDistribution": {
+                  "type": "linear"
+                },
+                "showPoints": "auto",
+                "spanNulls": false,
+                "stacking": {
+                  "group": "A",
+                  "mode": "none"
+                },
+                "thresholdsStyle": {
+                  "mode": "off"
+                }
+              },
+              "mappings": [],
+              "thresholds": {
+                "mode": "absolute",
+                "steps": [
+                  {
+                    "color": "green",
+                    "value": null
+                  },
+                  {
+                    "color": "red",
+                    "value": 80
+                  }
+                ]
+              }
+            },
+            "overrides": []
+          },
+          "gridPos": {
+            "h": 8,
+            "w": 12,
+            "x": 0,
+            "y": 17
+          },
+          "id": 88,
+          "options": {
+            "legend": {
+              "calcs": [],
+              "displayMode": "list",
+              "placement": "bottom",
+              "showLegend": true
+            },
+            "timezone": [
+              "Europe/Berlin"
+            ],
+            "tooltip": {
+              "mode": "single",
+              "sort": "none"
+            }
+          },
+          "targets": [
+            {
+              "datasource": {
+                "type": "postgres",
+                "uid": "LeipzigGiesst-PostgreSQL"
+              },
+              "format": "table",
+              "group": [],
+              "metricColumn": "none",
+              "rawQuery": true,
+              "rawSql": "SELECT\n  date_trunc('week', date) AS weekly,\n  SUM(mm*$m2) as mm\nFROM station_values\nWHERE\n  station_id = 1\nGROUP BY weekly  \nORDER BY weekly",
+              "refId": "A",
+              "select": [
+                [
+                  {
+                    "params": [
+                      "mm"
+                    ],
+                    "type": "column"
+                  }
+                ]
+              ],
+              "table": "station_values",
+              "timeColumn": "date",
+              "where": [
+                {
+                  "datatype": "int4",
+                  "name": "",
+                  "params": [
+                    "station_id",
+                    "=",
+                    "1"
+                  ],
+                  "type": "expression"
+                }
+              ]
+            }
+          ],
+          "title": "Niederschlag Leipzig/Holzhausen wöchentliche Summe liter/$m2 m² (Baumscheibe)",
+          "type": "timeseries"
+        },
+        {
+          "datasource": {
+            "type": "postgres",
+            "uid": "LeipzigGiesst-PostgreSQL"
+          },
+          "description": "",
+          "fieldConfig": {
+            "defaults": {
+              "color": {
+                "mode": "palette-classic"
+              },
+              "custom": {
+                "axisCenteredZero": false,
+                "axisColorMode": "text",
+                "axisLabel": "",
+                "axisPlacement": "auto",
+                "barAlignment": 0,
+                "drawStyle": "bars",
+                "fillOpacity": 100,
+                "gradientMode": "none",
+                "hideFrom": {
+                  "legend": false,
+                  "tooltip": false,
+                  "viz": false
+                },
+                "lineInterpolation": "linear",
+                "lineWidth": 1,
+                "pointSize": 5,
+                "scaleDistribution": {
+                  "type": "linear"
+                },
+                "showPoints": "auto",
+                "spanNulls": false,
+                "stacking": {
+                  "group": "A",
+                  "mode": "normal"
+                },
+                "thresholdsStyle": {
+                  "mode": "line"
+                }
+              },
+              "mappings": [],
+              "thresholds": {
+                "mode": "absolute",
+                "steps": [
+                  {
+                    "color": "green",
+                    "value": null
+                  },
+                  {
+                    "color": "semi-dark-green",
+                    "value": 80
+                  }
+                ]
+              }
+            },
+            "overrides": [
+              {
+                "matcher": {
+                  "id": "byName",
+                  "options": "niederschlag"
+                },
+                "properties": [
+                  {
+                    "id": "color",
+                    "value": {
+                      "fixedColor": "dark-blue",
+                      "mode": "fixed"
+                    }
+                  }
+                ]
+              },
+              {
+                "matcher": {
+                  "id": "byName",
+                  "options": "gegossen"
+                },
+                "properties": [
+                  {
+                    "id": "color",
+                    "value": {
+                      "fixedColor": "dark-purple",
+                      "mode": "fixed"
+                    }
+                  }
+                ]
+              }
+            ]
+          },
+          "gridPos": {
+            "h": 8,
+            "w": 12,
+            "x": 12,
+            "y": 17
+          },
+          "id": 89,
+          "options": {
+            "legend": {
+              "calcs": [],
+              "displayMode": "list",
+              "placement": "bottom",
+              "showLegend": true
+            },
+            "timezone": [
+              "browser"
+            ],
+            "tooltip": {
+              "mode": "single",
+              "sort": "none"
+            }
+          },
+          "pluginVersion": "9.2.5",
+          "targets": [
+            {
+              "datasource": {
+                "type": "postgres",
+                "uid": "LeipzigGiesst-PostgreSQL"
+              },
+              "format": "time_series",
+              "group": [],
+              "metricColumn": "none",
+              "rawQuery": true,
+              "rawSql": "SELECT\n  v.mm as niederschlag,\n  g.gegossen as gegossen,\n  v.weekly_rain as time\nFROM (\nSELECT\n  date_trunc('week', s.date) AS weekly_rain,\n  SUM(s.mm*$m2) as mm\nFROM station_values AS s\nWHERE\n  s.station_id = 1\nGROUP BY weekly_rain  \n) AS v\n LEFT OUTER JOIN (\nSELECT\n  date_trunc('week', w.timestamp) AS weekly_watered,\n  SUM(CAST (w.amount AS integer)) as gegossen\nFROM trees_watered AS w JOIN trees t ON t.id = w.tree_id\nWHERE t.standortnr = '$standort_nummer'\nGROUP BY weekly_watered\n) AS g ON (g.weekly_watered = v.weekly_rain)\nWHERE $__timeFilter(v.weekly_rain)",
+              "refId": "A",
+              "select": [
+                [
+                  {
+                    "params": [
+                      "mm"
+                    ],
+                    "type": "column"
+                  }
+                ]
+              ],
+              "table": "station_values",
+              "timeColumn": "date",
+              "where": [
+                {
+                  "datatype": "int4",
+                  "name": "",
+                  "params": [
+                    "station_id",
+                    "=",
+                    "1"
+                  ],
+                  "type": "expression"
+                }
+              ]
+            }
+          ],
+          "title": "wöchentlicher  Niederschlag (pro $m2 m²)  + gegossene Liter für den Baum mit der Standortnummer $standort_nummer",
+          "type": "timeseries"
+        },
+        {
+          "datasource": {
+            "type": "postgres",
+            "uid": "LeipzigGiesst-PostgreSQL"
+          },
+          "description": "",
+          "fieldConfig": {
+            "defaults": {
+              "color": {
+                "mode": "thresholds"
+              },
+              "custom": {
+                "align": "auto",
+                "displayMode": "auto",
+                "inspect": false
+              },
+              "mappings": [],
+              "thresholds": {
+                "mode": "absolute",
+                "steps": [
+                  {
+                    "color": "green",
+                    "value": null
+                  },
+                  {
+                    "color": "red",
+                    "value": 80
+                  }
+                ]
+              }
+            },
+            "overrides": []
+          },
+          "gridPos": {
+            "h": 8,
+            "w": 12,
+            "x": 0,
+            "y": 25
+          },
+          "id": 90,
+          "options": {
+            "footer": {
+              "fields": "",
+              "reducer": [
+                "sum"
+              ],
+              "show": false
+            },
+            "showHeader": true
+          },
+          "pluginVersion": "9.2.5",
+          "targets": [
+            {
+              "datasource": {
+                "type": "postgres",
+                "uid": "LeipzigGiesst-PostgreSQL"
+              },
+              "format": "table",
+              "group": [],
+              "metricColumn": "none",
+              "rawQuery": true,
+              "rawSql": "SELECT t.id, t.standortnr as Standortnummer, count(*) AS AnzahlWochen \nFROM (\n  SELECT\n    g.tree_id as tree_id,\n    v.weekly_rain as weekly,\n    SUM(COALESCE(v.mm,0) + COALESCE(g.gegossen,0)) AS summe\n  FROM (\n    SELECT\n      date_trunc('week', s.date) AS weekly_rain,\n      SUM(s.mm*$m2) as mm\n    FROM station_values AS s\n    WHERE\n      s.station_id = 1\n    AND $__timeFilter(s.date)\n    GROUP BY weekly_rain  \n  ) AS v \n  LEFT OUTER JOIN (\n    SELECT\n      t.id as tree_id,\n      date_trunc('week', w.timestamp) AS weekly_watered,\n      SUM(CAST (w.amount AS integer)) as gegossen\n    FROM trees AS t LEFT OUTER JOIN trees_watered AS w ON t.id = w.tree_id\n    WHERE $__timeFilter(w.timestamp)\n    GROUP BY t.id, weekly_watered\n  ) AS g\n  ON (g.weekly_watered = v.weekly_rain)\n  GROUP BY g.tree_id, v.weekly_rain\n  HAVING SUM(COALESCE(v.mm,0) + COALESCE(g.gegossen,0)) >= $required_liters\n) AS a JOIN trees t ON t.id = a.tree_id\nGROUP BY t.id, t.standortnr\nORDER BY count(*) DESC",
+              "refId": "A",
+              "select": [
+                [
+                  {
+                    "params": [
+                      "mm"
+                    ],
+                    "type": "column"
+                  }
+                ]
+              ],
+              "table": "station_values",
+              "timeColumn": "date",
+              "where": [
+                {
+                  "datatype": "int4",
+                  "name": "",
+                  "params": [
+                    "station_id",
+                    "=",
+                    "1"
+                  ],
+                  "type": "expression"
+                }
+              ]
+            }
+          ],
+          "title": "Bäume mit Anzahl Wochen, in denen >= $required_liters Liter (Regen ($m2 m²) + gegossen)",
+          "type": "table"
+        },
+        {
+          "datasource": {
+            "type": "postgres",
+            "uid": "LeipzigGiesst-PostgreSQL"
+          },
+          "description": "",
+          "fieldConfig": {
+            "defaults": {
+              "color": {
+                "mode": "thresholds"
+              },
+              "custom": {
+                "align": "auto",
+                "displayMode": "auto",
+                "inspect": false
+              },
+              "mappings": [],
+              "thresholds": {
+                "mode": "absolute",
+                "steps": [
+                  {
+                    "color": "green",
+                    "value": null
+                  },
+                  {
+                    "color": "red",
+                    "value": 80
+                  }
+                ]
+              }
+            },
+            "overrides": []
+          },
+          "gridPos": {
+            "h": 8,
+            "w": 12,
+            "x": 12,
+            "y": 25
+          },
+          "id": 91,
+          "options": {
+            "footer": {
+              "fields": "",
+              "reducer": [
+                "sum"
+              ],
+              "show": false
+            },
+            "showHeader": true
+          },
+          "pluginVersion": "9.2.5",
+          "targets": [
+            {
+              "datasource": {
+                "type": "postgres",
+                "uid": "LeipzigGiesst-PostgreSQL"
+              },
+              "format": "table",
+              "group": [],
+              "metricColumn": "none",
+              "rawQuery": true,
+              "rawSql": "SELECT t.id, t.standortnr as Standortnummer, count(*) AS AnzahlWochen \nFROM (\n  SELECT\n    g.tree_id as tree_id,\n    v.weekly_rain as weekly,\n    SUM(COALESCE(v.mm,0)) AS summe\n  FROM (\n    SELECT\n      date_trunc('week', s.date) AS weekly_rain,\n      SUM(s.mm*$m2) as mm\n    FROM station_values AS s\n    WHERE\n      s.station_id = 1\n    AND $__timeFilter(s.date)\n    GROUP BY weekly_rain  \n  ) AS v \n  LEFT OUTER JOIN (\n    SELECT\n      t.id as tree_id,\n      date_trunc('week', w.timestamp) AS weekly_watered,\n      SUM(CAST (w.amount AS integer)) as gegossen\n    FROM trees AS t LEFT OUTER JOIN trees_watered AS w ON t.id = w.tree_id\n    WHERE $__timeFilter(w.timestamp)\n    GROUP BY t.id, weekly_watered\n  ) AS g\n  ON (g.weekly_watered = v.weekly_rain)\n  GROUP BY g.tree_id, v.weekly_rain\n  HAVING SUM(COALESCE(v.mm,0)) >= $required_liters\n) AS a JOIN trees t ON t.id = a.tree_id\nGROUP BY t.id, t.standortnr\nORDER BY count(*) DESC",
+              "refId": "A",
+              "select": [
+                [
+                  {
+                    "params": [
+                      "mm"
+                    ],
+                    "type": "column"
+                  }
+                ]
+              ],
+              "table": "station_values",
+              "timeColumn": "date",
+              "where": [
+                {
+                  "datatype": "int4",
+                  "name": "",
+                  "params": [
+                    "station_id",
+                    "=",
+                    "1"
+                  ],
+                  "type": "expression"
+                }
+              ]
+            }
+          ],
+          "title": "Bäume mit Anzahl Wochen, in denen >= $required_liters Liter (nur Regen ($m2 m²))",
+          "type": "table"
+        },
+        {
+          "datasource": {
+            "type": "postgres",
+            "uid": "LeipzigGiesst-PostgreSQL"
+          },
+          "description": "",
+          "fieldConfig": {
+            "defaults": {
+              "color": {
+                "mode": "thresholds"
+              },
+              "custom": {
+                "align": "auto",
+                "displayMode": "auto",
+                "inspect": false
+              },
+              "mappings": [],
+              "thresholds": {
+                "mode": "absolute",
+                "steps": [
+                  {
+                    "color": "green",
+                    "value": null
+                  },
+                  {
+                    "color": "red",
+                    "value": 80
+                  }
+                ]
+              }
+            },
+            "overrides": []
+          },
+          "gridPos": {
+            "h": 8,
+            "w": 12,
+            "x": 0,
+            "y": 33
+          },
+          "id": 92,
+          "options": {
+            "footer": {
+              "fields": "",
+              "reducer": [
+                "sum"
+              ],
+              "show": false
+            },
+            "showHeader": true
+          },
+          "pluginVersion": "9.2.5",
+          "targets": [
+            {
+              "datasource": {
+                "type": "postgres",
+                "uid": "LeipzigGiesst-PostgreSQL"
+              },
+              "format": "table",
+              "group": [],
+              "metricColumn": "none",
+              "rawQuery": true,
+              "rawSql": "SELECT t.id, t.standortnr as Standortnummer, count(*) AS AnzahlWochen \nFROM (\n  SELECT\n    g.tree_id as tree_id,\n    v.weekly_rain as weekly,\n    SUM(COALESCE(v.mm,0) + COALESCE(g.gegossen,0)) AS summe\n  FROM (\n    SELECT\n      date_trunc('week', s.date) AS weekly_rain,\n      SUM(s.mm*$m2) as mm\n    FROM station_values AS s\n    WHERE\n      s.station_id = 1\n    AND $__timeFilter(s.date)\n    GROUP BY weekly_rain  \n  ) AS v \n  LEFT OUTER JOIN (\n    SELECT\n      t.id as tree_id,\n      date_trunc('week', w.timestamp) AS weekly_watered,\n      SUM(CAST (w.amount AS integer)) as gegossen\n    FROM trees AS t LEFT OUTER JOIN trees_watered AS w ON t.id = w.tree_id\n    WHERE $__timeFilter(w.timestamp)\n    GROUP BY t.id, weekly_watered\n  ) AS g\n  ON (g.weekly_watered = v.weekly_rain)\n  GROUP BY g.tree_id, v.weekly_rain\n  HAVING SUM(COALESCE(v.mm,0)) < $required_liters AND SUM(COALESCE(v.mm,0) + COALESCE(g.gegossen,0)) >= $required_liters\n) AS a JOIN trees t ON t.id = a.tree_id\nGROUP BY t.id, t.standortnr\nORDER BY count(*) DESC",
+              "refId": "A",
+              "select": [
+                [
+                  {
+                    "params": [
+                      "mm"
+                    ],
+                    "type": "column"
+                  }
+                ]
+              ],
+              "table": "station_values",
+              "timeColumn": "date",
+              "where": [
+                {
+                  "datatype": "int4",
+                  "name": "",
+                  "params": [
+                    "station_id",
+                    "=",
+                    "1"
+                  ],
+                  "type": "expression"
+                }
+              ]
+            }
+          ],
+          "title": "Bäume mit Anzahl Wochen, in denen nur mit Gießen >= $required_liters Liter",
+          "type": "table"
+        },
+        {
+          "datasource": {
+            "type": "postgres",
+            "uid": "LeipzigGiesst-PostgreSQL"
+          },
+          "description": "",
+          "fieldConfig": {
+            "defaults": {
+              "color": {
+                "mode": "thresholds"
+              },
+              "custom": {
+                "align": "auto",
+                "displayMode": "auto",
+                "inspect": false
+              },
+              "mappings": [],
+              "thresholds": {
+                "mode": "absolute",
+                "steps": [
+                  {
+                    "color": "green",
+                    "value": null
+                  },
+                  {
+                    "color": "red",
+                    "value": 80
+                  }
+                ]
+              }
+            },
+            "overrides": []
+          },
+          "gridPos": {
+            "h": 8,
+            "w": 12,
+            "x": 12,
+            "y": 33
+          },
+          "id": 93,
+          "options": {
+            "footer": {
+              "fields": "",
+              "reducer": [
+                "sum"
+              ],
+              "show": false
+            },
+            "showHeader": true
+          },
+          "pluginVersion": "9.2.5",
+          "targets": [
+            {
+              "datasource": {
+                "type": "postgres",
+                "uid": "LeipzigGiesst-PostgreSQL"
+              },
+              "format": "table",
+              "group": [],
+              "metricColumn": "none",
+              "rawQuery": true,
+              "rawSql": "SELECT x.weekly_rain, x.mm\nFROM (\nSELECT\n  date_trunc('week', s.date) AS weekly_rain,\n  SUM(s.mm*$m2) as mm\nFROM station_values AS s\nWHERE\n  s.station_id = 1\nGROUP BY weekly_rain\n) AS x\nWHERE x.mm >= $required_liters\nAND $__timeFilter(weekly_rain)\nORDER BY weekly_rain ASC\n",
+              "refId": "A",
+              "select": [
+                [
+                  {
+                    "params": [
+                      "mm"
+                    ],
+                    "type": "column"
+                  }
+                ]
+              ],
+              "table": "station_values",
+              "timeColumn": "date",
+              "where": [
+                {
+                  "datatype": "int4",
+                  "name": "",
+                  "params": [
+                    "station_id",
+                    "=",
+                    "1"
+                  ],
+                  "type": "expression"
+                }
+              ]
+            }
+          ],
+          "title": "Wochen, in denen >= $required_liters Liter Regen ($m2 m²)",
+          "type": "table"
+        }
+      ],
       "title": "Niederschlag",
       "type": "row"
-    },
-    {
-      "datasource": {
-        "type": "postgres",
-        "uid": "LeipzigGiesst-PostgreSQL"
-      },
-      "description": "mm = liter pro m²",
-      "fieldConfig": {
-        "defaults": {
-          "color": {
-            "mode": "palette-classic"
-          },
-          "custom": {
-            "axisCenteredZero": false,
-            "axisColorMode": "text",
-            "axisLabel": "",
-            "axisPlacement": "auto",
-            "barAlignment": 0,
-            "drawStyle": "bars",
-            "fillOpacity": 100,
-            "gradientMode": "none",
-            "hideFrom": {
-              "legend": false,
-              "tooltip": false,
-              "viz": false
-            },
-            "lineInterpolation": "linear",
-            "lineWidth": 1,
-            "pointSize": 5,
-            "scaleDistribution": {
-              "type": "linear"
-            },
-            "showPoints": "auto",
-            "spanNulls": false,
-            "stacking": {
-              "group": "A",
-              "mode": "none"
-            },
-            "thresholdsStyle": {
-              "mode": "off"
-            }
-          },
-          "mappings": [],
-          "thresholds": {
-            "mode": "absolute",
-            "steps": [
-              {
-                "color": "green",
-                "value": null
-              },
-              {
-                "color": "red",
-                "value": 80
-              }
-            ]
-          }
-        },
-        "overrides": []
-      },
-      "gridPos": {
-        "h": 8,
-        "w": 12,
-        "x": 0,
-        "y": 12
-      },
-      "id": 86,
-      "options": {
-        "legend": {
-          "calcs": [],
-          "displayMode": "list",
-          "placement": "bottom",
-          "showLegend": true
-        },
-        "timezone": [
-          "Europe/Berlin"
-        ],
-        "tooltip": {
-          "mode": "single",
-          "sort": "none"
-        }
-      },
-      "targets": [
-        {
-          "datasource": {
-            "type": "postgres",
-            "uid": "LeipzigGiesst-PostgreSQL"
-          },
-          "format": "time_series",
-          "group": [],
-          "metricColumn": "none",
-          "rawQuery": false,
-          "rawSql": "SELECT\n  date AS \"time\",\n  mm\nFROM station_values\nWHERE\n  station_id = 1\nORDER BY 1",
-          "refId": "A",
-          "select": [
-            [
-              {
-                "params": [
-                  "mm"
-                ],
-                "type": "column"
-              }
-            ]
-          ],
-          "table": "station_values",
-          "timeColumn": "date",
-          "where": [
-            {
-              "datatype": "int4",
-              "name": "",
-              "params": [
-                "station_id",
-                "=",
-                "1"
-              ],
-              "type": "expression"
-            }
-          ]
-        }
-      ],
-      "title": "Niederschlag Leipzig/Holzhausen täglich liter/m²",
-      "type": "timeseries"
-    },
-    {
-      "datasource": {
-        "type": "postgres",
-        "uid": "LeipzigGiesst-PostgreSQL"
-      },
-      "description": "mm = liter pro m²",
-      "fieldConfig": {
-        "defaults": {
-          "color": {
-            "mode": "palette-classic"
-          },
-          "custom": {
-            "axisCenteredZero": false,
-            "axisColorMode": "text",
-            "axisLabel": "",
-            "axisPlacement": "auto",
-            "barAlignment": 0,
-            "drawStyle": "bars",
-            "fillOpacity": 100,
-            "gradientMode": "none",
-            "hideFrom": {
-              "legend": false,
-              "tooltip": false,
-              "viz": false
-            },
-            "lineInterpolation": "linear",
-            "lineWidth": 1,
-            "pointSize": 5,
-            "scaleDistribution": {
-              "type": "linear"
-            },
-            "showPoints": "auto",
-            "spanNulls": false,
-            "stacking": {
-              "group": "A",
-              "mode": "none"
-            },
-            "thresholdsStyle": {
-              "mode": "off"
-            }
-          },
-          "mappings": [],
-          "thresholds": {
-            "mode": "absolute",
-            "steps": [
-              {
-                "color": "green",
-                "value": null
-              },
-              {
-                "color": "red",
-                "value": 80
-              }
-            ]
-          }
-        },
-        "overrides": []
-      },
-      "gridPos": {
-        "h": 8,
-        "w": 12,
-        "x": 12,
-        "y": 12
-      },
-      "id": 87,
-      "options": {
-        "legend": {
-          "calcs": [],
-          "displayMode": "list",
-          "placement": "bottom",
-          "showLegend": true
-        },
-        "timezone": [
-          "Europe/Berlin"
-        ],
-        "tooltip": {
-          "mode": "single",
-          "sort": "none"
-        }
-      },
-      "targets": [
-        {
-          "datasource": {
-            "type": "postgres",
-            "uid": "LeipzigGiesst-PostgreSQL"
-          },
-          "format": "table",
-          "group": [],
-          "metricColumn": "none",
-          "rawQuery": true,
-          "rawSql": "SELECT\n  date_trunc('week', date) AS weekly,\n  SUM(mm) as mm\nFROM station_values\nWHERE\n  station_id = 1\nGROUP BY weekly  \nORDER BY weekly",
-          "refId": "A",
-          "select": [
-            [
-              {
-                "params": [
-                  "mm"
-                ],
-                "type": "column"
-              }
-            ]
-          ],
-          "table": "station_values",
-          "timeColumn": "date",
-          "where": [
-            {
-              "datatype": "int4",
-              "name": "",
-              "params": [
-                "station_id",
-                "=",
-                "1"
-              ],
-              "type": "expression"
-            }
-          ]
-        }
-      ],
-      "title": "Niederschlag Leipzig/Holzhausen wöchentliche Summe liter/m²",
-      "type": "timeseries"
-    },
-    {
-      "datasource": {
-        "type": "postgres",
-        "uid": "LeipzigGiesst-PostgreSQL"
-      },
-      "description": "mm = liter pro m²",
-      "fieldConfig": {
-        "defaults": {
-          "color": {
-            "mode": "palette-classic"
-          },
-          "custom": {
-            "axisCenteredZero": false,
-            "axisColorMode": "text",
-            "axisLabel": "",
-            "axisPlacement": "auto",
-            "barAlignment": 0,
-            "drawStyle": "bars",
-            "fillOpacity": 100,
-            "gradientMode": "none",
-            "hideFrom": {
-              "legend": false,
-              "tooltip": false,
-              "viz": false
-            },
-            "lineInterpolation": "linear",
-            "lineWidth": 1,
-            "pointSize": 5,
-            "scaleDistribution": {
-              "type": "linear"
-            },
-            "showPoints": "auto",
-            "spanNulls": false,
-            "stacking": {
-              "group": "A",
-              "mode": "none"
-            },
-            "thresholdsStyle": {
-              "mode": "off"
-            }
-          },
-          "mappings": [],
-          "thresholds": {
-            "mode": "absolute",
-            "steps": [
-              {
-                "color": "green",
-                "value": null
-              },
-              {
-                "color": "red",
-                "value": 80
-              }
-            ]
-          }
-        },
-        "overrides": []
-      },
-      "gridPos": {
-        "h": 8,
-        "w": 12,
-        "x": 0,
-        "y": 20
-      },
-      "id": 88,
-      "options": {
-        "legend": {
-          "calcs": [],
-          "displayMode": "list",
-          "placement": "bottom",
-          "showLegend": true
-        },
-        "timezone": [
-          "Europe/Berlin"
-        ],
-        "tooltip": {
-          "mode": "single",
-          "sort": "none"
-        }
-      },
-      "targets": [
-        {
-          "datasource": {
-            "type": "postgres",
-            "uid": "LeipzigGiesst-PostgreSQL"
-          },
-          "format": "table",
-          "group": [],
-          "metricColumn": "none",
-          "rawQuery": true,
-          "rawSql": "SELECT\n  date_trunc('week', date) AS weekly,\n  SUM(mm*$m2) as mm\nFROM station_values\nWHERE\n  station_id = 1\nGROUP BY weekly  \nORDER BY weekly",
-          "refId": "A",
-          "select": [
-            [
-              {
-                "params": [
-                  "mm"
-                ],
-                "type": "column"
-              }
-            ]
-          ],
-          "table": "station_values",
-          "timeColumn": "date",
-          "where": [
-            {
-              "datatype": "int4",
-              "name": "",
-              "params": [
-                "station_id",
-                "=",
-                "1"
-              ],
-              "type": "expression"
-            }
-          ]
-        }
-      ],
-      "title": "Niederschlag Leipzig/Holzhausen wöchentliche Summe liter/$m2 m² (Baumscheibe)",
-      "type": "timeseries"
-    },
-    {
-      "datasource": {
-        "type": "postgres",
-        "uid": "LeipzigGiesst-PostgreSQL"
-      },
-      "description": "",
-      "fieldConfig": {
-        "defaults": {
-          "color": {
-            "mode": "palette-classic"
-          },
-          "custom": {
-            "axisCenteredZero": false,
-            "axisColorMode": "text",
-            "axisLabel": "",
-            "axisPlacement": "auto",
-            "barAlignment": 0,
-            "drawStyle": "bars",
-            "fillOpacity": 100,
-            "gradientMode": "none",
-            "hideFrom": {
-              "legend": false,
-              "tooltip": false,
-              "viz": false
-            },
-            "lineInterpolation": "linear",
-            "lineWidth": 1,
-            "pointSize": 5,
-            "scaleDistribution": {
-              "type": "linear"
-            },
-            "showPoints": "auto",
-            "spanNulls": false,
-            "stacking": {
-              "group": "A",
-              "mode": "normal"
-            },
-            "thresholdsStyle": {
-              "mode": "line"
-            }
-          },
-          "mappings": [],
-          "thresholds": {
-            "mode": "absolute",
-            "steps": [
-              {
-                "color": "green",
-                "value": null
-              },
-              {
-                "color": "semi-dark-green",
-                "value": 80
-              }
-            ]
-          }
-        },
-        "overrides": [
-          {
-            "matcher": {
-              "id": "byName",
-              "options": "niederschlag"
-            },
-            "properties": [
-              {
-                "id": "color",
-                "value": {
-                  "fixedColor": "dark-blue",
-                  "mode": "fixed"
-                }
-              }
-            ]
-          },
-          {
-            "matcher": {
-              "id": "byName",
-              "options": "gegossen"
-            },
-            "properties": [
-              {
-                "id": "color",
-                "value": {
-                  "fixedColor": "dark-purple",
-                  "mode": "fixed"
-                }
-              }
-            ]
-          }
-        ]
-      },
-      "gridPos": {
-        "h": 8,
-        "w": 12,
-        "x": 12,
-        "y": 20
-      },
-      "id": 89,
-      "options": {
-        "legend": {
-          "calcs": [],
-          "displayMode": "list",
-          "placement": "bottom",
-          "showLegend": true
-        },
-        "timezone": [
-          "browser"
-        ],
-        "tooltip": {
-          "mode": "single",
-          "sort": "none"
-        }
-      },
-      "pluginVersion": "9.2.5",
-      "targets": [
-        {
-          "datasource": {
-            "type": "postgres",
-            "uid": "LeipzigGiesst-PostgreSQL"
-          },
-          "format": "time_series",
-          "group": [],
-          "metricColumn": "none",
-          "rawQuery": true,
-          "rawSql": "SELECT\n  v.mm as niederschlag,\n  g.gegossen as gegossen,\n  v.weekly_rain as time\nFROM (\nSELECT\n  date_trunc('week', s.date) AS weekly_rain,\n  SUM(s.mm*$m2) as mm\nFROM station_values AS s\nWHERE\n  s.station_id = 1\nGROUP BY weekly_rain  \n) AS v\n LEFT OUTER JOIN (\nSELECT\n  date_trunc('week', w.timestamp) AS weekly_watered,\n  SUM(CAST (w.amount AS integer)) as gegossen\nFROM trees_watered AS w JOIN trees t ON t.id = w.tree_id\nWHERE t.standortnr = '$standort_nummer'\nGROUP BY weekly_watered\n) AS g ON (g.weekly_watered = v.weekly_rain)\nWHERE $__timeFilter(v.weekly_rain)",
-          "refId": "A",
-          "select": [
-            [
-              {
-                "params": [
-                  "mm"
-                ],
-                "type": "column"
-              }
-            ]
-          ],
-          "table": "station_values",
-          "timeColumn": "date",
-          "where": [
-            {
-              "datatype": "int4",
-              "name": "",
-              "params": [
-                "station_id",
-                "=",
-                "1"
-              ],
-              "type": "expression"
-            }
-          ]
-        }
-      ],
-      "title": "wöchentlicher  Niederschlag (pro $m2 m²)  + gegossene Liter für den Baum mit der Standortnummer $standort_nummer",
-      "type": "timeseries"
-    },
-    {
-      "datasource": {
-        "type": "postgres",
-        "uid": "LeipzigGiesst-PostgreSQL"
-      },
-      "description": "",
-      "fieldConfig": {
-        "defaults": {
-          "color": {
-            "mode": "thresholds"
-          },
-          "custom": {
-            "align": "auto",
-            "displayMode": "auto",
-            "inspect": false
-          },
-          "mappings": [],
-          "thresholds": {
-            "mode": "absolute",
-            "steps": [
-              {
-                "color": "green",
-                "value": null
-              },
-              {
-                "color": "red",
-                "value": 80
-              }
-            ]
-          }
-        },
-        "overrides": []
-      },
-      "gridPos": {
-        "h": 8,
-        "w": 12,
-        "x": 0,
-        "y": 28
-      },
-      "id": 90,
-      "options": {
-        "footer": {
-          "fields": "",
-          "reducer": [
-            "sum"
-          ],
-          "show": false
-        },
-        "showHeader": true
-      },
-      "pluginVersion": "9.2.5",
-      "targets": [
-        {
-          "datasource": {
-            "type": "postgres",
-            "uid": "LeipzigGiesst-PostgreSQL"
-          },
-          "format": "table",
-          "group": [],
-          "metricColumn": "none",
-          "rawQuery": true,
-          "rawSql": "SELECT t.id, t.standortnr as Standortnummer, count(*) AS AnzahlWochen \nFROM (\n  SELECT\n    g.tree_id as tree_id,\n    v.weekly_rain as weekly,\n    SUM(COALESCE(v.mm,0) + COALESCE(g.gegossen,0)) AS summe\n  FROM (\n    SELECT\n      date_trunc('week', s.date) AS weekly_rain,\n      SUM(s.mm*$m2) as mm\n    FROM station_values AS s\n    WHERE\n      s.station_id = 1\n    AND $__timeFilter(s.date)\n    GROUP BY weekly_rain  \n  ) AS v \n  LEFT OUTER JOIN (\n    SELECT\n      t.id as tree_id,\n      date_trunc('week', w.timestamp) AS weekly_watered,\n      SUM(CAST (w.amount AS integer)) as gegossen\n    FROM trees AS t LEFT OUTER JOIN trees_watered AS w ON t.id = w.tree_id\n    WHERE $__timeFilter(w.timestamp)\n    GROUP BY t.id, weekly_watered\n  ) AS g\n  ON (g.weekly_watered = v.weekly_rain)\n  GROUP BY g.tree_id, v.weekly_rain\n  HAVING SUM(COALESCE(v.mm,0) + COALESCE(g.gegossen,0)) >= $required_liters\n) AS a JOIN trees t ON t.id = a.tree_id\nGROUP BY t.id, t.standortnr\nORDER BY count(*) DESC",
-          "refId": "A",
-          "select": [
-            [
-              {
-                "params": [
-                  "mm"
-                ],
-                "type": "column"
-              }
-            ]
-          ],
-          "table": "station_values",
-          "timeColumn": "date",
-          "where": [
-            {
-              "datatype": "int4",
-              "name": "",
-              "params": [
-                "station_id",
-                "=",
-                "1"
-              ],
-              "type": "expression"
-            }
-          ]
-        }
-      ],
-      "title": "Bäume mit Anzahl Wochen, in denen >= $required_liters Liter (Regen ($m2 m²) + gegossen)",
-      "type": "table"
-    },
-    {
-      "datasource": {
-        "type": "postgres",
-        "uid": "LeipzigGiesst-PostgreSQL"
-      },
-      "description": "",
-      "fieldConfig": {
-        "defaults": {
-          "color": {
-            "mode": "thresholds"
-          },
-          "custom": {
-            "align": "auto",
-            "displayMode": "auto",
-            "inspect": false
-          },
-          "mappings": [],
-          "thresholds": {
-            "mode": "absolute",
-            "steps": [
-              {
-                "color": "green",
-                "value": null
-              },
-              {
-                "color": "red",
-                "value": 80
-              }
-            ]
-          }
-        },
-        "overrides": []
-      },
-      "gridPos": {
-        "h": 8,
-        "w": 12,
-        "x": 12,
-        "y": 28
-      },
-      "id": 91,
-      "options": {
-        "footer": {
-          "fields": "",
-          "reducer": [
-            "sum"
-          ],
-          "show": false
-        },
-        "showHeader": true
-      },
-      "pluginVersion": "9.2.5",
-      "targets": [
-        {
-          "datasource": {
-            "type": "postgres",
-            "uid": "LeipzigGiesst-PostgreSQL"
-          },
-          "format": "table",
-          "group": [],
-          "metricColumn": "none",
-          "rawQuery": true,
-          "rawSql": "SELECT t.id, t.standortnr as Standortnummer, count(*) AS AnzahlWochen \nFROM (\n  SELECT\n    g.tree_id as tree_id,\n    v.weekly_rain as weekly,\n    SUM(COALESCE(v.mm,0)) AS summe\n  FROM (\n    SELECT\n      date_trunc('week', s.date) AS weekly_rain,\n      SUM(s.mm*$m2) as mm\n    FROM station_values AS s\n    WHERE\n      s.station_id = 1\n    AND $__timeFilter(s.date)\n    GROUP BY weekly_rain  \n  ) AS v \n  LEFT OUTER JOIN (\n    SELECT\n      t.id as tree_id,\n      date_trunc('week', w.timestamp) AS weekly_watered,\n      SUM(CAST (w.amount AS integer)) as gegossen\n    FROM trees AS t LEFT OUTER JOIN trees_watered AS w ON t.id = w.tree_id\n    WHERE $__timeFilter(w.timestamp)\n    GROUP BY t.id, weekly_watered\n  ) AS g\n  ON (g.weekly_watered = v.weekly_rain)\n  GROUP BY g.tree_id, v.weekly_rain\n  HAVING SUM(COALESCE(v.mm,0)) >= $required_liters\n) AS a JOIN trees t ON t.id = a.tree_id\nGROUP BY t.id, t.standortnr\nORDER BY count(*) DESC",
-          "refId": "A",
-          "select": [
-            [
-              {
-                "params": [
-                  "mm"
-                ],
-                "type": "column"
-              }
-            ]
-          ],
-          "table": "station_values",
-          "timeColumn": "date",
-          "where": [
-            {
-              "datatype": "int4",
-              "name": "",
-              "params": [
-                "station_id",
-                "=",
-                "1"
-              ],
-              "type": "expression"
-            }
-          ]
-        }
-      ],
-      "title": "Bäume mit Anzahl Wochen, in denen >= $required_liters Liter (nur Regen ($m2 m²))",
-      "type": "table"
-    },
-    {
-      "datasource": {
-        "type": "postgres",
-        "uid": "LeipzigGiesst-PostgreSQL"
-      },
-      "description": "",
-      "fieldConfig": {
-        "defaults": {
-          "color": {
-            "mode": "thresholds"
-          },
-          "custom": {
-            "align": "auto",
-            "displayMode": "auto",
-            "inspect": false
-          },
-          "mappings": [],
-          "thresholds": {
-            "mode": "absolute",
-            "steps": [
-              {
-                "color": "green"
-              },
-              {
-                "color": "red",
-                "value": 80
-              }
-            ]
-          }
-        },
-        "overrides": []
-      },
-      "gridPos": {
-        "h": 8,
-        "w": 12,
-        "x": 0,
-        "y": 36
-      },
-      "id": 92,
-      "options": {
-        "footer": {
-          "fields": "",
-          "reducer": [
-            "sum"
-          ],
-          "show": false
-        },
-        "showHeader": true
-      },
-      "pluginVersion": "9.2.5",
-      "targets": [
-        {
-          "datasource": {
-            "type": "postgres",
-            "uid": "LeipzigGiesst-PostgreSQL"
-          },
-          "format": "table",
-          "group": [],
-          "metricColumn": "none",
-          "rawQuery": true,
-          "rawSql": "SELECT t.id, t.standortnr as Standortnummer, count(*) AS AnzahlWochen \nFROM (\n  SELECT\n    g.tree_id as tree_id,\n    v.weekly_rain as weekly,\n    SUM(COALESCE(v.mm,0) + COALESCE(g.gegossen,0)) AS summe\n  FROM (\n    SELECT\n      date_trunc('week', s.date) AS weekly_rain,\n      SUM(s.mm*$m2) as mm\n    FROM station_values AS s\n    WHERE\n      s.station_id = 1\n    AND $__timeFilter(s.date)\n    GROUP BY weekly_rain  \n  ) AS v \n  LEFT OUTER JOIN (\n    SELECT\n      t.id as tree_id,\n      date_trunc('week', w.timestamp) AS weekly_watered,\n      SUM(CAST (w.amount AS integer)) as gegossen\n    FROM trees AS t LEFT OUTER JOIN trees_watered AS w ON t.id = w.tree_id\n    WHERE $__timeFilter(w.timestamp)\n    GROUP BY t.id, weekly_watered\n  ) AS g\n  ON (g.weekly_watered = v.weekly_rain)\n  GROUP BY g.tree_id, v.weekly_rain\n  HAVING SUM(COALESCE(v.mm,0)) < $required_liters AND SUM(COALESCE(v.mm,0) + COALESCE(g.gegossen,0)) >= $required_liters\n) AS a JOIN trees t ON t.id = a.tree_id\nGROUP BY t.id, t.standortnr\nORDER BY count(*) DESC",
-          "refId": "A",
-          "select": [
-            [
-              {
-                "params": [
-                  "mm"
-                ],
-                "type": "column"
-              }
-            ]
-          ],
-          "table": "station_values",
-          "timeColumn": "date",
-          "where": [
-            {
-              "datatype": "int4",
-              "name": "",
-              "params": [
-                "station_id",
-                "=",
-                "1"
-              ],
-              "type": "expression"
-            }
-          ]
-        }
-      ],
-      "title": "Bäume mit Anzahl Wochen, in denen nur mit Gießen >= $required_liters Liter",
-      "type": "table"
-    },
-    {
-      "datasource": {
-        "type": "postgres",
-        "uid": "LeipzigGiesst-PostgreSQL"
-      },
-      "description": "",
-      "fieldConfig": {
-        "defaults": {
-          "color": {
-            "mode": "thresholds"
-          },
-          "custom": {
-            "align": "auto",
-            "displayMode": "auto",
-            "inspect": false
-          },
-          "mappings": [],
-          "thresholds": {
-            "mode": "absolute",
-            "steps": [
-              {
-                "color": "green"
-              },
-              {
-                "color": "red",
-                "value": 80
-              }
-            ]
-          }
-        },
-        "overrides": []
-      },
-      "gridPos": {
-        "h": 8,
-        "w": 12,
-        "x": 12,
-        "y": 36
-      },
-      "id": 93,
-      "options": {
-        "footer": {
-          "fields": "",
-          "reducer": [
-            "sum"
-          ],
-          "show": false
-        },
-        "showHeader": true
-      },
-      "pluginVersion": "9.2.5",
-      "targets": [
-        {
-          "datasource": {
-            "type": "postgres",
-            "uid": "LeipzigGiesst-PostgreSQL"
-          },
-          "format": "table",
-          "group": [],
-          "metricColumn": "none",
-          "rawQuery": true,
-          "rawSql": "SELECT x.weekly_rain, x.mm\nFROM (\nSELECT\n  date_trunc('week', s.date) AS weekly_rain,\n  SUM(s.mm*$m2) as mm\nFROM station_values AS s\nWHERE\n  s.station_id = 1\nGROUP BY weekly_rain\n) AS x\nWHERE x.mm >= $required_liters\nAND $__timeFilter(weekly_rain)\nORDER BY weekly_rain ASC\n",
-          "refId": "A",
-          "select": [
-            [
-              {
-                "params": [
-                  "mm"
-                ],
-                "type": "column"
-              }
-            ]
-          ],
-          "table": "station_values",
-          "timeColumn": "date",
-          "where": [
-            {
-              "datatype": "int4",
-              "name": "",
-              "params": [
-                "station_id",
-                "=",
-                "1"
-              ],
-              "type": "expression"
-            }
-          ]
-        }
-      ],
-      "title": "Wochen, in denen >= $required_liters Liter Regen ($m2 m²)",
-      "type": "table"
     }
   ],
   "refresh": false,
@@ -5623,13 +4045,19 @@
     ]
   },
   "time": {
-    "from": "now-7d",
-    "to": "now"
+    "from": "2021-09-23T23:50:13.514Z",
+    "to": "2023-09-23T23:50:13.514Z"
   },
-  "timepicker": {},
-  "timezone": "",
-  "title": "Leipzig giesst",
-  "uid": "RQFRCgeGk",
-  "version": 23,
-  "weekStart": ""
+  "timepicker": {
+    "refresh_intervals": [
+      "1h",
+      "2h",
+      "1d"
+    ]
+  },
+  "timezone": "browser",
+  "title": "LeipzigGiesstPublic",
+  "uid": "leipzig-giesst-public",
+  "version": 1,
+  "weekStart": "monday"
 }
