@@ -4,6 +4,8 @@ import jwksClient, { SigningKey } from "jwks-rsa";
 import jwt, {
 	VerifyOptions,
 	JwtHeader,
+	Jwt,
+	JwtPayload,
 	SigningKeyCallback,
 } from "jsonwebtoken";
 import { getEnvs } from "./envs";
@@ -43,7 +45,7 @@ export function getKey(header: JwtHeader, callback: SigningKeyCallback): void {
  * based on https://codedaily.io/tutorials/174/Unit-Test-Token-Verification-for-Auth0-using-Jest-and-mock-jwks
  *
  */
-export async function verifyAuth0Token(token: string, options: VerifyOptions) {
+export async function verifyAuth0Token(token: string, options: VerifyOptions): Promise<string | Jwt | JwtPayload | undefined> {
 	return new Promise((resolve, reject) => {
 		jwt.verify(token, getKey, options, (err, decoded) => {
 			if (err) {
