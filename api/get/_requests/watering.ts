@@ -8,22 +8,31 @@ export default async function handler(
 	request: VercelRequest,
 	response: VercelResponse
 ) {
+	const tokenSubject = await verifyRequest(request);
+	if (!tokenSubject) {
+		return response.status(401).json({ error: "unauthorized" });
+	}
+
+	const { id } = <{ id: string }>request.query;
+    if (id === undefined) {
+        response.status(400).json({ error: new Error("watering id needs to be defined") });
+    }
+
     const { data, error } = await supabase
-		.from("trees_watered")
-		.select("tree_id")
-		.order("tree_id");
-    const treeIds = data?.map(elem => elem.tree_id)
-    const actualData = treeIds ? new Set(treeIds) : [];
+        .from("trees_watered")
+        .select("*")
+        .eq("watering_id", id);
+    const innerResult = (data && data.length > 0 && tokenSubject === data[0].uuid) && data[0]
 
 	checkDataError({
-		data: actualData,
+		data: innerResult,
 		error,
 		response,
-		errorMessage: "failed to retrieve ids of watered trees",
+		errorMessage: "no watering found for id",
 	});
 	const result = setupResponseData({
 		url: request.url,
-		data: actualData,
+		data: innerResult,
 		error,
 	});
 	return response.status(200).json(result);

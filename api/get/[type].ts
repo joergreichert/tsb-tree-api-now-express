@@ -10,6 +10,14 @@ import lastwateredHandler from "./_requests/lastwatered";
 import adoptedHandler from "./_requests/adopted";
 import istreeadoptedHandler from "./_requests/istreeadopted";
 import wateredbyuserHandler from "./_requests/wateredbyuser";
+import userprofileHandler from "./_requests/userprofile";
+import canexportusersHandler from "./_requests/canexportusers";
+import userexportHandler from "./_requests/userexport";
+import wateringHandler from "./_requests/watering";
+import wateredHandler from "./_requests/watered";
+import byageHandler from "./_requests/byage";
+import countbyageHandler from "./_requests/countbyage";
+
 
 export const method = "GET";
 const queryTypes = Object.keys(queryTypesList[method]);
@@ -61,6 +69,15 @@ export default async function handler(
 		case "lastwatered": {
 			return await lastwateredHandler(request, response);
 		}
+		case "watered": {
+			return await wateredHandler(request, response);
+		}
+		case "byage": {
+			return await byageHandler(request, response);
+		}
+		case "countbyage": {
+			return await countbyageHandler(request, response);
+		}
 		// All requests below this line are only available for authenticated users
 		// --------------------------------------------------------------------
 		case "adopted": {
@@ -69,9 +86,20 @@ export default async function handler(
 		case "istreeadopted": {
 			return await istreeadoptedHandler(request, response);
 		}
-
 		case "wateredbyuser": {
 			return await wateredbyuserHandler(request, response);
+		}
+		case "user-profile": {
+			return await userprofileHandler(request, response);
+		}
+		case "canexportusers": {
+			return await canexportusersHandler(request, response);
+		}
+		case "watering": {
+			return await wateringHandler(request, response);
+		}
+		case "user-export": {
+			return await userexportHandler(request, response);
 		}
 	}
 }
