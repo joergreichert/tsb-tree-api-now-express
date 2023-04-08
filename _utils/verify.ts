@@ -13,18 +13,28 @@ export async function verifyRequest(request: VercelRequest) {
 	if (!authorization) {
 		return null;
 	}
-	const token = authorization.split(" ")[1];
+	const segments = authorization.split(" ")
+	if (segments.length < 1) {
+		console.log(`token segments length not > 1: ${segments.length}`)
+		return null;
+	}
+	const token = segments[1];
 	try {
 		const decoded = await verifyAuth0Token(token, options);
 		if (decoded === undefined) {
+			console.log(`decoded is undefined`)
 			return null;
 		}
 		if (isJwtPayload(decoded)) {
-			return (decoded as JwtPayload).sub
+			const sub = (decoded as JwtPayload).sub;
+			console.log(`JWT sub is ${sub}`)
+			return sub;
 		} else {
+			console.log(`decoded is ${typeof decoded}`)
 			return null
 		}
 	} catch (error) {
+		console.log(`error: ${JSON.stringify(error, null, 2)}`)
 		return null;
 	}
 }
