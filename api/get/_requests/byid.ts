@@ -12,7 +12,8 @@ export default async function handler(
 
 	const { data, error } = await supabase.from("trees").select("*").eq("id", id);
 
-	checkDataError({ data, error, response, errorMessage: "trees not found" });
+	const errorResult = checkDataError({ data, error, response, errorMessage: "trees not found" });
+	if (errorResult) return errorResult
 
 	const result = setupResponseData({
 		url: request.url,

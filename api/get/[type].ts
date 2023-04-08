@@ -56,8 +56,6 @@ export default async function handler(
 	}
 
 	switch (type) {
-		default:
-			return response.status(400).json({ error: "invalid query type" });
 		case "all": {
 			return await allHandler(request, response);
 		}
@@ -104,6 +102,9 @@ export default async function handler(
 		}
 		case "user-export": {
 			return await userexportHandler(request, response);
+		}
+		default: {
+			return response.status(400).json({ error: "invalid query type" });
 		}
 	}
 }
