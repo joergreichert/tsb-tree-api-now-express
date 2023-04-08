@@ -1,5 +1,5 @@
 {
-  "name": "@technologiestiftung/giessdenkiez-de-postgres-api",
+  "name": "@codeforleipzig/leipziggiesst-postgres-api",
   "version": "2.0.0",
   "private": true,
   "license": "MIT",
@@ -53,19 +53,19 @@
     "typescript": "4.9.4",
     "vercel": "28.16.15"
   },
-  "description": "vercel functions for the giessdenkiez.de project to interact with the supabase database",
+  "description": "vercel functions for the app.leipziggiesst.de project to interact with the supabase database",
   "main": "api/index.ts",
   "keywords": [
-    "giessdenkiez.de"
+    "app.leipziggiesst.de"
   ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/technologiestiftung/giessdenkiez-de-postgres-api.git"
+    "url": "git+https://github.com/codeforleipzig/tsb-tree-api-now-express.git"
   },
   "bugs": {
-    "url": "https://github.com/technologiestiftung/giessdenkiez-de-postgres-api/issues"
+    "url": "https://https://github.com/codeforleipzig/tsb-tree-api-now-express/issues"
   },
-  "homepage": "https://github.com/technologiestiftung/giessdenkiez-de-postgres-api#readme",
+  "homepage": "https://https://github.com/codeforleipzig/tsb-tree-api-now-express#readme",
   "author": "Fabian Morón Zirfas <hash@ff6347.email> (https://fabianmoronzirfas.me)",
   "contributors": [
     "@fdnklg"
