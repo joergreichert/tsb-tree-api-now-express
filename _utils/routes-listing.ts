@@ -11,6 +11,14 @@ import {
 	wateredandadoptedSchemata,
 	wateredbyuserSchema,
 	waterSchema,
+	allSchema,
+	userprofileSchema,
+	canexportusersSchema,
+	wateringSchema,
+	userexportSchema,
+	wateredSchema,
+	byageSchema,
+	countbyageSchema,
 } from "./validation";
 
 export const queryTypes: Record<string, Record<string, AjvSchema>> = {

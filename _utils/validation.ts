@@ -152,6 +152,46 @@ export const userprofileSchema: AjvSchema = {
 	additionalProperties: false,
 };
 
+export const canexportusersSchema: AjvSchema = {
+	type: "object",
+	properties: {
+		type,
+		uuid: { type: "string" },
+	},
+	required: ["uuid"],
+	additionalProperties: false,
+};
+
+export const wateringSchema: AjvSchema = {
+	type: "object",
+	properties: {
+		type,
+		uuid: { type: "string" },
+	},
+	required: ["uuid"],
+	additionalProperties: false,
+};
+
+export const userexportSchema: AjvSchema = {
+	type: "object",
+	properties: {
+		type,
+		uuid: { type: "string" },
+	},
+	required: ["uuid"],
+	additionalProperties: false,
+};
+
+export const wateredSchema: AjvSchema = {
+	type: "object",
+	properties: {
+		type,
+		uuid: { type: "string" },
+	},
+	required: ["uuid"],
+	additionalProperties: false,
+};
+
 export const getSchemas: Record<string, AjvSchema> = {
 	byid: byidSchema,
 	treesbyids: treesbyidsSchema,
