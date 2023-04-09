@@ -18,7 +18,8 @@ export default async function handler(
 	request: VercelRequest,
 	response: VercelResponse
 ) {
-	checkLimitAndOffset(request, response);
+	const limitResult = checkLimitAndOffset(request, response);
+	if (limitResult) return limitResult
 	const { limit, offset } = getLimitAndOffeset(request.query);
 	const { tree_ids } = <{ tree_ids: string }>request.query;
 	const trimmed_tree_ids = tree_ids.split(",").map((id) => id.trim());

@@ -12,17 +12,10 @@ export default async function handler(
 	if (!tokenSubject) {
 		return response.status(401).json({ error: "unauthorized" });
 	}
-	const { uuid } = <{ uuid: string }>request.query;
-    if (uuid === undefined) {
-        return response.status(400).json({ error: "uuid needs to be defined" });
-    }
-    if (tokenSubject !== uuid) {
-        return response.status(400).json({ error: "You're only allowed to query your own user profile" });
-    }
 	const { data, error } = await supabase
 		.from("users")
 		.select("uuid, email, username, prefered_username, family_name, given_name, salutation, street_with_number, zipcode, phone_number")
-		.eq("uuid", uuid);
+		.eq("uuid", tokenSubject);
 
 	const errorResult = checkDataError({
 		data,

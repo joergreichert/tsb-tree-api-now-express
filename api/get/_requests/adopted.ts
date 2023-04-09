@@ -21,25 +21,30 @@ export default async function handler(
 		return response.status(401).json({ error: "unauthorized" });
 	}
 
-	checkLimitAndOffset(request, response);
+	const limitCheck = checkLimitAndOffset(request, response);
+	if (limitCheck) return limitCheck;
+
 	const { limit, offset } = getLimitAndOffeset(request.query);
 	const { uuid } = <{ uuid: string }>request.query;
 	const { range, error: rangeError } = await getRange(
 		`${SUPABASE_URL}/rest/v1/trees_adopted?uuid=eq.${uuid}`
 	);
-	checkRangeError(response, rangeError, range);
+	const rangeCheck = checkRangeError(response, rangeError, range);
+	if (rangeCheck) return rangeCheck;
+
 	const { data, error } = await supabase
 		.from("trees_adopted")
 		.select("tree_id,uuid")
 		.eq("uuid", uuid)
 		.range(offset, offset + (limit - 1))
 		.order("uuid", { ascending: true });
-	checkDataError({
+	const checkResult = checkDataError({
 		data,
 		error,
 		response,
 		errorMessage: "trees_adopted not found",
 	});
+	if (checkResult) return checkResult
 	type TreeArray = NonNullable<typeof data>;
 	const links = createLinks({
 		limit,

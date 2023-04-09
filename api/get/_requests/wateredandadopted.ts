@@ -17,7 +17,8 @@ export default async function handler(
 	request: VercelRequest,
 	response: VercelResponse
 ): Promise<VercelResponse> {
-	checkLimitAndOffset(request, response);
+	const limitResult = checkLimitAndOffset(request, response);
+	if (limitResult) return limitResult;
 	const { limit, offset } = getLimitAndOffeset(request.query);
 
 	const { range, error: rangeError } = await getRange(
