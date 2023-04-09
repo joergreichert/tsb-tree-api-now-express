@@ -15,7 +15,7 @@ export default async function handler(
 
 	const { id } = <{ id: string }>request.query;
     if (id === undefined) {
-        response.status(400).json({ error: new Error("watering id needs to be defined") });
+        return response.status(400).json({ error: "watering id needs to be defined" });
     }
 
     const { data, error } = await supabase
