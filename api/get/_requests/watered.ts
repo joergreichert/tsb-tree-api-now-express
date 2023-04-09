@@ -12,7 +12,7 @@ export default async function handler(
 		.select("tree_id")
 		.order("tree_id");
     const treeIds = data?.map(elem => elem.tree_id)
-    const actualData = treeIds ? new Set(treeIds) : [];
+    const actualData = treeIds ? [...new Set(treeIds)] : [];
 
 	const errorResult = checkDataError({
 		data: actualData,
