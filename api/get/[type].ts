@@ -91,7 +91,7 @@ export default async function handler(
 		case "wateredbyuser": {
 			return await wateredbyuserHandler(request, response);
 		}
-		case "user-profile": {
+		case "userprofile": {
 			return await userprofileHandler(request, response);
 		}
 		case "canexportusers": {
@@ -100,7 +100,7 @@ export default async function handler(
 		case "watering": {
 			return await wateringHandler(request, response);
 		}
-		case "user-export": {
+		case "userexport": {
 			return await userexportHandler(request, response);
 		}
 		default: {
