@@ -26,7 +26,8 @@ export default async function handler(
 		`${SUPABASE_URL}/rest/v1/trees?id=in.(${trimmed_tree_ids})`
 	);
 
-	checkRangeError(response, rangeError, range);
+	const changeRangeErrorResult = checkRangeError(response, rangeError, range);
+	if (changeRangeErrorResult) return changeRangeErrorResult
 
 	const { data, error } = await supabase
 		.from("trees")
@@ -35,7 +36,8 @@ export default async function handler(
 		.range(offset, offset + (limit - 1))
 		.order("id", { ascending: true });
 
-	checkDataError({ data, error, response, errorMessage: "trees not found" });
+	const errorResult = checkDataError({ data, error, response, errorMessage: "trees not found" });
+	if (errorResult) return errorResult
 
 	const links = createLinks({
 		limit,

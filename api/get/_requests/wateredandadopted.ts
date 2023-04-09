@@ -23,19 +23,21 @@ export default async function handler(
 	const { range, error: rangeError } = await getRange(
 		`${SUPABASE_URL}/rest/v1/rpc/get_watered_and_adopted`
 	);
-	checkRangeError(response, rangeError, range);
+	const rangeErrorResult = checkRangeError(response, rangeError, range);
+	if (rangeErrorResult) return rangeErrorResult
 
 	const { data, error } = await supabase
 		.rpc("get_watered_and_adopted")
 		.range(offset, offset + (limit - 1))
 		.order("tree_id", { ascending: true });
 
-	checkDataError({
+	const errorResult = checkDataError({
 		data,
 		error,
 		response,
 		errorMessage: "function trees_watered_and_adopted not found",
 	});
+	if (errorResult) return errorResult
 
 	const links = createLinks({
 		limit,

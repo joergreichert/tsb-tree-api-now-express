@@ -18,14 +18,9 @@ export default async function handler(
         innerResult = false;
     }
 
-    const data = setupResponseData({
-        url: request.url,
-        data: innerResult !== undefined ? innerResult : {},
-    });
-
 	const result = setupResponseData({
 		url: request.url,
-		data,
+		data: innerResult,
 		error: null,
 	});
 	return response.status(200).json(result);

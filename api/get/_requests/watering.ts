@@ -24,12 +24,13 @@ export default async function handler(
         .eq("watering_id", id);
     const innerResult = (data && data.length > 0 && tokenSubject === data[0].uuid) && data[0]
 
-	checkDataError({
+	const errorResult = checkDataError({
 		data: innerResult,
 		error,
 		response,
 		errorMessage: "no watering found for id",
 	});
+	if (errorResult) return errorResult
 	const result = setupResponseData({
 		url: request.url,
 		data: innerResult,

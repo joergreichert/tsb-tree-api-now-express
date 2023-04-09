@@ -146,9 +146,8 @@ export const userprofileSchema: AjvSchema = {
 	type: "object",
 	properties: {
 		type,
-		uuid: { type: "string" },
 	},
-	required: ["uuid"],
+	required: [],
 	additionalProperties: false,
 };
 
@@ -156,9 +155,8 @@ export const canexportusersSchema: AjvSchema = {
 	type: "object",
 	properties: {
 		type,
-		uuid: { type: "string" },
 	},
-	required: ["uuid"],
+	required: [],
 	additionalProperties: false,
 };
 
@@ -176,9 +174,8 @@ export const userexportSchema: AjvSchema = {
 	type: "object",
 	properties: {
 		type,
-		uuid: { type: "string" },
 	},
-	required: ["uuid"],
+	required: [],
 	additionalProperties: false,
 };
 

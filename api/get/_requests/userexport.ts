@@ -28,12 +28,13 @@ export default async function handler(
     const json2csv = new Parser({ fields });
     const actualData = json2csv.parse(data);
 
-	checkDataError({
+	const errorResult = checkDataError({
 		data: actualData,
 		error,
 		response,
 		errorMessage: "user export failed",
 	});
+	if (errorResult) return errorResult
 	const result = setupResponseData({
 		url: request.url,
 		data: actualData,

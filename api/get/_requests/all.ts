@@ -21,12 +21,14 @@ export default async function handler(
 		return response.status(401).json({ error: "unauthorized" });
 	}
 
-	checkLimitAndOffset(request, response);
+	const limitResult = checkLimitAndOffset(request, response);
+	if (limitResult) return limitResult
 	const { limit, offset } = getLimitAndOffeset(request.query);
 	const { range, error: rangeError } = await getRange(
 		`${SUPABASE_URL}/rest/v1/trees`
 	);
-	checkRangeError(response, rangeError, range);
+	const rangeResult = checkRangeError(response, rangeError, range);
+	if (rangeResult) return rangeResult
 
 //    t.*, g.german_label as gattungdeutsch,
 //    g.wikipedia as gattungwikipedia, g.wikidata as gattungwikidata, g.wikicommons as gattungwikicommons,
@@ -40,12 +42,13 @@ export default async function handler(
 		.select("id")
 		.range(offset, offset + (limit - 1))
 		.order("id", { ascending: true });
-	checkDataError({
+	const errorResult = checkDataError({
 		data,
 		error,
 		response,
 		errorMessage: "trees not found",
 	});
+	if (errorResult) return errorResult
 	type TreeArray = NonNullable<typeof data>;
 	const links = createLinks({
 		limit,

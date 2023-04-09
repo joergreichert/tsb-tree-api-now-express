@@ -33,12 +33,13 @@ export default async function handler(
 		.range(offset, offset + (limit - 1))
 		.order("timestamp", { ascending: false });
 
-	checkDataError({
+	const errorResult = checkDataError({
 		data,
 		error,
 		response,
 		errorMessage: "trees_watered not found",
 	});
+	if (errorResult) return errorResult
 
 	const links = createLinks({
 		limit,

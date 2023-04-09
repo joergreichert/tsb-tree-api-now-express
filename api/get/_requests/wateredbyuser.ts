@@ -20,13 +20,15 @@ export default async function handler(
 	if (!authorized) {
 		return response.status(401).json({ error: "unauthorized" });
 	}
-	checkLimitAndOffset(request, response);
+	const checkResult = checkLimitAndOffset(request, response);
+	if (checkResult) return checkResult
 	const { limit, offset } = getLimitAndOffeset(request.query);
 	const { uuid } = <{ uuid: string }>request.query;
 	const { range, error: rangeError } = await getRange(
 		`${SUPABASE_URL}/rest/v1/trees_watered?uuid=eq.${uuid}`
 	);
-	checkRangeError(response, rangeError, range);
+	const rangeResult = checkRangeError(response, rangeError, range);
+	if (rangeResult) return rangeResult
 
 	const { data, error } = await supabase
 		.from("trees_watered")
@@ -35,12 +37,13 @@ export default async function handler(
 		.range(offset, offset + (limit - 1))
 		.order("timestamp", { ascending: false });
 
-	checkDataError({
+	const errorResult = checkDataError({
 		data,
 		error,
 		response,
 		errorMessage: "trees_watered not found",
 	});
+	if (errorResult) return errorResult
 	const links = createLinks({
 		limit,
 		offset,

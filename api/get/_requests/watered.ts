@@ -15,12 +15,13 @@ export default async function handler(
     const treeIds = data?.map(elem => elem.tree_id)
     const actualData = treeIds ? new Set(treeIds) : [];
 
-	checkDataError({
+	const errorResult = checkDataError({
 		data: actualData,
 		error,
 		response,
 		errorMessage: "failed to retrieve ids of watered trees",
 	});
+	if (errorResult) return errorResult
 	const result = setupResponseData({
 		url: request.url,
 		data: actualData,

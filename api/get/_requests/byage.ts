@@ -21,12 +21,13 @@ export default async function handler(
         .lte("pflanzjahr", parseInt(end, 10));
     const actualData = data?.map(elem => elem.id)    
 
-	checkDataError({
+	const errorResult = checkDataError({
 		data: actualData,
 		error,
 		response,
 		errorMessage: "issues when filtering trees by age",
 	});
+	if (errorResult) return errorResult
 	const result = setupResponseData({
 		url: request.url,
 		data: actualData,

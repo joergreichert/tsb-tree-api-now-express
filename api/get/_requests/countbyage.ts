@@ -20,12 +20,13 @@ export default async function handler(
 		.gte("pflanzjahr", parseInt(start, 10))
         .lte("pflanzjahr", parseInt(end, 10));
 
-	checkDataError({
+	const errorResult = checkDataError({
 		data: count,
 		error,
 		response,
 		errorMessage: "issues when counting trees by age",
 	});
+	if (errorResult) return errorResult
 	const result = setupResponseData({
 		url: request.url,
 		data: count,

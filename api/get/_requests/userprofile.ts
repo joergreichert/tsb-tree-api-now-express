@@ -24,12 +24,13 @@ export default async function handler(
 		.select("uuid, email, username, prefered_username, family_name, given_name, salutation, street_with_number, zipcode, phone_number")
 		.eq("uuid", uuid);
 
-	checkDataError({
+	const errorResult = checkDataError({
 		data,
 		error,
 		response,
 		errorMessage: "user profile not found",
 	});
+	if (errorResult) return errorResult
 	const result = setupResponseData({
 		url: request.url,
 		data,
