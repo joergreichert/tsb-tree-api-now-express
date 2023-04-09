@@ -14,10 +14,10 @@ export default async function handler(
 	}
 	const { uuid } = <{ uuid: string }>request.query;
     if (uuid === undefined) {
-        response.status(400).json({ error: new Error("uuid needs to be defined") });
+        return response.status(400).json({ error: new Error("uuid needs to be defined") });
     }
     if (tokenSubject !== uuid) {
-        response.status(400).json({ error: new Error("You're only allowed to query your own user profile") });
+        return response.status(400).json({ error: new Error("You're only allowed to query your own user profile") });
     }
 	const { data, error } = await supabase
 		.from("users")

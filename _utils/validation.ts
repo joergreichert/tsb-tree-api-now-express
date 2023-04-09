@@ -164,9 +164,9 @@ export const wateringSchema: AjvSchema = {
 	type: "object",
 	properties: {
 		type,
-		uuid: { type: "string" },
+		id: { type: "string" },
 	},
-	required: ["uuid"],
+	required: ["id"],
 	additionalProperties: false,
 };
 
@@ -183,9 +183,8 @@ export const wateredSchema: AjvSchema = {
 	type: "object",
 	properties: {
 		type,
-		uuid: { type: "string" },
 	},
-	required: ["uuid"],
+	required: [],
 	additionalProperties: false,
 };
 

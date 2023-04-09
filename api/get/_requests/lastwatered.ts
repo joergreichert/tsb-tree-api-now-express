@@ -17,18 +17,19 @@ export default async function handler(
 	request: VercelRequest,
 	response: VercelResponse
 ) {
-	checkLimitAndOffset(request, response);
+	const limitCheck = checkLimitAndOffset(request, response);
+	if (limitCheck) return limitCheck;
 	const { limit, offset } = getLimitAndOffeset(request.query);
 	const { id } = <{ id: string }>request.query;
 	const { range, error: rangeError } = await getRange(
 		`${SUPABASE_URL}/rest/v1/trees_watered?tree_id=eq.${id}`
 	);
-	checkRangeError(response, rangeError, range);
-
+	const rangeCheck = checkRangeError(response, rangeError, range);
+	if (rangeCheck) return rangeCheck;
 	// FIXME: Request could be done from the frontend
 	const { data, error } = await supabase
 		.from("trees_watered")
-		.select("id,timestamp,amount,username,tree_id")
+		.select("watering_id,timestamp,amount,username,tree_id")
 		.eq("tree_id", id)
 		.range(offset, offset + (limit - 1))
 		.order("timestamp", { ascending: false });
