@@ -15,10 +15,7 @@ import {
 import { Tree } from "./_utils/common/interfaces";
 import { verifyRequest } from "./_utils/auth/verify-request";
 import { errorHandler } from "./_utils/error-handler";
-import { brotliCompress } from 'zlib';
-import { promisify } = from 'util';
-
-const brotliCompressAsync = promisify(brotliCompress);
+import zlib from 'zlib';
 
 type GetQueryType =
   | "byid"
@@ -182,8 +179,7 @@ export default async function (
         // public
         var intermediateResult = await getTreesWateredAndAdopted();
         const str = JSON.stringify(intermediateResult);
-        const compressedData = await brotliCompressAsync(str);
-        result = compressedData.toString('base64')
+        result = Buffer.from(compress(str, true)).toString('base64');
         break;
       }
       case "treesbyids": {
