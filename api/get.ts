@@ -178,7 +178,7 @@ export default async function (
       case "wateredandadopted-compressed": {
         // public
         var intermediateResult = await getTreesWateredAndAdopted();
-        const str = JSON.stringify(intermediateResult, null, 2);
+        const str = JSON.stringify(intermediateResult);
         result = Buffer.from(compress(str, true)).toString('base64');
         break;
       }
