@@ -15,6 +15,7 @@ import {
 import { Tree } from "./_utils/common/interfaces";
 import { verifyRequest } from "./_utils/auth/verify-request";
 import { errorHandler } from "./_utils/error-handler";
+import { compress } from "brotli";
 
 type GetQueryType =
   | "byid"
@@ -30,6 +31,7 @@ type GetQueryType =
   | "countbyage"
   | "wateredbyuser"
   | "wateredandadopted"
+  | "wateredandadopted-compressed"
   | "treesbyids"
   | "istreeadopted";
 
@@ -171,6 +173,12 @@ export default async function (
       case "wateredandadopted": {
         // public
         result = await getTreesWateredAndAdopted();
+        break;
+      }
+      case "wateredandadopted-compressed": {
+        // public
+        var intermediateResult = await getTreesWateredAndAdopted();
+        result = compress(intermediateResult, true);
         break;
       }
       case "treesbyids": {
