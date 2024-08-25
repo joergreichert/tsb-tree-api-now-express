@@ -15,7 +15,7 @@ import {
 import { Tree } from "./_utils/common/interfaces";
 import { verifyRequest } from "./_utils/auth/verify-request";
 import { errorHandler } from "./_utils/error-handler";
-import { compress } from "brotli";
+import zlib from 'zlib';
 
 type GetQueryType =
   | "byid"
@@ -179,7 +179,8 @@ export default async function (
         // public
         var intermediateResult = await getTreesWateredAndAdopted();
         const str = JSON.stringify(intermediateResult);
-        result = Buffer.from(compress(str, true)).toString('base64');
+        const compressedData = await zlib.brotliCompress(str);
+        result = compressedData.toString('base64')
         break;
       }
       case "treesbyids": {
