@@ -15,7 +15,8 @@ import {
 import { Tree } from "./_utils/common/interfaces";
 import { verifyRequest } from "./_utils/auth/verify-request";
 import { errorHandler } from "./_utils/error-handler";
-import zlib from 'zlib';
+import { brotliCompress } from 'zlib';
+import { promisify } from 'util';
 
 type GetQueryType =
   | "byid"
@@ -50,6 +51,13 @@ const treeWithLatLongAsFloat = tree => ({
 });
 
 const treesWithLatLongAsFloat = trees => trees.map(treeWithLatLongAsFloat);
+
+const compressAsync = async (input) => {
+  const str = JSON.stringify(input);
+  const brotliCompressAsync = promisify(brotliCompress);
+  const compressedData = await brotliCompressAsync(str);
+  return compressedData.toString('base64');
+}
 
 export default async function (
   request: VercelRequest,
@@ -178,8 +186,7 @@ export default async function (
       case "wateredandadopted-compressed": {
         // public
         var intermediateResult = await getTreesWateredAndAdopted();
-        const str = JSON.stringify(intermediateResult);
-        result = Buffer.from(compress(str, true)).toString('base64');
+        result = await compressAsync(intermediateResult);
         break;
       }
       case "treesbyids": {
