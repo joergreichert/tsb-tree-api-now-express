@@ -1,5 +1,5 @@
 import pg from "pg";
-import { Parser } from 'json2csv';
+import { Parser } from '@json2csv/plainjs';
 import { v4 as uuidv4 } from 'uuid';
 import { getEnvs } from "../envs";
 import {
